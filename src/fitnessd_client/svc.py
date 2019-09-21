@@ -1,3 +1,4 @@
+import datetime
 from typing import Optional
 
 import requests
@@ -18,13 +19,16 @@ def authenticate(email, password) -> Optional[str]:
     return resp.json().get('api_key')
 
 
-def save_measurement(api_key: str, email: str, data: dict):
+def save_measurement(api_key: str, email: str, rate: int, weight: int, recorded: datetime.date):
     url = base_url + 'add_measurement'
-    auth = {
+
+    data = {
         "email": email,
         "api_key": api_key,
+        "weight": weight,
+        "rate": rate,
+        "recorded": recorded.isoformat().split('T')[0],
     }
-    data.update(auth)
 
     resp = requests.post(url, json=data)
     print("Server response", resp.text)
