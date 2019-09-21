@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+src/fitnessd_client/.idea/fitnessd_client.iml
+src/fitnessd_client/.idea/misc.xml
+src/fitnessd_client/.idea/modules.xml
+src/fitnessd_client/.idea/vcs.xml
+src/fitnessd_client/.idea/inspectionProfiles/profiles_settings.xml
