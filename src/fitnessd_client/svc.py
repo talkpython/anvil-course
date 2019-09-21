@@ -5,9 +5,7 @@ import requests
 base_url = 'https://fresh-zealous-song.anvil.app/_/api/'
 
 
-def authenticate(data: dict) -> Optional[str]:
-    email = data.get('email')
-    password = data.get('password')
+def authenticate(email, password) -> Optional[str]:
     body = {
         'email': email,
         'password': password,
