@@ -108,3 +108,9 @@ src/fitnessd_client/.idea/modules.xml
 src/fitnessd_client/.idea/vcs.xml
 src/fitnessd_client/.idea/inspectionProfiles/profiles_settings.xml
 account.json
+src/fitnessd_loader/.idea/fitworks_loader.iml
+src/fitnessd_loader/.idea/misc.xml
+src/fitnessd_loader/.idea/modules.xml
+src/fitnessd_loader/.idea/vcs.xml
+src/fitnessd_loader/.idea/workspace.xml
+src/fitnessd_loader/.idea/inspectionProfiles/Project_Default.xml
