@@ -1,0 +1,20 @@
+- name: Standard Page
+  description: A page with an app bar and an optional sidebar.
+  img: img/form-templates/material-design.png
+  form:
+    class_name: Form
+    container:
+      type: HtmlTemplate
+      properties: {html: '@theme:standard-page.html'}
+    components:
+    - type: ColumnPanel
+      properties: {}
+      name: content_panel
+      layout_properties: {slot: default}
+    - type: FlowPanel
+      properties: {}
+      name: navbar_links
+      layout_properties: {slot: nav-right}
+    code: "from anvil import *\n\nclass $NAME$($NAME$Template):\n\n  def __init__(self,\
+      \ **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\
+      \n    # Any code you write here will run when the form opens.\n    \n"

@@ -1,0 +1,76 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: ADD MEASUREMENT, font_size: 28, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:balance-scale'}
+  name: label_1
+  layout_properties: {grid_position: 'TISQTQ,MDSKFV'}
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_1
+  layout_properties: {grid_position: 'NMKNYW,NWIDVC'}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Date, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_title_date
+    layout_properties: {grid_position: 'QTLCLH,PFNBXB'}
+  - type: DatePicker
+    properties: {}
+    name: date_of_measurement
+    layout_properties: {grid_position: 'QTLCLH,IGVGAS'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Weight in pounds, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_title_lbs
+    layout_properties:
+      col_widths: {}
+      grid_position: YWCNQY,HJDFUB
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Weight,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_weight
+    layout_properties: {grid_position: 'YWCNQY,PBBKLV'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Resting hear rate (beats per min), font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_title_rate
+    layout_properties:
+      col_widths: {}
+      grid_position: TRVCYR,ESTNJF
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Heart rate,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: number, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_rate
+    layout_properties:
+      col_widths: {}
+      grid_position: TRVCYR,OXFEMU
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '#FF0000',
+    visible: false, text: ERROR MESSAGE, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_error_msg
+  layout_properties: {grid_position: 'ONUHTR,DDGDJZ'}
+- type: Button
+  properties: {role: primary-color, align: right, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: ADD MEASUREMENT, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: false, underline: false, icon: 'fa:plus'}
+  name: button_save
+  layout_properties: {grid_position: 'DJWZXV,ALDDMJ'}
+  event_bindings: {click: button_save_click}

@@ -1,0 +1,116 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: COMPARE YOURSELF, font_size: 32, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:compress'}
+  name: label_title
+  layout_properties: {grid_position: 'HPHCSF,BJKGAR'}
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_data
+  layout_properties: {grid_position: 'OLTIQQ,DWQCGY'}
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Average {gender} who is {height} tall has', font_size: 20,
+      font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_subtitle
+    layout_properties: {grid_position: 'VFDCHT,ZHSEWE'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'OJNWUN,AGVQLR'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Weight, font_size: 32, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'PSMUSB,FWAPHY'}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: '{value:.1f} lbs', font_size: 32, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_weight
+      layout_properties: {grid_position: 'PSMUSB,ENIKKU'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Heart rate, font_size: 32, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1_copy
+      layout_properties:
+        col_widths: {}
+        grid_position: LEVNBE,OUABKZ
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: '{value} bmp', font_size: 32, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_rate
+      layout_properties:
+        col_widths: {}
+        grid_position: LEVNBE,FNSSHS
+    - type: Spacer
+      properties: {visible: true, spacing_above: none, spacing_below: none, height: '1',
+        tooltip: ''}
+      name: spacer_1
+      layout_properties: {grid_position: 'GEDNTM,ZXWNCR', row_background: black}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Your weight, font_size: 32, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1_copy_2
+      layout_properties:
+        col_widths: {}
+        grid_position: HAYOTB,FXYLTS
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: '{original}, {sign}{value:.1f} lbs
+
+          ', font_size: 32, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '', bold: true, underline: false, icon: ''}
+      name: label_your_weight
+      layout_properties:
+        col_widths: {}
+        grid_position: HAYOTB,XFODJQ
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Your heart rate, font_size: 32, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1_copy_3
+      layout_properties:
+        col_widths: {}
+        grid_position: CUCGGP,SEQQAJ
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: '{original}, {sign}{value} bmp
+
+          ', font_size: 32, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+        italic: false, background: '', bold: true, underline: false, icon: ''}
+      name: label_your_rate
+      layout_properties:
+        col_widths: {}
+        grid_position: CUCGGP,OTLBUU
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_no_data
+  layout_properties: {grid_position: 'ZTPEOB,NZXHLS'}
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: red,
+      visible: true, text: 'Sorry but we do not seem to have information for {gender}
+        who are {height} tall.', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_no_data
+    layout_properties: {grid_position: 'ROREKD,DDSDWF'}

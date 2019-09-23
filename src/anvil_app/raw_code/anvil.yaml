@@ -1,0 +1,22 @@
+allow_embedding: false
+package_name: Fitnessd
+name: Fitnessd
+startup_form: HomeForm
+renamed: true
+runtime_options: {version: 1, server_version: python3-full}
+metadata: {}
+services:
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false, use_google: true, allow_remember_me: true, remember_me_days: 365}
+  server_config: {user_table: 30165}
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: false}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/stripe.yml
+  client_config: {}
+  server_config: {refresh_token: rt_FrebMnRqhzFTs1WYb7vJIWPXHHgMjwtySqh6lbTYzMZzBNAj,
+    stripe_user_id: acct_1Ez9DJAKz55IQBjs}

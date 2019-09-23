@@ -1,0 +1,97 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: YOUR ACCOUNT, font_size: 28, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:male'}
+  name: label_1_copy
+  layout_properties:
+    col_widths: {}
+    grid_position: RHYWMU,DDQBEQ
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{}'}
+  name: card_1
+  layout_properties: {grid_position: 'NEUTEQ,LWZXDB'}
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Some details about your account, font_size: 22, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: label_1_copy_2
+    layout_properties:
+      col_widths: {}
+      grid_position: FVDNLP,AXGKSE
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'CTCRIM,RBQVQX'}
+    components:
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: Your height, font_size: 20, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'XZDUJX,IFJBEE'}
+    - type: Label
+      properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+        visible: true, text: '{value} inches', font_size: 18, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_value_inches
+      layout_properties: {grid_position: 'XZDUJX,SPRBSI'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Your gender, font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_1_copy_3
+    layout_properties:
+      col_widths: {}
+      grid_position: GMHVRA,EYZPCD
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 18, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_gender
+    layout_properties:
+      col_widths: {}
+      grid_position: GMHVRA,KTSVDD
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Account type, font_size: 20, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_1_copy_4
+    layout_properties:
+      col_widths: {}
+      grid_position: BANKIG,DCRKMR
+  - type: Label
+    properties: {role: null, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 18, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_account_type
+    layout_properties:
+      col_widths: {}
+      grid_position: BANKIG,JYXLQZ
+  - type: Button
+    properties: {role: secondary-color, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: GO PRO FOR $9.99, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_go_pro
+    layout_properties: {grid_position: 'RESCZB,VMDWJE'}
+    event_bindings: {click: button_go_pro_click}
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: '#FF0000',
+    visible: true, text: '', font_size: 18, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_error
+  layout_properties: {grid_position: 'VSWKSH,EXQVOR'}
