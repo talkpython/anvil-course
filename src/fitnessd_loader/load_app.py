@@ -1,10 +1,6 @@
 import csv
-import json
-import os
 from collections import defaultdict
 from typing import List
-
-import requests
 
 import auth
 import svc
@@ -33,8 +29,6 @@ def main():
 
     averaged_entries = average_entries(entries)
     print("Computed {:,} averages from raw data.".format(len(averaged_entries)))
-
-    averaged_entries = averaged_entries[:2]
 
     for a in averaged_entries:
         print("Uploading {}".format(a))
