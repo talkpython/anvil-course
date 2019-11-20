@@ -1,0 +1,203 @@
+00:00 We're the grand finale for application.
+00:02 We're going to convert this command line app
+00:04 into a GUI app that will run on Mac, Windows and Linux.
+00:08 How cool is that?
+00:09 We're going to use a library called Gooey.
+00:12 Not this, this.
+00:15 But we can just have PyCharm install it.
+00:17 You'll see it'll spin down here at the bottom for a sec.
+00:19 Again, just hit install dashboard requirements.
+00:22 You're not doing it through PyCharm.
+00:24 All right, well that worked well.
+00:25 Let's go over here and we're going to do some more imports.
+00:28 We're going to import this thing called Gooey and GooeyParser.
+00:31 And the way this Gooey thing works is
+00:33 we go over here and we say this is a Gooey application.
+00:37 We say program name is going to be Fitnessd Local.
+00:44 That's what we're going to call it.
+00:45 And we'll say show
+00:47 this doesn't have auto complete for some reason.
+00:48 It's kind of annoying.
+00:49 Anyway, show_success_modal=False.
+00:54 So when things succeed, don't show me a dialog that says
+00:56 Hey this worked. Like you know what, I know it worked.
+00:59 Tell PyCharm that's not misspelled.
+01:00 Okay so this is going to trigger an interesting UI.
+01:05 The next thing we need to do is come down here
+01:07 and say parser = GooeyParser.
+01:11 Want to give it a description of the app.
+01:13 Let's just put it in like this, Fitnessd Local.
+01:16 Local edition, record your health on the go.
+01:22 Now, what we're going to do is the way Gooey works
+01:25 is we go to the parser and we add an argument.
+01:28 These arguments show up as UI form elements.
+01:32 But we first want to check this part here.
+01:34 And if it's not authorized
+01:36 what we're going to do is we're going to add an argument
+01:41 for the email and we're going to set
+01:43 the default equals auth.email
+01:47 if for some reason that happened to exist.
+01:52 We'll say widget though equals password field.
+01:58 And that will put the little dots
+02:00 instead of showing the password.
+02:02 Now let's go ahead and just configure.
+02:03 That's going to take care of a whole bunch of stuff here.
+02:06 Let's go ahead and configure some more arguments.
+02:08 And I'm just going to drop them in there.
+02:11 So regardless of whether they're logged in
+02:13 we want these things to be added.
+02:16 So we're always going to ask for a rate
+02:18 a weight, and a date.
+02:19 Here's some description, the types are integers
+02:21 and we even have a calendar picker type thing.
+02:24 So that's all good.
+02:25 And then the next thing that we want to do
+02:27 is we want to show the UIs.
+02:29 The way we do that is parse args, like that.
+02:33 This is where it gets interesting.
+02:34 So we should be able to come down here
+02:37 not do a whole bunch of this stuff.
+02:39 Before we were getting user data
+02:41 and that's kind of gone now
+02:42 because the Gooey itself is actually doing that.
+02:46 But something like this
+02:48 we could actually drop this whole thing here
+02:50 or we could move maybe this into it.
+02:54 And the way this works, whoops I need to store this here.
+02:58 This data that comes back from parser
+03:00 it's basically like a dynamic object.
+03:03 It has the values, rate, weight, and date, in it.
+03:06 So super easy.
+03:09 data.Weight and I'm using capitals
+03:12 because this is the title in the UI.
+03:15 We have data.Date but the way this comes back
+03:18 is kind of crummy.
+03:19 So I'm going to bring in one more library for parsing it.
+03:22 Python dateutil.
+03:25 Just refer it to this code.
+03:27 Here you have to put the Python in front
+03:29 and that's not misspelled
+03:31 which is what I was actually trying to do.
+03:33 So that got installed.
+03:34 Up here, we can import dateutil
+03:38 and say dateutil.parser.parse.
+03:43 A lot of parsing going on here, isn't there?
+03:45 Okay, super.
+03:46 Now, we kind of have to ask the same question again.
+03:49 Did they already log in and get authorized?
+03:51 So if they're not authorized, is authorize again
+03:56 we want to get email over here.
+03:59 data.Email, password equals data.Password
+04:04 and we want to save it.
+04:05 But we need the API key.
+04:07 Let's put API key.
+04:09 So over here, we're just going to go
+04:11 to the service.authenticate email and password once again.
+04:17 So we're going to save that.
+04:19 And then finally, we should be okay.
+04:22 We'll say for some reason they couldn't log in.
+04:25 We'll print their authenticating and return.
+04:33 Otherwise, we'll put login successful.
+04:36 And we're down to this.
+04:37 Now the final thing we need to do
+04:39 is just save the measurement.
+04:41 And here, this is going to be auth.apikey and auth.email.
+04:47 And then we have our data
+04:49 and I guess it probably is a little bit nicer
+04:52 to pass those as values.
+04:54 Let's go ahead and change these.
+04:57 Rate int, weight int, recorded is a str
+05:02 and let's just change this
+05:03 to data, weight is weight, and so on.
+05:09 Whoo, all right.
+05:10 Final thing, we have to pass different values here
+05:12 so we can pass the, let's see where are we.
+05:15 We're at rate, weight, and recorded.
+05:18 Get those in the right order.
+05:20 All right, well this reworks is to use this parser idea.
+05:26 What does this parser even look like?
+05:28 Let's go ahead and run it and see
+05:29 well first if I got it working
+05:31 and didn't make any stupid mistakes
+05:32 while talking and coding.
+05:34 And second, what it looks like.
+05:35 If it works, you'll be impressed.
+05:38 Here goes. Oh check that out!
+05:41 How awesome is that?
+05:42 So we have our rate in pounds.
+05:44 Look, we built a GUI!
+05:45 This is so amazing!
+05:47 So let's go over here and put this as 77 and 177.
+05:52 Just so we recognize it.
+05:53 We even have a cool little date picker thing
+05:55 and that's not incredible
+05:57 but whatever, it still works.
+05:58 Actually, I do want to pick today.
+06:01 I guess we should probably default it to today.
+06:03 Wouldn't that make sense?
+06:05 Put that as 25 or something in the future.
+06:08 So this is going to gather the data
+06:10 and then we're going to run it
+06:11 and it'll call save that into the API.
+06:14 Let's see how that works.
+06:15 Oh, oh there's a problem.
+06:18 I need to import this, sorry.
+06:24 Parser, date util doesn't seem to import it's sub packages.
+06:28 That's fine.
+06:31 Oh here we go.
+06:32 For some reason, that's so weird
+06:34 that that didn't work before.
+06:35 Anyway, we were setting the default but whatever.
+06:39 All right, let's go 77, 199
+06:42 again, just to get it a unique value there.
+06:46 Boom.
+06:48 datetime is not serializable.
+06:49 I forgot to call isoformat.
+06:52 Where are we doing that down here?
+06:55 Put isoformat.
+06:57 Remember I told you this is a datetime.date.
+07:05 There we go.
+07:06 JSON doesn't deal with dates, annoying.
+07:08 All right, last time.
+07:11 77, 199, go.
+07:15 Could not save the measurement.
+07:17 What did I pass in wrong this time.
+07:19 Oh we're so close!
+07:20 But nope, it didn't work.
+07:22 Let's see what our app log says.
+07:26 Oh it passed in the wrong date time format there.
+07:31 So let's go back to our code.
+07:33 Dates are always super annoying here.
+07:36 Let's print this out real quick, just see what this is.
+07:42 Didn't really matter what I put there
+07:43 because it's not going to work.
+07:46 Yeah, I think it might be getting a time zone
+07:48 or something funky in there.
+07:49 So let's split on T and just get the last one.
+07:52 So that's sort of annoying but this should work.
+07:55 77, 198, and that date.
+07:59 Off it goes. Yes! Success!
+08:03 This is probably not the message we want to show to them
+08:05 but let's go check it out and make sure our Gooey app worked.
+08:09 That 198, there it is. It just went in.
+08:13 So super, super cool.
+08:15 We were able to go and build these cool APIs.
+08:18 We authorized our users.
+08:19 And most importantly, we can now add our measurement.
+08:22 Once we have the API, we're able to call it externally
+08:25 from pretty much any client, as we saw with Postman here.
+08:29 And then we said
+08:30 Let's build something super nice like a Python app.
+08:33 Started out as a just throw it together command line app
+08:37 and then we actually converted it
+08:39 using the GUI library over here.
+08:42 GUI library and the GUI parser
+08:45 to be a full fledged GUI application.
+08:47 The grand finale, I guess, which we're not going to do
+08:51 would be to use PyInstaller or PyOxidizer
+08:54 to bundle this up as an EXE or a .app
+08:56 You could just ship to your user
+08:58 they double click it, they run it, they see that UI.
+09:01 Everybody's happy.
+09:03 All right well, there it is.
+09:04 There's consuming our Anvil API with our Python app.

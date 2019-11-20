@@ -1,0 +1,36 @@
+00:00 Let's review really quick.
+00:01 So, we saw that we have a database system
+00:05 already built into Anvil.
+00:06 All we have to do is go and enable the data table's service.
+00:10 We saw, in our case, that actually was already done
+00:13 or as someone created the user management stuff
+00:15 but it could be that you create the tables first
+00:18 before you do that, and you have to add it explicitly.
+00:21 So here we have a couple of tables that we've created
+00:24 averages and measurements, and one called users
+00:28 that was the one created by the user service.
+00:30 And you can see that we've added a record date
+00:32 created date, weight in pounds, resting heart rate.
+00:35 Those are standard columns, just direct data
+00:38 dates, date times, numbers, and so on.
+00:41 But we also had a foreign key relationship over to the user.
+00:45 This is the user to whom those measurements belong
+00:48 and those have a little bit different
+00:49 hyperlink-y looking thing here.
+00:51 You saw you can even click it
+00:52 and pull up details from the user table.
+00:54 That's pretty awesome.
+00:55 The other thing we have to look at is the security.
+00:58 By default, these are not accessible
+01:00 and probably should never be writable from Javascript.
+01:04 I don't know, that seems like a reasonable statement.
+01:07 We have the forms, that is, the client side Javascript
+01:10 cannot directly access this table at all.
+01:14 However, the server-side modules
+01:16 which are run on the server and are protected
+01:18 they can do the validation they need
+01:19 and then do whatever they want to talk to the database.
+01:21 So we had a server-side module that did two things.
+01:25 Added these records here and then we query 'em
+01:27 for the given logged in user.
+01:30 That's data tables.

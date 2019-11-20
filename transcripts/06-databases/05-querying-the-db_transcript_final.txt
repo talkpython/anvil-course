@@ -1,0 +1,95 @@
+00:00 Well adding the measurement wasn't too hard.
+00:01 Let's see about querying the database.
+00:05 We're going to have this @anvil decorator here.
+00:08 The next thing we want to do when our app is running
+00:12 on the authenticated homepage
+00:14 we want to draw a plot of all of your measurements.
+00:17 Now, that's a lot of work.
+00:18 So what we're going to do is we're going to start
+00:20 by just showing a list.
+00:22 A flat, string list of all of our measurements.
+00:25 And then we'll turn that into a plot just a little bit.
+00:29 Either way, though, to make that happen
+00:30 on the data side, we need to query the measurements
+00:34 for a particular user.
+00:35 Turns out to be not too hard.
+00:36 Let's write a method here called my_measurements.
+00:41 And it actually takes no arguments.
+00:43 It's going to have a user.
+00:46 A logged in user just like before.
+00:48 This time, if somebody tries to ask for their measurements
+00:50 but they're not authenticated
+00:52 they don't have any measurements.
+00:53 We're just going to return an empty list, here.
+00:57 And that's fine.
+00:58 Next, what we want to do, is we want to say the measurements
+01:01 that you have are actually, app_tables.measurements.
+01:08 We're going to do a search.
+01:09 And we can just say either some kind of expression
+01:12 or things like, User=user. How about that?
+01:17 Now this will give us all of our measurements back
+01:19 but we want them ordered.
+01:21 We can, of course, order them in Python.
+01:22 But you know what's really good at ordering things?
+01:25 Databases. And the Anvil database allows us to specify
+01:29 a little search expression, here.
+01:31 So notice up at the top
+01:32 we have anvil.tables as tables imported.
+01:34 So we can say, tables. has a couple of things.
+01:38 Most importantly, order_by.
+01:41 And then we can say what we want to order by.
+01:44 First let's go and say ascending=True
+01:45 and the column name is going to be
+01:48 what did we call it down here?
+01:49 Make sure we get it exactly right.
+01:50 RecordDate. There.
+01:54 So we're going to order by that.
+01:57 That's here. Alright, perfect.
+02:00 Anvil looks like it thinks I did something wrong.
+02:03 Did I? We'll see, let's return measurements.
+02:07 Alright, that looks okay to me.
+02:10 Probably there is something wrong that I'm just missing
+02:13 but let's go and run with it. See if this works.
+02:16 So let's just go over here, in this authenticated bit.
+02:19 Instead of doing this, let's print anvil.server.call
+02:24 my_measurements, and that's it.
+02:26 Let's just run that and see what we get.
+02:29 Oh, there you go.
+02:30 Positional argument followed by
+02:34 positional argument in the wrong wording.
+02:36 Of course, that is not allowed and I was just not focused.
+02:39 Okay, try again. This should work.
+02:43 Look at that, we have an iterator.
+02:46 That's cool that we get an iterator we can loop over it
+02:48 but let's actually loop over the items here.
+02:52 I'll say, for m in this thing
+02:56 let's print out something like RecordDate.
+02:59 And we can also print, let's do a little format here.
+03:07 Let's just put out the heart rate.
+03:12 So I'll copy those over.
+03:14 And we're going to be printing the record date
+03:17 weight in pounds, and heart rate for each entry.
+03:18 Remember, there should be two for me so far.
+03:22 Run it again, and we get some output.
+03:24 Two output. This is encouraging.
+03:27 Hey, look at that, there are the dates.
+03:29 Exactly what we were looking for.
+03:30 So we were able to get this cursor back
+03:32 to the database from the server.
+03:34 Actually passed through Javascript
+03:37 over to the client where we could
+03:38 process the result of this query.
+03:40 So here we are querying this database pretty easily.
+03:44 Now let's just go back here and review real quick.
+03:48 We come over here, we got to our table
+03:49 and we just called search.
+03:51 And then we specified some filter criteria
+03:53 like user equals such and such.
+03:56 On top of that we threw in a order by record date ascending.
+04:00 Did that work correctly? Let's see.
+04:02 We should have the oldest first and the newest last.
+04:05 Well, there's two of them, they're ordered right.
+04:07 It must be perfect.
+04:08 No, actually, this is the right way
+04:10 in this limited data set, at least
+04:12 to show that off.

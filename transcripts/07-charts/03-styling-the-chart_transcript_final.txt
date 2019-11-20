@@ -1,0 +1,52 @@
+00:00 We saw the chart was on the screen
+00:02 but it was empty.
+00:03 It had no styles and it had no data.
+00:05 So we're going to address this issue in two steps.
+00:08 Let's first just make it look good.
+00:11 Now, here's the thing about working with these charts:
+00:15 We come over here and we can click on them
+00:16 and we can get to some of their details like
+00:20 things like what their height is
+00:23 their tool tip, their user data
+00:25 some of their events and things like this.
+00:28 But to really program them and interact with them
+00:30 what we have to do is basically use the Plotly API.
+00:35 So I'm going to go over here and I'm going to put
+00:36 some design stuff to make it look good
+00:39 but there's no point in you watching me type it in.
+00:42 It's just a bunch of, this part of the chart has this width
+00:45 and this part has this line with this color and so on
+00:48 so here it is. Phew, look at that.
+00:50 We're going to say go to our plot here and set it's title
+00:54 to "Your Quantitative Self."
+00:56 Axis is the day
+00:58 whether or not we'll show grids and ticks and colors.
+01:02 The Y axis is going to have two things:
+01:04 It's going to be your weight
+01:05 and your beats per minute for your heart
+01:08 and we'll have different types of graph.
+01:10 One will be a line graph and one will be bars.
+01:13 When I put all this on there
+01:15 Now let's just run it and oops
+01:18 maybe not run it just yet cause if we run it
+01:20 nothing will happen.
+01:21 So let's go over here and actually call this part here.
+01:25 Okay. Give that a shot. Oh! Wow.
+01:30 Remember I deleted that element and put it into a card?
+01:33 Well, I forgot to rename it.
+01:34 Let's do that real quick.
+01:39 Here we go. Now we have that right there.
+01:41 Let's give it a shot. There we have it.
+01:44 It's not super interesting because our chart is empty
+01:46 but look, we have all these cool little interactive
+01:49 download as a .png, save and edit it to the cloud
+01:53 we can pan and zoom and scale
+01:55 and do all sorts of interesting stuff to it.
+01:58 We have no data so I'm not going to do that yet.
+02:00 Here it is. We have our days
+02:02 we have our pounds and beats per minute
+02:04 and our quantitative self.
+02:05 So, getting the chart styled
+02:07 even though you don't actually see the graph
+02:09 element just yet 'cause we don't have any data
+02:11 getting it styled we're off to a good start there.

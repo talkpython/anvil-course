@@ -1,0 +1,120 @@
+00:00 The last UI element, the last part of our site
+00:02 that we have to build, is this compare page.
+00:06 And the idea is that now that we have
+00:08 your gender, your height, and things like that
+00:11 and we've been collecting your weight and heart rate
+00:14 we'd like to compare you to folks
+00:16 of that gender and that height.
+00:18 Now, that's pretty imperfect, y'know
+00:20 there's a lot of factors in there
+00:21 but that's the data that we have
+00:23 it's those two things, so we'll compare you to that
+00:25 and you can just disregard it.
+00:27 That's the idea that I have, right.
+00:29 So we need to fill out this page
+00:31 and we also need to put some more data in the server
+00:33 that this is what the average person
+00:36 who is female and this height weighs
+00:38 and what their heart rate is and things like that.
+00:41 So, I'm going to fill out this UI, really quick
+00:43 and then we'll talk about how we get the data in there.
+00:46 And here you have it: Look at that.
+00:47 Here's our UI, let me scroll up just a little bit for you.
+00:49 So I've fleshed this out, let's just run it
+00:52 so you can see it, full size here.
+00:54 Now the fonts probably look kind of huge
+00:56 and they're a little bit huge, but and that's also just partly
+00:59 because my screen's small for recording.
+01:01 Alright, so here's what we have so far
+01:03 obviously we're not loading any data into it
+01:06 and we can do that a little bit in just a second.
+01:08 So the idea is that we're going to compare ourselves
+01:10 against the average male or female
+01:12 who is however many inches or feet tall
+01:16 and then we're going to put some information over here.
+01:19 Now, you might notice there's some weird symbols
+01:21 in our label values, like value :.1f.
+01:25 What the heck is up with that?
+01:26 An original sign in value, this is a little trick technique
+01:31 I guess is a better word that I'm using here.
+01:33 These are Python string formats
+01:37 and so this lets me design in the designer
+01:40 the look and feel and the text that goes in there exactly
+01:43 but still use string format to fill in the values.
+01:47 So I can say string format on this value is 172.0051
+01:51 So I can say string format on this value is 172.0051
+01:56 or whatever and it will actually
+01:57 format that value into this location
+01:59 and use Python's formatting characters disable.
+02:03 We're going to put one decimal place here, and then
+02:07 you know, no decimal places on this one, for example.
+02:10 So that's what's up with these funky bits.
+02:12 Let's put as much data in here as we can.
+02:14 So this we can not do, this is the average person
+02:17 we can't do anything, but the original we can put in here.
+02:20 In the sign, in the value, we'll see about those
+02:24 in a second; so let's me just copy this away.
+02:27 Get with me and remember where to put it.
+02:32 So let's go back to the code and let's import some stuff.
+02:36 Pretty much all of this stuff we don't need.
+02:43 We just need our cool little library there
+02:45 so it'll say user equals data access, the user, like so.
+02:52 And then we'll say self dot label
+02:55 we got a ton of these we got to figure out which one
+02:57 your weight equals, now, how're we going to get this?
+03:03 We're going to need to get my measurements
+03:05 your measurements, we'll just call them measurements.
+03:12 We don't have a great function to get our last measurement
+03:15 now we probably should write that
+03:17 but remember when you log in you're already
+03:19 cashing all of these and the first one is the latest
+03:23 so we'll go like that, and let's say
+03:27 measurement equals nothing, but if...
+03:33 Actually let's do it like this.
+03:35 Do a singular measurement equals none
+03:39 and if there are measurements we're going to set that
+03:42 to the first one, okay, 'cause remember the way we sort them
+03:46 the newest one is first so we'll just show you
+03:48 your last measurement there; go ahead and show this.
+03:52 If we don't have any data there's a way to deal with this
+03:56 but let's go ahead and do this here let's say text equals...
+04:02 and dot format, and then what do we want to put?
+04:05 Well, let's go back here real quick
+04:09 and we have value, here, original in value
+04:14 so I think we want for this one
+04:17 to be plus or minus so value needs something
+04:19 we're just going to put original in there for now;
+04:21 original equals measurement of weight.
+04:29 Let's check our data table and make sure
+04:30 that's what it's called; measurements, weight in pounds.
+04:36 Let's copy that, we want to get that right.
+04:40 And what was the other one?
+04:41 We have our heart rate, resting heart rate
+04:47 so we're going to need to do the other one
+04:49 self dot label, and your rate dot text
+04:52 is going to be something like that, of label.
+05:00 There we go, let's just run that, see how that works.
+05:03 Going to compare... ah, perfect!
+05:06 We have not a number because that didn't get set
+05:09 and we have 181, that looks right
+05:12 for some reason our weight value didn't get in there
+05:15 let's see; original, and I guess we could set the others
+05:20 sign and value, let's format these a little bit.
+05:28 Put nothing, it could be plus or minus
+05:29 I'll put plus I guess, and we'll do it like that.
+05:35 Here, same thing, and this didn't work
+05:38 because I didn't spell it right.
+05:41 Here we go, perfect, so our weight and our rate is fine
+05:45 we need these values to determine what that is
+05:48 and then we don't want to share this if we have some value.
+05:52 So let's fix that's real quick, and let's do that.
+05:57 So we have our card with data
+05:58 and our card with no data, I'll say
+06:00 visible equals measurement is not none...
+06:08 Is none, yes, and our card with data like this.
+06:16 Alright, run it one more time
+06:18 make sure this is showing and hiding correctly.
+06:22 Perfect, alright, so it looks like this is working
+06:25 the last thing to do is just get the average
+06:28 and then compute the delta of whatever our value is
+06:32 compared to our person's average.

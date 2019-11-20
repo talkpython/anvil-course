@@ -1,0 +1,139 @@
+00:00 It's time to create our app
+00:01 and actually start writing some code
+00:03 and we're going to focus on that for the rest of the course.
+00:05 So here we are on anvil.works.
+00:08 Pretty cool domain.
+00:09 We're going to get started building our app.
+00:11 Now, like I said, you can create your account here.
+00:13 Having a free one pretty much let's you do what you need
+00:16 to do for most of what we're doing in this course.
+00:19 Having a paid one obviously lets you do more.
+00:23 For example, you can't host on a custom domain
+00:25 like we're going to without a paid account.
+00:27 So here we are, we're going to get started
+00:29 by just clicking Start Building.
+00:30 If we hadn't already logged in or registered
+00:33 we would do that, but now it's just going to take us
+00:35 straight to where we can create our app.
+00:37 Now, one of the things that is a little tricky
+00:39 for me working with Anvil is I always feel
+00:42 like I have the webpage
+00:44 and then I usually have an editor
+00:46 but the webpage that I'm viewing and interacting with
+00:49 created by Anvil, is also the editor.
+00:52 You should press the Stop button as you'll see
+00:54 and so in order to keep myself
+00:56 from trying to close that window and go back to my editor
+00:59 I like to have this full-screen
+01:01 just dedicate all the space to it.
+01:04 There's really no reason to leave our web browser, right?
+01:07 It's going to both run our app
+01:08 but also going to be where we're writing our app.
+01:12 Now, the app we're going to create is a fitness app.
+01:14 We've already sort of introduced that idea
+01:16 and I call it Fitnessd without the e in there.
+01:19 So Fitnessd, but without the e.
+01:22 Here, you can see a little sample one I built
+01:24 as I was writing this course
+01:25 taking the screenshots and everything.
+01:26 So we're going to start a new one
+01:28 that's why you see it down there already.
+01:30 So we're going to start with the material design one
+01:34 and it comes down, and it's just not so creatively called
+01:37 material design one.
+01:39 So let's give it a name.
+01:40 I'm going to call it Fitnessd, like that.
+01:44 Now, rename it, now our app is good.
+01:47 The next thing we want to do is we want to have
+01:49 some links over here, so we're going to put a title.
+01:53 On the right, you can see that there's sort of
+01:56 this drag-and-drop thing we have.
+01:58 Labels, we can put the labels over here.
+02:01 We have maybe a button if we want to put the button there.
+02:03 We can go and select the button
+02:05 and, say, change its style like
+02:08 it could say, Click Me.
+02:10 And we could set its role to be primary
+02:12 so it looks like this, and so on.
+02:14 This is not really how we want our app to look
+02:16 but just to show you really quickly
+02:18 how this form designer works here.
+02:21 Let's go ahead and put this title over here
+02:23 that we're talking about, that they're suggesting we put.
+02:26 I come down here, and I can rename these elements.
+02:29 If you want to program against them
+02:30 they should have good names, they always have names
+02:32 even if you don't want to program against them
+02:34 but you probably want to give them names.
+02:37 So this is going to be labeled Title, like that.
+02:40 And then, we could just put this up here
+02:41 as Fitnessd.app or something like that.
+02:45 This is going to be our title.
+02:47 Okay, so here's how the form editor works.
+02:50 We have a little output from when our app runs.
+02:52 That's like the console, terminal type thing.
+02:55 We have these forms here
+02:57 so by default they're form one, form two
+03:00 not super interesting
+03:01 I'm going to rename this one to HomeForm.
+03:06 And be like our main page, you'll see this is actually
+03:08 the center of our application in a lot of interesting ways.
+03:11 Here's the client side modules.
+03:13 We can go and add one of those.
+03:15 I'm going to get rid of it again 'cause we don't need it now
+03:17 but it just creates, well
+03:18 let me just look at it real quick.
+03:20 It creates a Python file where we'd write Python code
+03:23 but incredibly, this runs in the browser.
+03:25 It never runs on the server.
+03:27 The server modules are similar
+03:29 but these are going to run on the server.
+03:32 Right now, it's running.
+03:34 We can write Python 2 code over there
+03:37 but if we have the paid version
+03:39 we can have full Python 3, which is great.
+03:42 I definitely want to have that.
+03:45 If you don't have the paid version
+03:46 just write Python 2 code for now until you've decided
+03:49 that it's worthwhile for you, but, of course
+03:50 when I write code, it's going to be Python 3.
+03:53 Python 2 is just about out of the loop.
+03:56 It's just about deprecated and so on.
+03:58 We're going to come back when I have some of those.
+04:00 Here's the services that we talked about.
+04:02 We could have our data table service, our user service
+04:06 send an email, app secrets
+04:08 Google Drive, and login, and whatnot
+04:12 Facebook services, Microsoft
+04:13 which requires the business account
+04:15 and Stripe, as well as Uplink
+04:17 those are some of the things we spoke about.
+04:19 We can also configure the theme, and, just so you all know
+04:22 I have the individual plan here.
+04:26 Okay, so this is the basic look and feel of our app.
+04:30 This is how it's going to work.
+04:31 We're going to write code here
+04:34 and then when it's time to run it
+04:35 we just click this button.
+04:37 Actually, there it is, it doesn't do anything.
+04:38 It doesn't have anything going on
+04:40 and maybe if we put a button or something right here
+04:42 then you see this little button one.
+04:44 Run it, there you go, now, we can go about
+04:46 clicking our little button.
+04:48 So our app is running, this is what I was talking about
+04:50 with this sort of two experiences.
+04:53 Here's where we work with our app and run our app
+04:55 and debug it, and then you hit Stop
+04:56 and you're back to the editor.
+04:58 It's best to just have your web browser
+05:00 absolutely full-screen.
+05:01 Chrome is a little bit better than Firefox for this
+05:03 'cause it actually hides the window
+05:05 the tabs and everything, which I kind of like
+05:08 but in general I prefer Firefox.
+05:10 So here we go, we're going to be using Firefox for this.
+05:13 All right, our app is created
+05:15 and now, we're going to have to start
+05:16 doing some cool drag-and-drop UI layout
+05:19 to start creating our application properly.

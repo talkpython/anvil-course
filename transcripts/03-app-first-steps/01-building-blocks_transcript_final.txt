@@ -1,0 +1,106 @@
+00:00 The last thing I want to talk about
+00:01 before we actually start building our application
+00:04 is the Anvil building blocks.
+00:06 Let's just take a moment and get a broad picture
+00:09 of what things we have to work with.
+00:11 I showed you the Legos before and said it's fun to click
+00:14 the Legos together.
+00:15 Well here are some of the Legos we can work with.
+00:18 We look at Anvil there's different core concepts
+00:22 and functionality that we can bring together
+00:24 to build our application.
+00:26 Probably the most obvious and in-your-face and front
+00:29 and center type of thing is what are called forms.
+00:32 These are basically the web pages.
+00:35 There's nice visual design here, you drag and drop
+00:37 and you arrange all our your UI elements.
+00:40 Here's a label.
+00:41 Here's a repeating layout of repeating bunch of rows.
+00:45 Here's a chart.
+00:46 Here's some inputs in a button and so on.
+00:49 These are your forms.
+00:50 We're also going to have something that are called modules.
+00:53 I want to emphasize that they are client modules as opposed
+00:56 to something similar called server modules.
+00:59 Now we can write Python code to control our forms
+01:02 to respond to the button click events and so on.
+01:05 We can write other code in a separate file
+01:09 conceptually a separate file.
+01:11 In these modules that we can use across forms.
+01:15 It's not a good design pattern to cram all your code
+01:18 into the button click event.
+01:19 You really often want to separate
+01:21 that have like a data access layer
+01:23 maybe a navigation layer, other types of things.
+01:27 We're going to put that into these things
+01:29 probably called
+01:30 client modules sometimes into server modules.
+01:33 So what's the client server bit about.
+01:34 Well incredibly this Python code that we write
+01:37 the forms and for the client modules
+01:40 we're going to write standard Python code.
+01:43 This actually runs in the web browser.
+01:46 Its converted to JavaScript, it's so awesome.
+01:49 So this lets us not have to write JavaScript
+01:51 but to write Python for interactive client side code.
+01:55 Just like you would with say VueJS or something like that.
+01:59 But with Python and a nice visual designer instead.
+02:02 That's the client part.
+02:03 But sometimes we want to write code that runs on a server
+02:07 it's protected from the users messing with it
+02:09 because of course you got access to the web browser
+02:11 you can mess with the JavaScript.
+02:13 We want to write on the server we want to talk to the database
+02:15 maybe call other services
+02:17 use things like API keys and so on.
+02:19 So we can also write Python code that runs
+02:22 on the server side in Anvil
+02:23 and we can link these together really similarly.
+02:26 So client modules and server modules
+02:28 both great for breaking up our code and reusing it.
+02:31 Sometimes that belongs on the server
+02:32 sometimes it belongs on the front end
+02:35 and we can write both of them.
+02:37 We also have databases or Data Tables.
+02:41 Most important web applications save data.
+02:43 Almost all the dynamic ones do.
+02:46 Few of them depend just on APIs but almost all of them
+02:48 have their own database or own data access.
+02:50 So Anvil comes with a prebuilt database server
+02:53 that's deeply integrated into Anvil both the client
+02:56 and the server can work with it in interesting ways.
+02:59 So you're going to be able to create these different tables
+03:02 with relationships and all that great stuff
+03:04 so that we can go and query it and use it to store our data.
+03:10 And then there are a bunch of other things
+03:11 that I'm going to refer to as services.
+03:14 So we might have user management
+03:16 or encrypted secret data that we can work with.
+03:19 Maybe we want to work with stuff over at Google.
+03:21 Log in with Google or work with some of the stuff there
+03:23 so we can interact with a Google API or Facebook API.
+03:27 We want to add eCommerce to our site.
+03:29 We want to charge credit cards.
+03:30 Stipe is a great credit card provider service
+03:34 that we can sign up for.
+03:35 We can integrate say Stripe credit card charging options
+03:38 right into our service.
+03:40 Uplink is interesting.
+03:41 This is a way to let our Anvil apps
+03:43 call into other applications.
+03:45 The example they give is there's a Raspberry Pi
+03:47 running Python code.
+03:49 It sets up a way like a bidirectional communication
+03:53 back to Anvil
+03:54 so that our Anvil app can trigger operations
+03:56 over on the Raspberry Pi.
+03:58 That's pretty incredible.
+03:59 There's a bunch of others that we're not talking about
+04:02 explicitly here.
+04:03 Background service ability to send and receive email.
+04:07 All sorts of cool stuff like that.
+04:08 But I just want to give you a sense
+04:09 there's all these little services that we can bring in
+04:12 this extra functionality right into our application.
+04:15 Well that's it.
+04:16 Those are the building blocks.

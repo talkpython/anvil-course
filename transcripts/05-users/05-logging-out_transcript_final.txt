@@ -1,0 +1,37 @@
+00:00 We saw we can register
+00:02 and we saw we can drive the user interface
+00:04 based on whether or not there is a user
+00:06 even from remembering us from session to session, right?
+00:09 So if I run this now
+00:11 we'll see that account and logout are shown
+00:13 but that login and register are not.
+00:16 However, we probably want to let them log out
+00:19 at some point, right?
+00:20 So let's go do that, that turns out to be super, super easy.
+00:23 So when you go down here and you click this
+00:25 you see Anvil.users.logout.
+00:31 Not too hard, huh?
+00:32 And we also want to go back home and set this user state.
+00:38 Okay, so we're going to go do those three things.
+00:41 I'm going to log out
+00:42 and then we want to set this to be None
+00:45 because we've logged them out
+00:47 and then we're going to go home
+00:48 that's going to trigger a refresh
+00:50 of potentially that home screen
+00:52 and show the anonymous view.
+00:54 if you're on the home screen, of course
+00:55 it's just going to toggle that
+00:56 but if you were maybe somewhere else
+00:57 like in your account page
+00:58 got to take 'em somewhere that's valid
+01:00 and home is always valid.
+01:02 Let's run that.
+01:03 All right, we're logged in, as you can see right here.
+01:06 I click logout, it should change this menu.
+01:09 Should re-navigate us home
+01:10 which is going to reload this to home anonymous view.
+01:13 Let's give it a shot, here we go. Again, the cell.
+01:18 All right, let's try it one more time.
+01:20 Well, our logout worked.
+01:21 We just weren't able to update.

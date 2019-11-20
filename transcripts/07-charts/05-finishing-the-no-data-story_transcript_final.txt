@@ -1,0 +1,73 @@
+00:00 All right. Our app is looking really good.
+00:01 We saw we can get this chart looking fantastic.
+00:05 Another thing going on, though
+00:06 down here, that's not great is we can show this.
+00:10 Alright. Let's actually go and test that.
+00:12 Let's in here and set that to be empty.
+00:17 All right. Here's our spot where it says
+00:19 Hey, there's no data. Maybe you should go add some.
+00:22 Well, this is an encouraging button
+00:25 but it's behavior is not so encouraging.
+00:28 We just need to take them here
+00:29 over to add measurement, right?
+00:31 That would be great. How do we do that?
+00:33 Well, it turns out to be super easy.
+00:35 Do we have navigation imported? Not yet.
+00:39 Remember we wrote this navigation thing
+00:41 specifically so all these components' controls
+00:44 can use the navigation stuff
+00:45 without knowing or caring about it.
+00:48 So let's go to our design
+00:50 do the double-click on that thing.
+00:52 And then, all we've got to do down here
+00:54 we want to go home, is we say, navigation.go_add
+00:57 Or go to add an element, we say, go_add like this.
+01:02 Let's get rid of this space. There.
+01:05 Like so. What do you think? Is it going to work?
+01:07 Of course it's going to work because
+01:08 our navigation is awesome. Alright.
+01:12 Here it is.
+01:13 Let's give it a click and see what happens.
+01:14 Ready?  Boom.
+01:16 Just like that. We can add another measurement.
+01:18 If we had deleted our elements out
+01:20 maybe that's, maybe that's worth a little try here.
+01:22 Let's go and do one more thing.
+01:24 Let's go over to our data table.
+01:25 Delete out the elements.
+01:27 So I can go up here.
+01:28 Right now, remember, I'm faking this out
+01:30 to only...just only show no data.
+01:33 So what I want to do is go through the experience
+01:35 of there is no data, I click the button
+01:38 I enter an element, then I have data.
+01:41 So instead of deleting them
+01:42 just so we still have them, I'm going to try
+01:44 to simulate that by seeing...
+01:46 Let's go for the 6th onward one.
+01:49 Alright. Because there's five, and I said
+01:51 Give me only the 6th and onward measurements
+01:54 this thing thinks there's none.
+01:56 So let's go and add one.
+01:57 There should be at least one
+01:58 and we'll get started from there.
+01:59 So we'll say, add measurement
+02:01 and I'll pick yesterday.
+02:03 Let's say, The weight's 180, heart rate is 69.
+02:08 I hit this. It'll take me back home.
+02:10 Going back home should realize that
+02:12 there's now at least one element
+02:14 shows something different. Boom.
+02:17 There it goes. Now, why do we see all of these here?
+02:18 We see two, four, six because
+02:21 remember, I was doing the slice up here; but
+02:25 down the bottom we're getting all of them again.
+02:27 That works. That's the flow that we're looking for.
+02:30 You go there, you land on the page
+02:31 you've signed up for an account
+02:33 you don't have any measurements.
+02:34 Put one in. Boom.
+02:36 You're taken back. Now, that graph is shown.
+02:38 I think this whole graph and home page thing is
+02:41 well, it's pretty good.
+02:42 I'm going to call it done.

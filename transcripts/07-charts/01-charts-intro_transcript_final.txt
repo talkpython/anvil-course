@@ -1,0 +1,34 @@
+00:00 Because our application gathers a bunch
+00:02 of measurements, a really nice way
+00:03 to display these back to the user
+00:06 would be a chart.
+00:07 That way they could quickly see what their weight
+00:11 or their health is over time.
+00:13 So that's what we're going to do in this chapter.
+00:14 We're going to create some graphs, some charts
+00:16 right on the homepage.
+00:17 When people log in, just going to land there and see them.
+00:21 But what are we going to use?
+00:22 Well, there's a lot of options in Python
+00:24 for building really rich, interactive plots in the web.
+00:28 One of those is Plotly.
+00:30 So here's a really cool graph.
+00:31 You can see the life expectancy versus
+00:34 per capita GDP from 2007, and what's really nice
+00:38 is it's not just a picture.
+00:40 You can move around this little red boxes
+00:42 when you hold the mouse over, I guess the part
+00:45 that's United States, and you can see the different colors
+00:48 in areas and so on.
+00:49 And also, see that toolbar up at the top?
+00:51 You can zoom in, you can pan, you can do all kinds
+00:54 of stuff on these graphs
+00:56 so they're very, very interactive.
+00:57 And in Anvil, it's super easy.
+00:59 All you have to do is go over to your toolbox
+01:01 grab this little bar chart-looking thing
+01:04 bar graph-looking thing, and drag it over
+01:06 and then configure it, and it automatically
+01:08 brings Plotly into your web app.
+01:11 So that's what we're going to do in this chapter
+01:12 for our weight and our resting heart rate.

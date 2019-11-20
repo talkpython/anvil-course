@@ -1,0 +1,131 @@
+00:00 So our app is working pretty well.
+00:01 Let's actually clear this out
+00:03 and click around a little bit.
+00:05 When I go_compare, notice there's a little spinner
+00:09 and Ajax busy type of thing, and I go_home
+00:13 and it spins, and I go here, and it spins.
+00:15 And I go there, and it spins.
+00:18 What's happening? Well, every interaction we're going and getting
+00:21 the user object from the Anvil server.
+00:25 In this Home one, we're actually getting the user
+00:27 and we're getting all the measurements, every time.
+00:31 That seems a little silly.
+00:33 Maybe we could get it once.
+00:35 We had some location, some centralized place
+00:37 where we could do that, that would be great.
+00:39 We do, of course, that's why we created
+00:41 this data_access thing.
+00:42 So let's work on measurements first here.
+00:45 Let's create a private variable here called __measurements
+00:50 and we'll start it out being empty like that.
+00:52 Say global, that thing, and here we'll say
+00:56 if there are measurements, return __measurements.
+00:59 Otherwise, the __measurements equal to this
+01:01 you know, this is like a cursor thing into the database
+01:04 so let's convert this to a local list
+01:06 and then return Measurements.
+01:09 Just doing that one simple thing should make our app
+01:11 work a little bit better.
+01:12 Let's do some clean up, and then run it.
+01:16 Are we ready?
+01:17 Notice that we had a little spinner, we go to compare
+01:19 that's the user spinner, we go home.
+01:23 That's quicker, quicker, there was more spinner action
+01:26 going on before, but we're still getting
+01:29 a little spinner here. So what's that for?
+01:31 Well that's for accessing the user.
+01:36 So let's have a function here called def the_user.
+01:40 We're just going to use that whenever we want
+01:43 to access the user.
+01:52 You may be noticing a pattern.
+02:03 Okay, so now we have this other function called the_user
+02:06 and we just need to make sure that wherever we were
+02:08 working with the user before, so in this part right there
+02:13 let's just change this to data_access
+02:17 which we have not imported in this place
+02:23 the_user, something like that. Okay?
+02:26 And let's just cruise around and see if there's
+02:29 anywhere else we're doing this, maybe in navigation.
+02:37 Over in require_accounts, actually we're going to need
+02:39 to import data_access here, just to make sure that works.
+02:46 Again, we put data_access user, and if it's there
+02:50 we return it, otherwise we're going to log in.
+02:52 All right, this is looking pretty good for the user there.
+02:56 Let's see if we're doing anything about the user
+02:59 in these other places.
+03:04 Not there, but I think we are compare.
+03:06 Okay, we're probably ready to go.
+03:08 Let's do a quick clean up and re-run it.
+03:10 See if this is working.
+03:14 So it did the little spinny thing when it was starting up
+03:17 and we got that output. That's looking good.
+03:20 Let's go here. Wait a minute, that was faster.
+03:24 That was a lot faster. Let's go to compare.
+03:27 Let's go home.
+03:28 Oh, so there's still something happening on home.
+03:30 But notice, this is much, much quicker.
+03:33 Let's go see what we're missing on the home bit here.
+03:36 Yeah, I'm not sure we're missing anything.
+03:38 I think it's pretty good.
+03:40 There, maybe, maybe I'm missing it, but I don't see it.
+03:43 Let's do one final thing.
+03:44 Let's just do a little print statement
+03:46 where we show that we're returning the cached measurements
+03:49 for that, and maybe also, the same thing for the user.
+03:53 Something like print using cached user
+04:00 I think it's email, let's double check.
+04:04 Email, perfect.
+04:08 And when it first runs, we output our three measurements
+04:10 but there's no comment on caching.
+04:13 But as we work around now, as we click around
+04:16 notice we're using the cached user.
+04:18 We're not going back to the database.
+04:20 We go home, we're using our cached measurements.
+04:23 No more data access, and look how incredibly quick that is.
+04:27 I mean maybe, not sure how well it comes across
+04:29 in the video, but it feels nearly instant.
+04:32 This one right here, a tiny bit of spinning
+04:34 as it's loading up stuff, but it's much, much better
+04:38 and that's on a really fast gigabit connection.
+04:40 If we were on crummy 3G or Edge Cellular
+04:44 you would really appreciate the fact
+04:46 that this app goes super fast now. And that's it.
+04:49 That's how we use our data access bit to cache things.
+04:53 Now there's a few other things about, say
+04:55 logging out and whatnot, we got to be a little bit
+04:57 careful about, so, we're going to have a function
+05:00 called logout, and when we do that, we want to just
+05:03 clear out the measurements here.
+05:06 So we'll say user equals none.
+05:09 The other thing we want to be careful about
+05:11 is once we add a measurement, how does this get updated?
+05:15 Remember, this function was going to get more interesting?
+05:19 So down here we're going to say, that's equal
+05:22 to an empty list as well.
+05:25 If we're going to change the measurements
+05:27 we're going to clear the ones we've got
+05:28 and so the next time someone asks for them
+05:30 we go back to the database.
+05:32 And let's just make sure that that actually works.
+05:35 And everything should be good.
+05:36 Oh, we're not calling the, one other thing.
+05:39 We want to make sure we're call logout down here somewhere.
+05:43 link_logout so let's say data_access.logout.
+05:48 That should actually log out the user
+05:50 and I think we'll be good this time.
+05:52 Let's give it a shot.
+05:54 So we're over here, let's try to logout.
+05:56 Yeah, everything worked on that.
+06:00 Log back in, that looks like that works
+06:03 and yeah, we're actually getting the measurements
+06:05 logged in again.
+06:06 Now notice we're using the cached measurements.
+06:08 Let's add one more, go back in time.
+06:11 Add go, 181, say 73, 74, something like that.
+06:17 Notice there's a little spin right there
+06:18 as it took just a moment to add that measurement
+06:21 and now how many do we have?
+06:23 We have four. Right, 'cause when we went to the Home page
+06:25 we had to go back and reload it
+06:27 but again now, we're using our four cached measurements.
+06:32 I think we have this data access and caching thing nailed.

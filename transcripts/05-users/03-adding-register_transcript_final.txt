@@ -1,0 +1,83 @@
+00:00 With our user service set up
+00:01 let's go back to our HomeForm here
+00:04 and work on register.
+00:06 So if somebody comes in here and clicks register
+00:08 we want to show them a form, gather their information
+00:11 create an account and then set a cookie potentially
+00:13 to remember across at least this session.
+00:17 We're going to do that, and then once we have the ability
+00:19 to create accounts, we'll be able to later
+00:21 log in and log out of those accounts.
+00:24 So here's our register, click handler
+00:26 and turn out if we go way to the top
+00:28 we have anvil.users, and this is the thing
+00:31 that we're going to use, to actually interact with it
+00:34 so let's go back down here, our register
+00:37 and we say anvil.users.signup_with_form.
+00:43 You can say sign up with just email, just Google
+00:45 or whatever.
+00:46 We're just going to say sign up with form
+00:48 and we're just going to run it for a second
+00:50 and show you something that's kind of annoying.
+00:51 We don't need a pass here.
+00:53 Once you do this we maybe want to refresh
+00:55 and send you back home, say go home.
+00:59 Now that we have accounts, what we want to do
+01:01 when you go home, is to, let me load up this HomeForm here.
+01:05 Let's say that's over here.
+01:07 We want to check and determine whether or not
+01:10 there is an account.
+01:11 If there is an account, show the anonymous component here
+01:15 or just hey welcome to our app, you should sign in
+01:17 create an account.
+01:18 Or, the one that is the details
+01:21 hey welcome to your account, here are your details.
+01:24 So we're going to deal with that in just a second.
+01:25 Let's take it one thing at a time
+01:26 but it turns out to be pretty easy.
+01:28 So down here, we going to go and register
+01:31 and then we're going to go back home.
+01:33 Just to refresh the screen here.
+01:35 Let's go ahead and run this.
+01:37 So we're on our anonymous page
+01:38 if we click register, now all of a sudden
+01:40 we get this cool signup.
+01:42 So we can sign up with an email
+01:45 or we can sign up with Google.
+01:47 Now, how do I decide that I didn't like that form?
+01:52 Huh, well it turns out if for some reason
+01:55 you click that and you don't actually want to register
+01:58 to bad, you've got to refresh the page.
+01:59 So let's go fix that really quick.
+02:01 That's kind of annoying but I wanted to show you that
+02:03 so we have this allow_cancel is True
+02:06 and now if we run it, it's probably the right experience
+02:09 that we're looking for. So click here, and sign up with email or with Google
+02:12 or you know what, actually never mind, forget it.
+02:16 So we're going to go over here and we're going to sign up.
+02:19 We just going to sign up with a simple email.
+02:22 No problem there, and say remember me.
+02:23 So we'll say sign up.
+02:26 Give this just a second, and it went home.
+02:28 We got some output over here.
+02:31 So it automatically created some columns in that table
+02:34 which didn't exist before right
+02:36 so it basically created that table over in the user
+02:38 service, and now you should be logged in.
+02:42 Our app didn't understand that.
+02:44 It do anything. So, that's okay though.
+02:47 We've already signed up.
+02:48 Let's see what else we can do here.
+02:50 We can also say remember by default, that is true
+02:52 but you could disable that if you want.
+02:55 Last thing, let's see if our user actually got created here.
+02:59 We go to our data tables.
+03:00 Look at that, there's a michael@talkpython.fm.
+03:04 This account is enabled, is_pro is unset.
+03:07 But check this out, we have a nice password hash here.
+03:10 We have the remember login details that have been set
+03:14 and the last time that we logged in.
+03:17 Super cool huh?
+03:18 So really really great to be able to just check
+03:20 a few boxes, call a simple function, and have Envol
+03:23 handle all the tricky user management stuff for us.

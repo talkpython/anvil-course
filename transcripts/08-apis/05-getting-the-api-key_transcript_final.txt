@@ -1,0 +1,133 @@
+00:00 Time to implement our authorize method.
+00:02 This one won't be too tricky.
+00:04 What we're going to do is we're first going to get the body.
+00:06 We expect them to pass the username and password
+00:09 in as a JSON post over here.
+00:13 So we're going to get the data back
+00:15 from the anvil.server.request.body_json.
+00:21 APIs need tons of validation and checks.
+00:25 Maybe they didn't paste some sort of body in, right
+00:27 and maybe they didn't post that to us.
+00:29 Maybe it's just empty or it was some other kind.
+00:31 It can be parsed or whatever.
+00:33 We have to say that if not data
+00:35 we need to give them some kind of error.
+00:38 In APIs, you typically return some kind of status code.
+00:42 HTTP Statuses, this place is great.
+00:45 So it shows you all the different status codes
+00:47 you're meant to return.
+00:48 And the one we want if they send in bad data
+00:51 is to tell them
+00:52 Hey, you should have sent in some more data.
+00:55 So like malformed or invalid stuff.
+00:59 But we can send over, we'll send this back.
+01:01 Now how do we do that in Anvil?
+01:03 Well we're going to return in anvil.server.HttpResponse
+01:08 and what we can put in here
+01:09 is the status code 400 and a message.
+01:13 All right, so we're going to do that first
+01:15 and we can actually go ahead and test this
+01:17 because we're not going to be able to submit
+01:19 that over where we had before.
+01:21 So if we pull this back up and we try to go to authorize
+01:28 we hit it, we should see the status message is this
+01:31 and if we inspect element and look at the request.
+01:34 So there you see, we're getting 400 bad request.
+01:37 Okay, so this is exactly what we want.
+01:39 We'll see that we can no longer use our browser
+01:42 to test this, which is fine.
+01:44 We'll find another way to do that in just a minute.
+01:46 But let's finish writing it so we can test it.
+01:48 The next thing we expect is that they submitted email
+01:51 and remember this is a Python dictionary.
+01:54 So we're going to be able to just call it get email
+01:56 and None as an option is probably fine.
+02:00 We also want password = data.get('password').
+02:05 And then we're going to do some validation here.
+02:08 Right, so now we're checking is this data
+02:11 that we expected properly supplied.
+02:14 Finally, we have our data.
+02:15 We can try to log in.
+02:16 So we can do what I was attempting at before.
+02:18 We can say anvil.users.login_with_email.
+02:23 Okay, so we're going to say email, password
+02:28 and finally maybe they had passed this information in
+02:31 but it was wrong. So if we don't get a user
+02:34 we want to return another status code.
+02:36 But this time, we want to return
+02:38 some kind of authorization one
+02:40 like, "We're not going to let you process this,"
+02:43 or 403 or something like that.
+02:49 Something like 403 invalid login.
+02:52 Okay and let's at the end, we'll just return
+02:55 "You made it," something like that.
+02:56 Just to see that things are working.
+02:58 Then we're going to figure out
+02:59 actually how to deal with this API key.
+03:01 If we were to try to request this again
+03:03 remember we're just not going to make it past this section
+03:06 because we must do a POST with a JSON body.
+03:09 And while you can technically make the browser
+03:12 do this with some plugins or something
+03:13 I'm sure there's better tools for it.
+03:15 So let's actually drop out of super full screen mode here
+03:19 and look at another tool called Postman.
+03:22 Postman is a free tool.
+03:23 It has a paid tier but you can use it for free.
+03:26 This allows you to build much richer requests.
+03:29 So let's go over here, go back to our URL that we need.
+03:34 We're going to add over here a post request to that.
+03:39 Let's just hit send and see what happens.
+03:42 What is the response we got?
+03:43 You must submit a JSON body 400 bad request.
+03:47 Okay, that's fine because we can come over to the body
+03:50 and say it's raw and we can start typing in here.
+03:57 Notice that, we can even switch it to JSON
+03:59 it auto completes the brackets, things like that.
+04:01 So we can say the email is michael@talkpython.fm
+04:05 and I'm ready to reveal my password to you.
+04:09 It's the same thing.
+04:12 It doesn't really matter, right.
+04:13 We can do whatever.
+04:14 It's just a simple little site, it's not really my log in.
+04:17 This actually, let's check that the log in doesn't work.
+04:20 How about even better, we'll check that if we don't have this data
+04:23 that we're validating that, hey, you must have the password.
+04:26 So let's send it again.
+04:27 The response should be slightly different.
+04:31 Oh an exception was raised.
+04:33 That doesn't seem so good, does it?
+04:37 Let's go back to our app logs and see what happened.
+04:41 Oh, it's because I can't write JSON.
+04:44 Of course, that should probably be coming back
+04:46 as a 400 bad request
+04:47 but this is deep down inside of Anvil, so it is what it is.
+04:52 I always do this when I work with JSON.
+04:53 These have to be double quotes.
+04:55 I think I maybe made a joke about that earlier
+04:56 but there we go. Let's try again.
+05:00 Email and password are required.
+05:01 So again, 400 bad request but a new message.
+05:04 And now if we put password, but this time an invalid one
+05:09 it should not log me in. I keep breaking this thing.
+05:14 What's going on with it? Oh incorrect email or password.
+05:25 I guess we got to catch that differently.
+05:27 So where was I doing this? Here, we can say.
+05:39 Here we go, either one of those should be appropriate.
+05:42 Now finally, let's try.
+05:44 Here we go, invalid login, again.
+05:46 Okay, so that was the 403 we expected.
+05:48 Finally, let's get us all the way through this
+05:50 and see where we are.
+05:51 This should say some kind of message like
+05:53 Hey you made it. Ta-da!
+05:56 Alright, a little bit of dialing in
+05:58 a little bit of tweaking on the way we were processing this.
+06:01 Now we're good.
+06:02 We've done all the validation that I think we need to do
+06:04 and we've passed over the information.
+06:06 And finally, we've logged in.
+06:07 The last thing we need to send back is our API key.
+06:10 We'll deal with that in a minute.
+06:11 But once we get that done
+06:12 this authorize bit will be finished.

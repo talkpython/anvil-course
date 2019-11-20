@@ -1,0 +1,85 @@
+00:00 Let's start building the real application.
+00:02 The real service.
+00:03 So, the thing I actually want to build
+00:05 I'm going to come down here and build something
+00:07 kind of like this, add_measurement.
+00:09 Because, what we actually want to do is
+00:12 we want to enable some kind of rich application
+00:15 or offline application that doesn't involve the website
+00:18 for people to keep track of their measurements
+00:21 and their health.
+00:22 So, imagine we went to integrate with a smart scale
+00:24 or smartwatch or we want to build an iPhone
+00:27 or Android app that just is going to submit measurements
+00:30 daily that somehow magically it can take for us
+00:32 or you can just enter it on your phone
+00:34 without going to the web. Things like that.
+00:36 That's what we want to build
+00:37 but the very first thing we have to do
+00:39 is we have to come over here and say
+00:41 user = anvil.user.get_user()
+00:46 or something like that.
+00:48 And we're going to need access to the user.
+00:51 So, what I'm actually going to build is some mechanism
+00:53 for people to authenticate and login
+00:56 in store that in their app.
+00:58 I could come over
+00:59 we saw that at this in point
+01:01 if I can get the auto complete to come up.
+01:03 It'll say that it will authenticate users
+01:05 and require credentials and things like that.
+01:08 In order to do that, we have to do
+01:10 I believe basic authentication
+01:11 which means we passed the username and password in a header
+01:15 which is all fine and good but I don't want to store
+01:18 the username and password so much.
+01:19 So what I'm going to do is set up some kind of API key
+01:22 that we do store to the log in with their
+01:24 username and password once in the app
+01:26 and then there's going to store this API key
+01:28 that can't be reused or replayed against any other site
+01:31 or anything like that and we can always just have
+01:33 a button for them to regenerate their API key
+01:36 for some reason they need to log out sessions.
+01:38 You could even do it just invalidate almost for them
+01:40 and make them, you know, just log back in.
+01:42 I'm not going to use this
+01:43 built-in authentication mechanism here.
+01:45 So we're going to do something like
+01:46 get username and password
+01:50 or turn users API key. Okay.
+01:55 That's all well and good
+01:57 but the user doesn't have an API key.
+02:00 Let's go look. Do users have API keys?
+02:02 And here, nope, no API keys.
+02:04 Over here in this table, nope.
+02:06 We did have this cool thing we added, is_pro
+02:08 cus we knew in advance when we created the user
+02:11 Oh, hey, we want to have them be able to have a paid account
+02:14 but it turns out that we didn't think about this.
+02:16 So, we can just retroactively go over here
+02:18 and add a text column called API key.
+02:24 So, what we're going to do is
+02:25 we're going to exchange this API key
+02:27 and the way we're going to generate it is
+02:30 when the user first logs in, if they don't have an API key
+02:34 we're going to randomly generate it
+02:36 save it to their account
+02:37 and then return it to them.
+02:38 After that, or like when we work with the other methods
+02:41 we're just going to check, hey is the API key that you sent over
+02:44 is that the one that we actually expected.
+02:47 We're going to go over here, put this here
+02:49 get this, the one we actually want
+02:52 and I'm going to change this to authorize
+02:58 and then this add measurement is just going to
+03:01 expect an API key.
+03:04 User management and most importantly storing something
+03:07 on client-side, that's really the super tricky part
+03:11 that gets to be, you know a little bit tricky
+03:13 but I think this will be good enough for our purposes here.
+03:16 So what we're going to do is
+03:17 we're going to work on this authorize method next.
+03:20 Work on how we pass username and password
+03:22 and we generate this API key
+03:24 and that sort of thing and then just check for it over here.

@@ -1,0 +1,48 @@
+00:00 What fun would our app be
+00:01 where we are going to store things like measurements
+00:05 over time and personalized information
+00:08 without having some kind of account?
+00:10 Luckily, Anvil makes it super easy for us
+00:13 to create accounts, log in with username and password
+00:16 or even things like using your Google account
+00:18 or other accounts like that, even Enterprise accounts.
+00:21 And it makes sure that it happens in a nice and secure way.
+00:25 Creating basic accounts is tricky.
+00:27 We got to make sure we store the password correctly.
+00:29 And oh, what if they've got to reset their password?
+00:31 Now we have to be able to send email.
+00:32 There's all sorts of stuff around
+00:34 user management and accounts.
+00:35 It turns out to be pretty tricky
+00:37 in from scratch web applications
+00:39 that Anvil's going to handle for us.
+00:42 All of this starts with the User Service.
+00:45 When you create a new project
+00:46 it doesn't have a User Service.
+00:47 But, there's a Services section
+00:49 and you just add the User Service
+00:50 and configure it as you want.
+00:52 So you'll see, we're going to go over there
+00:53 and we're going to click on the User Service
+00:55 and add it to our application.
+00:57 Then we get to pick how users can interact with our site.
+01:01 How do we want them to log in?
+01:02 We can say only active directory
+01:04 which is a way to basically have a single account
+01:07 within your company, managed by your company.
+01:10 We could have the traditional username or password.
+01:13 We could have sign in with Google or Facebook, certificates.
+01:16 We could actually do all of these things
+01:17 if we had the Enterprise plan.
+01:19 So here you can see, we can configure whether
+01:21 you could be remembered across sessions
+01:23 how long that should be for, and so on.
+01:26 So all this stuff we have to do to have
+01:27 a nice user interaction, Anvil just makes it a checkbox.
+01:31 That's what we're going to do in this chapter
+01:33 is we're going to configure this
+01:34 and then integrate it into our application.
+01:36 You can see the little sample code at the top
+01:38 anvil.users.login with form.
+01:41 That's a pretty simple way to get started
+01:42 and I think we'll start there.

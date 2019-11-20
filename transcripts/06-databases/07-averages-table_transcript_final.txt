@@ -1,0 +1,20 @@
+00:00 We're going to need one more table for our web app to work.
+00:03 When we get to the compare yourself
+00:05 against the average person of your age
+00:08 and height and things like that
+00:10 we need to have that data
+00:11 so that we can then compare you to it.
+00:13 So, let's add one more table.
+00:16 Now, create a new table, averages
+00:19 and in here we're going to have just a couple of things.
+00:21 We're going to have a text column.
+00:23 This will be gender and it'll be like male or female.
+00:27 We're going to have a number
+00:29 and this is going to be your height, the average height.
+00:34 And have a weight.
+00:36 And we're going to have a rate as in heart rate.
+00:40 And that's it.
+00:41 We're going to write a little app to populate this later
+00:44 but for now, we're going to have this table just around
+00:47 'cause that's going to round out all the tables
+00:49 we got to create, might as well do it here.

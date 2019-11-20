@@ -1,0 +1,137 @@
+00:00 Here we are in our app again.
+00:01 And we have our anonymous landing page, homepage
+00:04 working well and we also have our homepage.
+00:07 We've got add, we've two more to work on
+00:09 compare, that's kind of involved
+00:11 we'll get to that in a minute.
+00:12 Also the account, now that is not super interesting.
+00:17 It's cool, we can check
+00:18 you have to have the right page
+00:20 to be logged in to go there.
+00:21 But other than that we have nothing going on.
+00:24 So you already saw me drag and drop
+00:25 a bunch of stuff in there.
+00:26 Let me just do that again real quick and
+00:27 then we'll fill in the interactive bits
+00:31 or the part that loads up with the data.
+00:32 And here we have a nice, new account page.
+00:36 So this is going to be our account details.
+00:38 Now notice it's going to show a couple of things.
+00:40 Maybe it'll also show our email
+00:42 but it's basically going to show our account type
+00:45 whether or not we have a pro paid account or not.
+00:48 And a couple things about us we haven't spoken about yet.
+00:51 So I'll give you the rundown.
+00:52 That's our height and our gender.
+00:54 So later when we get to the compare section
+00:57 we want to show your stats against some average stats.
+01:03 How we going to do that?
+01:04 Well it doesn't make sense to compare guys and girls.
+01:06 We would obviously compare folks only
+01:09 with their gender and with their height.
+01:11 If you're six foot seven or five foot should probably weigh
+01:14 something different on average.
+01:16 The average person, of that size
+01:17 weighs something different.
+01:18 So we're going to have this data here.
+01:23 Now in order for us to actually have our height
+01:26 and our gender, we need to go over here
+01:29 to our data table or our users
+01:33 and again add some more stuff.
+01:34 So we have API key and we also saw
+01:36 we have whether or not it's pro
+01:38 That's going to drive that account type.
+01:40 But let's do the other two here.
+01:44 Let's go and add a text column.
+01:48 Called gender.
+01:51 Alright so we have a gender and we're going to add another
+01:58 number column called height.
+02:04 And so that'll have the gender and the height.
+02:05 We can use that actually, to show something on that page.
+02:08 With this data in here, we'll be able to go
+02:11 and load up those details.
+02:15 We still need away to actually set them
+02:17 hang tight for that. But here we can actually put something
+02:21 in here.
+02:22 So we need to come up with something for the value.
+02:26 This says pounds, pounds don't know why I said that.
+02:30 I want inches and value in inches.
+02:36 Okay so when it loads up, we're going to put your value
+02:39 in inches here.
+02:41 And initially it's not set, but eventually it will.
+02:44 So we'll come over and say the user is
+02:46 data access member  or caching our user
+02:52 and I'm going to import that bit.
+02:55 There's other stuff that we don't really need
+02:58 that, that, that, that, that.
+03:03 I have the user, like that.
+03:06 I'm going to log them in.
+03:07 If it needs to or it will just give us the user
+03:10 if it's already gotten it.
+03:13 So let's put in here, we want to say
+03:15 valueandinches.text= and we've got a bit of problem
+03:19 because we might not have user height set
+03:24 value set for the user.
+03:25 So we come over here we can say, something cool.
+03:30 We can actually say that .format value=height.
+03:39 If we have that
+03:44 if we have a value there, else it could just be
+03:50 with a backslash. I think this'll work.
+03:53 Not set. Something to that effect and
+03:57 a quote and a parentheses.
+03:59 Let's make this a little bit simpler.
+04:01 Height=user of height.
+04:08 And let's just see what we get.
+04:10 It put none in there, it might leave it empty.
+04:12 I'm not entirely sure.
+04:13 I'm going to find out though.
+04:15 Alright go to our account over here.
+04:18 None inches. Okay well, that's not super but it's okay.
+04:23 We're going to actually set up something that
+04:24 will actually pull that in for us.
+04:26 You know what forget it.
+04:27 I'm just going to leave it like this and it's
+04:29 going to be good enough.
+04:31 The other one, we wanted to self.label_gender.text=
+04:38 use your gender and again that'll be something like none
+04:42 not going to leave it that way but that's what it's going to say.
+04:46 Alright, none and none, and then our account type
+04:48 that one we can work with already.
+04:51 self.label_account_type.text = pro if user is pro
+05:01 else it's going to be basic or something like that.
+05:04 The other thing we need to do
+05:05 we don't want to show them this button here
+05:08 if they're not already
+05:11 if they already are pro.
+05:12 So let's go and do one more thing
+05:15 say self.label, actually button sorry.
+05:19 Button.visable= whether or not they're a pro.
+05:23 I think that'll round out other than the fact
+05:25 that the data is missing.
+05:31 Count, alright basic, well that didn't work.
+05:36 Let's see what we're putting here.
+05:45 None or not, for some reason, we set it false
+05:50 but I think leaving it like this will do it.
+05:55 Final test, it's going to be the time it worked.
+05:58 There we go.
+05:59 So we have the basic account we can click this
+06:01 and go pro, obviously that's not written.
+06:03 Save that for eCommerce chapter
+06:05 but when this is pro, this button will go away.
+06:09 Alright, so I think this is great.
+06:10 The last thing we got to do is get this data.
+06:13 Now remember when you create all the forms
+06:15 through this little section in about
+06:17 getting our height and actually
+06:18 already through the elements in here
+06:21 it's going to ask you for your height in inches
+06:23 and your gender if you try to go to
+06:25 your account page or the compare page and
+06:27 you don't yet have those details that we need set.
+06:30 So we're going to gather them one and only one time
+06:32 and then send you along.
+06:33 So next, what we have to do is actually find a way
+06:37 to show this before we can show them their account page
+06:39 or the compare page, which is super easy.
+06:42 We'll can do that in navigation and set it on the server
+06:44 and we'll be all good.

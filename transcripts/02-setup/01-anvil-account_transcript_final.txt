@@ -1,0 +1,21 @@
+00:00 In this short chapter, we're going to make sure
+00:02 that you have everything set up and configured
+00:04 so that you can follow along with this course
+00:07 get the application, run it, and most importantly
+00:10 build a similar one along the way
+00:13 so you can learn, really learn it well.
+00:15 Now, the first thing you're going to need
+00:17 is an Anvil account.
+00:18 So please use the link, talkpython.fm/anvil
+00:21 if you don't already.
+00:23 That'll let the Anvil folks know
+00:24 that you're coming from our course.
+00:26 And you go here and you can sign up for free.
+00:29 There are paid versions of Anvil
+00:31 and there are free versions of Anvil.
+00:33 All you need for this course really
+00:34 except for a minor, minor little thing
+00:37 which you don't have to do
+00:38 is going to be totally fine with the free plan.
+00:40 So you create a free account, log in
+00:42 and you'll be ready to go.

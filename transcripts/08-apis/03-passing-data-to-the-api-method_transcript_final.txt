@@ -1,0 +1,49 @@
+00:00 Well, we created our ACPM point
+00:02 but let's explore just a little bit
+00:03 about how we might pass data.
+00:06 There's a number of ways in which you could
+00:08 pass data to the API.
+00:11 Over here we're just calling /hello
+00:14 and we just get a basic response back.
+00:17 We could pass something like hello your name
+00:20 something like this.
+00:21 We could have query parameters x equals seven
+00:26 and maybe less obviously
+00:28 'cause it's hard to do here
+00:29 but we could have a body element
+00:31 which is like a JSON document itself
+00:34 that we're submitting back.
+00:36 So, all three of those are ways
+00:37 that we could pass data over.
+00:39 And let's just play with those real quick.
+00:40 So, if we want to have like /name
+00:43 like slash Sarah or whatever
+00:45 we can say :name here
+00:47 and we can put back the name element there.
+00:50 And, if we want to capture the query parameters
+00:55 call this query params
+00:58 like that, and we get this.
+01:00 And if we want to get the JSON body
+01:01 I'll just put this here.
+01:03 This will be anvil.server.request.
+01:04 It's how we get a bunch of stuff about the inbound request.
+01:09 And we can say body_json.
+01:11 So let's echo the other ones back.
+01:14 Okay, so let's just save that.
+01:15 That'll refresh this.
+01:17 And we come over here
+01:18 we can say hello Sarah.
+01:22 Like that.
+01:23 And we see it says, "Hello Sarah,"
+01:25 so it's passed over.
+01:27 There's no body passed over
+01:28 but we do have the query as x equals seven
+01:31 and we could also have y equals 10.
+01:34 So we, this actually, if you look at the raw
+01:36 this comes in as basically a little sub-dictionary
+01:39 with keys and values
+01:41 So that's how we pass data over.
+01:42 I said we can't really easily pass data in
+01:45 using the browser, just like this, for the body.
+01:48 We'll see how to do that when we build
+01:49 the real meaningful API for our app.

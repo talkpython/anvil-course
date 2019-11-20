@@ -1,0 +1,35 @@
+00:00 Let's just quickly review the two main steps
+00:02 of what we did to set up our chart
+00:04 and then put data into it.
+00:05 Well, first we set it up
+00:07 and we did that by just setting a ton of properties.
+00:09 We went to the layout, and we did a bunch
+00:11 of stuff with layouts at the title, and the X-axis
+00:14 and the Y-axis and so on.
+00:16 And on the X-axis, we have a bunch of properties
+00:18 like the zero line or show the grid
+00:20 or mirror should be ticks and things like that.
+00:23 You can just go look at different examples
+00:26 in the Plotly galleries and find one you like.
+00:28 You're like all right, what are the settings on that thing?
+00:30 Let me try that.
+00:32 And then you want to put your data into the system.
+00:34 So we used our data access to go potentially
+00:37 to the web service or to cache, local cache
+00:39 and get our measurements.
+00:41 And if there's none, well, we don't want to try
+00:44 to load this up with nothing.
+00:46 That might not work so well.
+00:47 But we just bail out
+00:48 and then we're going to create three variables
+00:50 x for the X-axis, h for heart rate
+00:54 and w for weight, and then we go through
+00:56 and we just build up the X-axis
+00:57 the H-axis, and the W-axis from the different parts
+01:00 of our data records.
+01:02 Then, super simple, we say go to put plot.
+01:04 We set the data to be two graph objects
+01:07 a scatterplot, and a bar chart
+01:09 where we set the X, the Y, and the name.
+01:12 That's it. Now we have a beautiful graph that's highly interactive.
+01:15 People are going to love it.

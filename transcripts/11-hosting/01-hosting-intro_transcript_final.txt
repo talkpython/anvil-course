@@ -1,0 +1,40 @@
+00:00 It's super fun to build a website
+00:02 but if only you get to use it, how much fun is it really?
+00:05 Obviously, we typically build websites
+00:08 for a whole bunch of people.
+00:10 In our wildest dreams, maybe millions of people.
+00:12 But the first step in order to getting our app available
+00:16 to anyone else is to give it a domain
+00:18 make it available to people.
+00:20 So there's a couple of options that we have.
+00:23 We saw that we could already host our app
+00:25 on that funky fresh fruit song
+00:28 or something like that, domain, .anvil.app.
+00:31 And that's fine, that's a pretty good public option.
+00:34 But if you're really going to build a site
+00:36 and make it professional
+00:37 especially if you're going to do something like e-commerce
+00:39 as we'll talk about soon
+00:41 you definitely want it to be on its own domain.
+00:44 So here's our app, but notice this time
+00:47 there's a couple of really sweet things going on.
+00:50 One, it has HTTPS, it's encrypted.
+00:52 And two, it's on its own domain.
+00:55 Now, I decided to make this a sub domain of talkpython.com
+00:58 just so that I don't have to deal
+01:00 with creating another domain and paying for it
+01:03 year after year to keep it around.
+01:05 It's easy to add it just as an extra sub domain
+01:08 health, for talk python.
+01:09 In our demo, we're actually going to use fitnessd
+01:11 as in what you see right here, fitness, fitnessd
+01:14 as the sub domain there.
+01:16 But okay, so this is our goal of this chapter.
+01:19 To get the Anvil app that we built up here
+01:21 and running like this.
+01:23 You'll see it's not too hard.
+01:24 It does take a little bit of patience
+01:26 because, well, DNS takes time.
+01:28 There's some Let's Encrypt HTTPS certificates
+01:31 that take a little bit of time, things like that.
+01:33 But it's not hard and we'll do it right away.

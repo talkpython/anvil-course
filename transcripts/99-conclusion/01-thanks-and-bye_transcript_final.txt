@@ -1,0 +1,92 @@
+00:00 Look at that, you've made it to the end.
+00:02 And there it is, you see it? The finish line
+00:05 and you've made it across. Awesome!
+00:07 You now possess many of Anvil's super powers.
+00:11 And there's actually a bunch of things
+00:13 we haven't even spoke about.
+00:15 Background processes and other cool stuff like that.
+00:18 Go, take your idea, build it on Anvil
+00:21 and share it with us when you're done.
+00:24 You can put it together without knowing all
+00:25 the ins and out of the details of the web.
+00:28 You can even try prototyping something there
+00:30 and move it into Flask if that's really your end goal.
+00:33 So fun little platform, you can build some
+00:35 really cool apps as you've seen throughout
+00:37 this entire course.
+00:38 You can take the code with you.
+00:40 Now, sharing the source code with you here
+00:44 is different than maybe sharing it with like
+00:46 a standard Python course.
+00:48 Normally what I would do is just put the Python
+00:50 files that you need there, and other resources
+00:52 and you would go and use that.
+00:53 But Anvil is a little bit different
+00:54 so let's break out of this view.
+00:56 And actually let me walk you through GitHub
+00:58 real quick.
+00:59 So here we are at the Anvil Course Repo
+01:02 yeah, right now it says private, cause I haven't
+01:03 published this course yet, but soon as I do
+01:05 that'll be public and you can just get to it.
+01:08 So, we've got our source code down here
+01:10 and you've already seen two of the things.
+01:12 We've added the fitnessd_client
+01:14 and the fitnessd_loader.
+01:16 Right here is the GUI App that we've built
+01:17 for example. Right, you can see it's code here.
+01:21 So, this is regular Python code
+01:23 you just download this, create a virtual environment
+01:25 run the requirements, install the requirements with pip.
+01:28 And you can run the app.
+01:29 Nothing unusual about that.
+01:31 But, for Anvil itself, the thing that we actually get
+01:35 when we go over to this thing.
+01:38 You can't run this locally, that's not how Anvil works.
+01:41 It has to run within Anvil
+01:43 cause it's got to tie the client, and the server
+01:45 and the database, all that stuff together.
+01:47 So I gave you that code, we go back here
+01:50 under Anvil App.
+01:52 I gave it to you in two forms.
+01:54 You can export from Git, the actual raw code
+01:57 you can clone it, and if you go down here
+02:00 you can see the forms.
+02:01 For example, here's the UI definition of our Account page.
+02:06 It looks like this YAML stuff.
+02:09 And here's our card, and let's see
+02:11 stuff that we'll recognize here.
+02:14 Label gender, for example, right?
+02:17 And then here's the Python code, it is the code
+02:19 behind for it, right?
+02:20 Here's our Go Pro that we just did
+02:22 and there's the code.
+02:23 So this is really nice, you actually have the code locally.
+02:27 You can work with it, you can do whatever you want.
+02:29 With like a local editor and copy code around
+02:33 from maybe here, into your real app.
+02:35 That's a really nice thing, if I want to just copy
+02:38 this whole method into my app
+02:40 just go here and just copy into your app.
+02:42 However, this can't be run, right?
+02:45 So I just gave you this, you can download it
+02:46 and have the code locally as text files.
+02:49 If you want to run and edit the code
+02:51 you have to clone it into your account.
+02:54 So over here there's runable, and to do that
+02:57 you just click on this thing here.
+02:58 It says, "okay, you can start it by clicking this."
+03:00 and it says Michael has invited you to work
+03:06 on a copy of their app.
+03:07 Okay, so that's what you would get.
+03:09 That's how you would actually get a runable version.
+03:11 That you can tweak and play with, and so on.
+03:13 It's a lot of fun, you have all the code
+03:15 I think everything you need to take exactly what
+03:18 we built right during this course
+03:19 and run with it.
+03:21 So finally, thank you for taking my course.
+03:23 I'm Michael Kennedy, follow me on twitter
+03:25 where I'm @mkennedy.
+03:27 Check out our other courses over at training.talkpython.fm
+03:30 and go build something awesome with Anvil.

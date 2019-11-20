@@ -1,0 +1,32 @@
+00:00 With most of our user interaction working
+00:02 the last thing to do is log in.
+00:05 And, it turns out that that is super simple as well.
+00:07 No surprise, it's anvil.users.something.
+00:11 Log in, options are show signup options
+00:14 so you can log in, oh, don't have an account, create one.
+00:17 That's probably good, and that's the default.
+00:19 Now, remember, by default you can say, probably True.
+00:22 allow_remember, True.
+00:23 Those are all fine, but the allow_cancel
+00:25 being default of not, I'm going to say
+00:29 we do want to say True here.
+00:31 And, then we'll have just the user
+00:32 so we can say self.set_account_state
+00:35 with that user that we got
+00:36 and then, again, we want to refresh the screen
+00:39 so navigation, go home, like so.
+00:43 Those three lines, that'll probably do it.
+00:45 Let's give it a shot.
+00:47 All right, so anonymous view, we're going to log in
+00:49 hey look, we got a form, that's good.
+00:52 Now, what do we want to do?
+00:53 We could log in with Google.
+00:55 We're going to log in with our username and password.
+00:57 We could instead go to the register view
+01:00 we could cancel, or we could just log in.
+01:02 Let's go ahead and just log in.
+01:04 Boom, we're logged in, and, just like you expect
+01:07 this updated, went here, and as we move around
+01:10 again, we're still getting this logged-in view.
+01:13 Beautiful. So, we can now register, we can log out, and we can log in.
+01:19 Pretty good.

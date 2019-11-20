@@ -1,0 +1,90 @@
+00:00 It may feel like we've already built an API
+00:02 cause if you remember, when our code over here runs
+00:06 this Python code runs, basically in JavaScript
+00:09 on the browser, and this server code like what we have here
+00:13 this anvil.server.callable, this runs on the Anvil servers
+00:17 and there's a communication across them
+00:20 kind of like a service or API would.
+00:22 This callable is not really for building external services.
+00:26 It's for gluing the server side
+00:28 and the front-end side of Anvil together.
+00:32 If we want to have a proper stand-alone service
+00:35 that folks can use, we need to do something different.
+00:38 So let's go down here
+00:39 and create something we are going to call an API.
+00:42 Now, Server Module 1 is exciting
+00:44 but I prefer the name, just flat api.
+00:48 And at first glance, there's nothing here that would
+00:50 indicate to you that you might be able
+00:53 to use some kind of service.
+00:55 So what you can do is come down here
+00:57 and you can do anvil.server.callable just like we saw.
+01:01 But like I also said, this is not what you want.
+01:04 So, we're going to do something different.
+01:05 Let me just clean up a few things.
+01:06 We don't need drives, probably need tables.
+01:09 Yeah, that's probably good.
+01:11 So, what we're going to use is something different here.
+01:14 And it's going to be an HTTP endpoint.
+01:17 And if you look at the parameters here
+01:18 the required thing you pass in is the path.
+01:21 This is like a sub part of the URL
+01:24 like basically the end part of the URL.
+01:26 And you can also say whether it requires credentials
+01:28 authenticates users, whether it does get or post or both.
+01:34 CORS is Cross Origin Request Security
+01:36 and then Cross Site Session and so on.
+01:38 Things like this, okay?
+01:39 So, we're going to say that
+01:40 and what I want to just set here is the path.
+01:43 And let's just have a super simple thing
+01:46 that just says, Hello. Alright, it's not going to take
+01:48 any parameters or anything like that.
+01:51 And instead of printing, it's going to return
+01:54 let's say, a JSON document that says
+01:56 Message: Hello from the API.
+01:59 Now we can go and call this.
+02:01 When we run this up here we get this quite funky URL
+02:06 and that's not something we can use for this.
+02:09 Okay, I got to put a little slash here.
+02:11 This is not what we can use here.
+02:13 We have to use a different URL and if you look at the bottom
+02:15 you get an even more crazy-looking URL here.
+02:18 That's fine, you technically could use that
+02:21 but what we can do is if we go back here to our app
+02:23 real quick and we say publish app
+02:26 we're not really going to publish it
+02:27 but we can say we'd like to be able to share it
+02:29 through a public link and it will come up with something
+02:32 like fresh-zealous-song.anvil.app.
+02:35 We can also add a custom domain, which we'll do later
+02:38 but for now we can at least get this public URL here.
+02:42 We hit okay, then notice down here
+02:44 we have a much better looking URL that we can share
+02:48 more stable, things like that.
+02:50 Let's just put, ah, Hello, maybe the same name
+02:53 or something like that.
+02:54 This is not actually what we're trying to build
+02:56 but we're just going to build a simple, little API
+02:58 just to test it to see that it works.
+02:59 We don't have to run the app, just as long as we save it
+03:02 we should be able to request it.
+03:04 So, let's try that.
+03:06 If we go here and then, what did I say?
+03:08 Hello...yes, hello. So, let's try that.
+03:11 Okay, that, we got some JSON back.
+03:14 If we look at the raw data, it's message is
+03:16 "Hello, from the API." How cool is that?
+03:19 This is what we have to do to create an API in Anvil.
+03:22 We convert the callable to an HTTP endpoint.
+03:25 We probably want to at least give it a stable, semi-public
+03:29 endpoint here that we can get to
+03:31 and then we write a function.
+03:32 The function doesn't take any parameters.
+03:34 We'll see how to pass data to it in just a moment.
+03:36 And then we return some kind of dictionary
+03:39 which is converted directly to JSON.
+03:41 The Python dictionary is in JSON, our super similar
+03:44 like, single quotes first, double quotes basically
+03:46 as long as all the elements are serializable in JSON.
+03:48 And this is a really easy way to get started.

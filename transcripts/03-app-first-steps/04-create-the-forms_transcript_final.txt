@@ -1,0 +1,84 @@
+00:01 Okay, now that we know kind of
+00:03 what our app is going to be doing
+00:04 we can go and create these forms
+00:05 that are going to go into this little component
+00:07 that's hidden right there.
+00:09 Now these are wrapping around 'cause they're too big
+00:11 but remember only half of them will ever be shown at a time
+00:14 so it shouldn't be a problem.
+00:16 Right, now, let's go and add this here.
+00:18 So we could choose another separate page
+00:21 that looks totally different
+00:22 like the one we just created
+00:23 but like I said, we're going to have these components
+00:26 that we can use as we navigate around our application.
+00:29 There's a really interesting model
+00:31 pretty straightforward to do
+00:33 to swap in and out these views.
+00:34 We're going to write a little module, client module
+00:37 that's going to take care of that and just say go to Home
+00:40 go to Add Measurement, and it's going to totally solve it.
+00:43 So here is a basic form called Form One
+00:46 not super loving the name
+00:48 so let's go over here and give it a different name.
+00:51 Let's say we have an AccountComponent.
+00:54 We don't need to call it component
+00:56 just to conceptually for us to know like
+00:58 this one is being used in this way, I'm going to call it that.
+01:01 And we could just do real quick just something
+01:04 so we know that this is happening here.
+01:07 A quick name for the text and just call this Account.
+01:10 Something like that.
+01:12 The next thing we can do is we can add another one of these.
+01:15 We're going to need to have one for adding measurements.
+01:19 This is probably the most involved form
+01:21 in terms of user input and validation.
+01:27 So AddMeasurementComponent.
+01:30 And again just so you know what we're working with here
+01:32 let's put a label here and put some text on it.
+01:41 It could be like the title or something when we're done.
+01:51 If we want to compare us against other people.
+01:55 People that are our age or something like that
+01:57 we might have this compare form.
+01:59 That's one of our features.
+02:03 Now we have the Home Form
+02:04 but remember the Home Form is meant to be kind of like
+02:06 the overall application.
+02:07 So we want to dynamically swap out what you see
+02:11 when you're logged in.
+02:12 Just when you're laying on the sites.
+02:13 We're going to have another one here like this
+02:17 and its name can be HomeDetailsComponent.
+02:23 Now it's easiest if we have a separate component
+02:26 for when you're logged in
+02:28 and you have details or when you first open the app but you're not yet logged in.
+02:32 So we're going to have one more of these here
+02:37 called HomeAnonComponent.
+02:39 As anonymous, not logged in, that type of thing.
+02:43 That pretty much does it.
+02:44 It turns out we need one more thing
+02:47 and I'm going to go ahead and just add it right now.
+02:50 And I'm going to call this SetHeightComponent.
+02:57 When you first register for the site it pops up a dialogue
+03:00 that says what is your username, what's your email
+03:03 what's the password you want to use.
+03:04 Stuff like that. But, it doesn't let us ask additional information.
+03:07 In order for us to compare you
+03:09 like your weight, your heart rate.
+03:10 Things that we're going to measure on you to others.
+03:13 We need to compare.
+03:14 We need to know like how tall are you, how old are you?
+03:16 Things like that. So we're going to have this other form
+03:18 that we're going to show just once to get
+03:20 that information when you sign up.
+03:22 Right so here's all the forms that we're going to use.
+03:25 I'm going to load this up
+03:26 and then dynamically put in here
+03:28 the AccountComponent, AddMeasurementComponent, Compare
+03:31 HomeDetails are anonymous
+03:33 and then the one time when I get your height
+03:35 and your age and things like that.
+03:38 And then we're going to store it.
+03:39 And we'll show you that one again.
+03:40 But, we do need to form for that as well.
+03:42 So it looks like we're just about ready to get going.

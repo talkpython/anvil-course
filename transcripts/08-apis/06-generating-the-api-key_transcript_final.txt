@@ -1,0 +1,66 @@
+00:00 Well, we saw that our authorized method
+00:01 is basically doing what it should
+00:03 it's verifying all the data's there
+00:05 it's logging in the user, getting access to them
+00:08 telling us that worked or it didn't work.
+00:10 The last bit is, remember we added this API key
+00:13 over here in the right, but it's not set.
+00:17 How do we set it?
+00:18 Well, we could set it when we first create the user
+00:21 but that's not technically necessary.
+00:22 You'll see it's super easy to do right here.
+00:25 You only need the API key if you're going
+00:27 to try to call the API anyway and in order to do that
+00:30 you first have to authorize
+00:32 using this little method we built.
+00:34 So lets do it like this, we'll say if we have the user
+00:37 we're going to test if they have an API key.
+00:41 Look at how sweet that autocomplete is. Thank you.
+00:44 All right, so we're going to test if there's an API key
+00:47 say if there's not an API key, rather.
+00:49 We want to generate it for them.
+00:52 And I'll say how to do that in a sec and then
+00:55 change this to api_key.
+00:59 It's just going to be the user's API key.
+01:01 So, that's what we want to return.
+01:03 But what do we do if it's not here?
+01:04 Well, we just regenerate it.
+01:06 So, we're going to go over here and say import uuid
+01:09 uuid is a library for generating
+01:11 unique identifiers and so on.
+01:13 So, we're going to go to this and say UUID4
+01:16 like this when we set this here
+01:18 it's actually going to save it back to the database
+01:20 and then we're just going to return.
+01:23 So, lets do a print generated new API key.
+01:27 I'm going to put it in here.
+01:31 So the first time you should see this generated
+01:33 but the second time it'll be already there
+01:35 so it won't show up again.
+01:37 Actually, it's a little harder to see
+01:38 lets do it like this.
+01:40 We don't have to go back to the logs.
+01:47 Here we go, we'll just return that back to the caller.
+01:50 Okay, here we are. The first time I call it
+01:52 there's not going to be an API key.
+01:55 Clear this out, it's a fresh session.
+01:59 We hit send, it comes back.
+02:02 You see our API key is here, this is the UUID.
+02:06 And the mode is created. Let's run it again.
+02:11 There you go, existing. It's already there.
+02:13 And we can double check that, if we go with the Firefox
+02:16 and we go to our data tables.
+02:19 Notice now, there's our API key.
+02:21 So that's how we're going to work in this little API
+02:23 that I built. We're going to have this authorized method.
+02:26 And come in, we're going to log in and get their API key.
+02:29 Once they have this, they can just save this API key
+02:32 to their device however they want to do that
+02:35 and just exchange it over here to add measurements.
+02:37 That's our plan.
+02:38 We're just going to send this over.
+02:39 It should be all well and good.
+02:41 These other methods over here are going
+02:43 to just expect that API key, use that to get the user.
+02:46 We'll just do a little query, user aware that API key
+02:48 equals whatever they pass in.

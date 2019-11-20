@@ -1,0 +1,15 @@
+00:00 Finally, before we kick off this course
+00:02 I just want to tell you that if you want to dive deeper
+00:05 into Anvil and you want to hear the story
+00:07 of why it was created
+00:08 how some of the internals work and so on
+00:10 I interviewed over on the Talk Python To Me Podcast
+00:13 on Episode 138 Meredydd Luff.
+00:16 He's one of the co-creators, co-founders of Anvil.
+00:20 We talk all about why did he built it, why does it exist
+00:23 why does it work this way, a lot of the internals
+00:25 and things like that, so you might enjoy listening to this.
+00:28 It's about an hour, you know, take it with you on a drive
+00:30 or while you're doing some errands.
+00:33 It'll give you a personal perspective
+00:35 of what we're about to learn.

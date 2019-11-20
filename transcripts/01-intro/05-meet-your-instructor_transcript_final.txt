@@ -1,0 +1,17 @@
+00:00 At this point you might be wondering
+00:01 who is this disembodied voice out there speaking to me?
+00:04 Well, here I am.
+00:05 My name's Michael, Michael Kennedy.
+00:07 Nice to meet you. This is what I look like.
+00:08 You can follow me on Twitter at @mkennedy.
+00:11 You might know me from the "Talk Python to Me" podcast
+00:13 which I founded about four years ago
+00:15 and been hosting for a long time
+00:17 or the "Python Bytes" podcast
+00:19 which I cofounded with Brian Okken
+00:22 and probably most directly is "Talk Python Training,"
+00:25 where you're taking this course.
+00:27 I'm the founder and have created many of the courses
+00:29 but not all of them, over at "Talk Python Training."
+00:32 Nice to meet you. I'm really excited that you're in my class.
+00:35 We're going to have a lot of fun going through this technology.

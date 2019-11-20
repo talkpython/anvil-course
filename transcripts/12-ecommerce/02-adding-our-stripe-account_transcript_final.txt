@@ -1,0 +1,44 @@
+00:00 Here we are in our Anvil app
+00:01 and we want to add Stripe checkout for when we click
+00:04 this button we charge $9.99.
+00:07 In order to do that we have to add the Stripe service.
+00:10 We have users, Google API for login data tables
+00:14 now we're going to need to add Stripe down here.
+00:16 In order to use this you're going to have
+00:18 to have a Stripe account.
+00:20 You don't technically, in the early testing have
+00:23 to have a bank account or anything that will make
+00:26 information linked to that Stripe account.
+00:29 Just have to create it.
+00:30 So I've created a separate test Stripe account I'm
+00:34 going to use here that is not tied
+00:36 to my business Stripe account.
+00:38 I don't actually want those things anywhere near
+00:40 each other so I'm going to do a quick login
+00:42 and then we'll carry on.
+00:43 So either you create an account or you login
+00:47 with an existing account. Perfect, so I've logged in, no big deal to that.
+00:49 Just click the add my current account, went over
+00:53 through OAuth and logged in at Stripe and
+00:56 then it came back here.
+00:58 Now it says we're in test mode and absolutely
+01:00 we want to be in test mode we don't want to have actual
+01:03 charges attempted here and stuff.
+01:05 There's actually a bunch of test credit cards that
+01:07 signify different scenarios.
+01:10 What does it look like if I want
+01:12 to have a successful charge?
+01:13 What if I want to have an invalid CVV?
+01:15 What if I wanted to have an expired card
+01:17 declined payment, a fraudulent card?
+01:19 All those kinds of things.
+01:20 Go in test mode we can test that and then flip
+01:22 it to live if we were a real app.
+01:25 This is just a demo so we're never ever going to do that.
+01:28 Anyway it shows us that the code down here is pretty simple.
+01:32 So we got to do that and then we'll be in good shape.
+01:37 So this is our first step here to do what we want
+01:41 with Stripe is to just have this connected
+01:43 the service added, and we're going to use this code
+01:46 so I'm going to go ahead and copy and paste
+01:49 and edit it because it's exactly what we want.

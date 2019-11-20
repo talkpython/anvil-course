@@ -1,0 +1,78 @@
+00:00 So, we saw that we could write some code
+00:01 like we did over here to query our measurements
+00:06 and we also wrote some code here to submit those.
+00:10 Now, there's a two-step process
+00:13 that I want to go through here to make this a little bit better
+00:15 architecturally and performance-wise.
+00:18 Architecture first, performance second.
+00:20 Remember, we had our navigation
+00:22 and we could have just crammed that all
+00:23 into various forms
+00:25 but we have a lot more fine-grain control
+00:28 and we can make sure everything happens just right
+00:30 if we have these go_home, go_compare, go_to_accounts
+00:33 and so on.
+00:34 So what I want to do is create a data access layer
+00:36 compliance side module
+00:38 that we're going to use to talk to the data base.
+00:41 First and foremost
+00:42 it's just going to be to isolate that
+00:43 so here we just call a really simple function
+00:45 and we get what we want.
+00:47 So let's go over here
+00:48 and maybe that's not the name we want
+00:50 how about data_access.
+00:54 And let's just go over here to these two
+00:57 we'll say import data_access
+01:01 and let's just replace this part here
+01:06 with something like my_measurements.
+01:08 Now, we need to go over here and define a function again
+01:13 so here's how you use it
+01:15 and this one's even simpler, there's really nothing to it.
+01:19 And I'll just grab this little bit here
+01:23 measurements, and it's going to be really simple.
+01:26 You might be thinking, Michael, this is too simple
+01:29 to justify making this.
+01:31 Hold tight, like I said, architecture, then performance.
+01:34 So the next one that we're going to do
+01:36 is add measurement like so
+01:41 and this is going to take similar arguments as we had here
+01:46 so, just to save typing, let's just rob that sucker
+01:50 put that here like that.
+01:52 And then, we'll go over to the AddMeasurementForm
+01:55 at the top, say import data_access way down here.
+02:05 We'll go down here and we'll say add, we'll rewrite it
+02:08 add_measurement, we just didn't quite finish it, did we?
+02:14 We'll add_measurement, and you know what?
+02:15 It probably takes pretty much exactly the same argument.
+02:20 And again, I'm just going to put this here.
+02:23 Let's just make sure it still works.
+02:25 Now this, again, seems like a silly thing
+02:27 because here we just have this
+02:29 but we're going to expand this a ton.
+02:31 It's going to get lots better and more useful.
+02:33 We'll just see how this works.
+02:35 So over here, we've pulled down our two records
+02:37 when we go home, if we go here, and we come back
+02:41 see again, notice it's calling a function correctly
+02:44 and we have a bunch of output.
+02:46 That's really good. Let's do one more add.
+02:48 Let's just work our way backwards in time
+02:52 I was apparently 180
+02:53 and my resting heart rate was 72 that day.
+02:56 So we add that in, and we broke something here.
+03:01 Yeah, that's right.
+03:03 So we get to our data access.
+03:08 This will be a record date
+03:11 weight in pounds, and resting heart rate.
+03:15 Whoops, let's try one more time.
+03:18 Going to add, finally, let's give it a shot, is it going to work?
+03:21 It does, and look at this, now we have five items.
+03:25 So we have this factored in a way
+03:27 that as we use it throughout the application
+03:30 things are going to be a little bit easier.
+03:31 It's going to be a little bit more isolated.
+03:33 Anything we might want to change about data access
+03:35 like hint, hint, performance
+03:37 we can do in that one location
+03:39 and have the entire app benefit from it.

@@ -1,0 +1,183 @@
+00:00 Now there's a few parts of our app
+00:01 that are just kind of unfinished.
+00:03 Like, for example, this.
+00:04 Let's run our app and just see
+00:06 what the experience is here if we're not logged in.
+00:09 I think you'll find it to be less satisfying.
+00:11 So, log out. Login looks just totally good.
+00:14 But this, not so much, huh?
+00:16 Home anonymous? Yeah.
+00:18 If this was the thing you found
+00:19 when you went to the website
+00:20 to try it out
+00:21 to consider creating an account
+00:23 you would go away.
+00:25 So, let's just quickly add some kind of landing page here.
+00:29 So, let's go over.
+00:30 And I've got some rebuilt text here.
+00:32 Let's call this "Label Title".
+00:33 Something like that.
+00:34 "Home Anonymous" is not what we want.
+00:38 We want to set a few text properties
+00:40 to make it a little bit bigger.
+00:42 So, go down here.
+00:45 Let's actually set, span that out.
+00:48 Set that to be centered.
+00:49 And the font size to be 32.
+00:53 And let's actually go and add
+00:54 one of these little icons as well.
+00:57 Let's put a scale. Balance scale.
+01:00 There we go because we're tracking
+01:02 stuff you weigh with scales.
+01:03 Things like that.
+01:04 Next up, we want to put an image.
+01:08 It's going to go to the top there.
+01:10 Put an image. And let's say we want it about like so.
+01:12 Nice and big. Put that banner.
+01:21 So, here, I have this peaceful image
+01:23 I've gotten from a place called Unsplash.
+01:26 www.unsplash.com
+01:27 You get a whole bunch of awesome, free
+01:30 rights free, royalty free big images like this.
+01:33 So, go ahead and grab that
+01:35 and we're going to throw that in there.
+01:37 Make it a tad bigger.
+01:39 And let's go ahead and set that to zoom to fill.
+01:42 There we go, like that. That's good.
+01:44 We're going to put a little text box in here.
+01:47 We'll call this "Label Pitch" or something like that.
+01:51 It's like a sales pitch.
+01:52 Let's set thee font size here to be 18.
+01:55 All right, now let's just see
+01:56 where we are with this so far.
+01:58 All right, this looks really good.
+02:00 Maybe that image is a little grainy but it's okay.
+02:03 I've noticed there's nothing else to scroll down to.
+02:05 Which is fine, it's okay.
+02:08 But we need some kind of call to action.
+02:10 Right? Let's get a big button right there next.
+02:21 So, we'll call the button "Register"
+02:22 but the text will show as
+02:23 "Create A Free Account" like that.
+02:28 And its role is going to be primary.
+02:31 And "Create A Free Account".
+02:32 And does it have a name?
+02:33 Yes. So, that's cool.
+02:35 Let me double-click it.
+02:37 First we're going to use our "Sign Up With" form.
+02:39 And then we're going to set the account for our...
+02:44 Actually, don't need to do that.
+02:50 I think that should work.
+02:52 Here we go. Maybe we're still going to need some help here.
+02:54 But I think this might work.
+02:56 Anyway, we'll see.
+02:57 We might have to do something by setting the account bit.
+03:01 In terms of, you know
+03:02 showing register versus account.
+03:04 And login versus logout.
+03:05 And so on. But we got that.
+03:07 But let's just finish out the design of this page here.
+03:09 And I'm going to have a couple of icons.
+03:11 So, let's have one other section here.
+03:16 Put this image down below.
+03:19 And actually, I want to have some text in here as well.
+03:22 So, I'm going to use a column panel.
+03:25 There we go. Put a little column panel down here.
+03:27 And within that, I'm going to put three more columns.
+03:30 One column just goes like that.
+03:33 And let's go ahead and put some stuff into the columns
+03:36 so we don't lose track of what's going on.
+03:39 And let's put some text below the image.
+03:42 This looks pretty good.
+03:44 It's a couple of layers so it might
+03:46 get a little tricky with drag and drop
+03:47 but let's see what we can do.
+03:49 Notice here it's trying to go to the right of the image
+03:50 but if I go more right
+03:51 that little blue thing drops down.
+03:53 Now, it'll go right in that column, the outer column panel
+03:57 which is what I want. There. There we go.
+04:04 And in here, we want an image and we want a label.
+04:09 If we can get it to go down in this spot. Perfect.
+04:12 Now, that looks like it's not quite in the right spot.
+04:19 Just put that right over here.
+04:21 Yeah. Not always the easiest thing to do
+04:24 but there we go. Pretty close.
+04:27 We need to maybe align these up a little bit better here.
+04:29 Okay. Move that over. Maybe a tad bit more.
+04:35 There we go. Are these the same size?
+04:37 Perfect! Okay.
+04:39 Well, that was a lot of drag and drop playing
+04:42 but, let's just go ahead and set the text for these.
+04:45 I'm going to do, like, little icons
+04:46 and we're going to give them a nice message.
+04:47 We'll say, "Wake up feeling energized"
+04:54 and let's just set that to be bold and center.
+04:58 I want to pick an image here.
+05:01 And I got some more cool transparent images.
+05:04 These came from a place called The Noun Project.
+05:07 If you pay for it, also royalty free, like I do.
+05:09 If you don't, I think you've got to do attribution.
+05:11 But, got these cool icon-type pictures.
+05:14 So, we're going to put that picture there.
+05:16 The next one we're going to pick is this free thing.
+05:19 There you go. And then, third, is going to be that app.
+05:27 Like so. And then for the text on these two.
+05:35 All right, there we go.
+05:37 So, let's go ahead and run this
+05:38 and see how our page looks.
+05:39 We should be logged out now, I think.
+05:42 Yes, we are. And look at this
+05:44 Fitness works!
+05:45 Get fit by tracking your health!
+05:47 Are you looking to be more healthy?
+05:48 It takes time, we get it.
+05:49 But if you see progress, that'll keep you going!
+05:52 And that's where fit works will
+05:55 Get you started!" Or whatever.
+05:56 So, here's our cool little icons.
+05:57 And it's going to be our landing page.
+05:59 Obviously we would do more in a real one
+06:01 but it's an okay start. We click this.
+06:04 It's going to either let us sign up or
+06:09 Yeah, I guess, just sign up.
+06:13 I guess I'll create another one.
+06:19 Use the letter "A" for the password
+06:20 because hey, I'm security conscious.
+06:24 All right. Copy.
+06:26 That's how I remember it.
+06:27 All right. Try and sign up.
+06:28 Just take us home. Perfect!
+06:31 And that almost worked
+06:33 but notice "register" and "logged in" is up here.
+06:36 So, let's just quickly fix that.
+06:38 And I think the best way to fix it might be over here.
+06:42 So, when we go over here to load component rather
+06:49 Yeah, there's a couple options
+06:50 but let's go ahead and just put it over here
+06:51 into load component.
+06:54 I guess we'll say.
+06:59 So, we'll just ask if there is a user.
+07:01 Let's go ahead and set the account state.
+07:02 And I forgot
+07:06 Are we passing the user? Yes.
+07:08 This thing again. Okay.
+07:12 If we're doing this in the right order
+07:14 we'll be fine over here long as we go home.
+07:17 Yeah, I think this will work.
+07:19 Let's try it one more time.
+07:23 Now it's working because we're loading up from start
+07:25 but let's go down here. Click this button.
+07:29 And three@talkpython.fm. So many accounts.
+07:35 Totally different password this time. Alright.
+07:38 Sign up should not take us home with the navigation.
+07:40 The navigation will check for the user
+07:41 and then trigger that.
+07:43 Well, actually the home form will.
+07:45 Cool. So we saw that change as you would expect.
+07:48 Now, we're in our authenticated home
+07:50 but we got to add our first measurement.
+07:52 Perfect.
+07:53 I think this home landing page, when we're logged out.
+07:58 It's not perfect but it's going to be what we're going with.
+08:00 It's good enough.

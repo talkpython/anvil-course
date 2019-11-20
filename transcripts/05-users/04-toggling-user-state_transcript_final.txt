@@ -1,0 +1,77 @@
+00:00 Well, we've signed up
+00:01 and we now have users maybe, probably.
+00:03 I'm not entirely sure, right
+00:05 we have no way to tell whether the user's logged in.
+00:08 So, let's go and actually toggle
+00:10 a couple of things based on user state.
+00:12 First of all, let's go over here and say, the user is this.
+00:15 we'll say, set account stage, or something like that.
+00:21 What we need to do is we need to hide and show
+00:24 some of these elements depending on
+00:26 whether they're logged in.
+00:28 And, we'll come in here and we'll say, user.
+00:30 That's great.
+00:32 And, let's go write that down here at the bottom.
+00:37 Put a little self, because that's how Python works.
+00:40 And, here we'll say something like this
+00:42 if there is a user, we want to show account and log out.
+00:46 If there's not a user, we want to hide those two
+00:48 but then show log in and register.
+00:50 And, let's try to do those in line.
+00:51 That's probably the easiest.
+00:52 So, we'll say self link account.visible =
+00:58 user is not None, so we have a user.
+01:01 Probably the easiest way there.
+01:04 And, what other ones do we have?
+01:05 We have log out, again.
+01:09 And, then log in, we want that to be the opposite, right
+01:13 user is None.
+01:17 Same thing with register.
+01:22 Now, that's getting called here.
+01:25 Let's also call it right at the start.
+01:28 And, we'll do something like this
+01:30 we'll say, user, now where we do we get the user from here?
+01:32 There's no log in.
+01:33 We can just ask Anvil, is there a current user.
+01:36 If they're logged in, we get them
+01:37 if not, then we get none.
+01:43 Get user, like that.
+01:45 All right, let's go ahead and run this and see what happens.
+01:49 set_account_state is not defined because
+01:51 of course self. is what I should have written there.
+01:56 Look at that. We're logged in.
+01:58 So, not only did we see the account created in the database
+02:01 when we set that cookie, we are now logged in already
+02:06 and this is great.
+02:07 The other thing we need to do is derive this
+02:10 anonymous versus details page.
+02:12 Let's go fix that.
+02:13 That's super-easy as well.
+02:16 Now, this is going to happen over in navigation.
+02:18 When we say, navigation go home
+02:20 we're basically going to call this function as well.
+02:23 Let's go over to the navigation, go home
+02:27 we're going to get the user, and then we're going to decide
+02:29 if there's a user, I'm going to do something
+02:32 else we're going to do this.
+02:34 And, that something that we want to do
+02:36 is going to be the HomeDetailsComponent.
+02:39 Here we go. So, when we go home, we have to look.
+02:42 Do you already have this in details or not?
+02:45 Also, when we have things like compare
+02:47 or go to your account, we want to make sure
+02:48 that there is a user, and send them along.
+02:51 So, we're going to take care of that validation in a minute
+02:53 but let's just see that we're getting
+02:54 the right home screen as well.
+02:57 Spelling is hard.
+02:58 Let's see what's going on here. User.
+03:03 Look at that, home logged-in view.
+03:06 Now, it's not so easy to show you the not-logged-in view
+03:10 because there's no log out, right
+03:12 that doesn't do anything right now.
+03:14 We'll do that in a minute, but this is really cool.
+03:16 We're deriving this navigation
+03:17 and we're deriving the home screen
+03:19 based on whether or not there's a logged-in user.
+03:22 Great.

@@ -1,0 +1,123 @@
+00:00 So the next thing we to do is switch this user account
+00:03 into actually being a pro.
+00:04 We saw that if we click this and we make them a pro
+00:08 it still just says that they're basic.
+00:10 And that's because we're taking their money
+00:11 yay, that's fun
+00:13 but we're not actually changing their account.
+00:17 Down here, instead of doing yay, you're a pro
+00:19 we need to do something.
+00:20 Let's go to this data access
+00:24 and say go pro.
+00:27 That's not a thing yet, but it's going to be.
+00:29 So over here
+00:30 this is where we've been hiding away all
+00:31 of our interaction with the server, right?
+00:34 Here's how we get our averages, set our details and so on.
+00:37 So let's just do something real similar.
+00:41 Here. Like this. So, we want the user.
+00:48 It's what we're going to work with.
+00:51 And what we need to do is we need to go
+00:53 and make a change over on the server.
+00:58 We look at our data table here
+01:00 and the user service
+01:01 they have an is pro, true or false?
+01:04 Right, so what we need to do is set that to true.
+01:09 But because we're setting it to true
+01:10 this user is being cached, right?
+01:13 We got a big performance boost from doing this here
+01:17 where we automatically cache it
+01:19 and only get a new bit of information from the server
+01:22 if it's not here.
+01:23 So we need to set this to none
+01:26 so that next time someone asks for the user
+01:29 they have to go over to the account, pull it down
+01:32 and they'll see that it has a new value for its pro.
+01:35 So we'll say go pro here.
+01:37 Going to be something on the server side
+01:39 remember the management service data side is the only thing
+01:42 that has access to write against the database
+01:46 which is appropriate.
+01:53 So then we're going to do this.
+01:59 And get the user, for some reason if there's no user
+02:02 I don't know what to do about this, we can't fix it.
+02:04 This is pretty hard, I want to say is pro equals true.
+02:09 Done.
+02:10 We've implemented the server side, that's pretty sweet.
+02:12 Let's see, let's work our way back
+02:14 we go to data_access.
+02:15 We're calling go pro and we're refreshing
+02:18 or knocking out the user there.
+02:20 We got to work our way back here to the account page.
+02:23 One thing that we could do is we could change the UI around
+02:27 so now it says pro in the account type
+02:31 and it says, you know, hides that button.
+02:33 We could also just reload this page
+02:35 which I think is probably the right thing to do.
+02:37 And so let's just go up here and import navigation.
+02:43 It'll reload itself, it'll recompute.
+02:46 You know, is the user a pro
+02:47 and all this stuff will rerun again
+02:48 so that's probably best, I'm going to go with that.
+02:51 Go account, boom.
+02:54 So let's refresh the page basically and we'll be good.
+02:57 Go to the database, record that, they are a pro.
+03:01 In reality, I would also record some of the details
+03:03 about this charge. That they attempted it
+03:05 that it either succeeded or failed.
+03:07 You want to have some record of people trying
+03:09 to do e-commerce stuff on your site.
+03:12 That would be a separate data table.
+03:14 We're not going to do it, 'cause it's not real, but, you know.
+03:16 Auditing in a real app around accounting
+03:19 and credit cards is a good idea.
+03:22 All right, are we ready to pros?
+03:23 I'm feeling like a pro already.
+03:25 So here we go.
+03:27 I come over here, I want to be a pro.
+03:29 Cancel, actually no.
+03:31 I want to be a pro, let's go pro again.
+03:33 Put my email address, do my four twos.
+03:36 All right, so what this should do is it should go
+03:38 make the charge, that should succeed
+03:40 'cause this number, this credit card is valid
+03:42 and then it's going to go to the server
+03:44 and tell account that it is pro.
+03:46 It's going to reload the page
+03:47 which should make this button go away
+03:48 and make that text go to pro.
+03:50 Ready? Here we go.
+03:54 Boom. Yeah, that purchase canceled
+03:57 I need to hide that, don't I?
+03:59 All right, cool.
+04:00 I guess that was already there
+04:01 from the first time I hit it
+04:02 but yeah, perfect, this looks great.
+04:05 So now our account is pro
+04:06 if we go and look at the account
+04:08 of course it should be also a pro over here.
+04:13 And our users, and sure enough, there it is.
+04:17 I guess one super small improvement we could make is
+04:24 when I hit that, it kind of looked weird
+04:27 that it was left over from before.
+04:30 So let's, whenever they click that button
+04:32 first thing, the label goes away.
+04:35 So while Stripe is thinking and the server is thinking
+04:37 we're not going to have some kind of remnant error
+04:40 that might freak people out.
+04:41 I think we're good.
+04:43 How many lines is this?
+04:44 This is like 22 lines of code.
+04:47 Over here.
+04:49 Probably another four or five over here
+04:54 another five or six.
+04:57 That's it for our e-commerce
+04:58 and in like 60 lines of code
+05:00 we just added e-commerce support to our site.
+05:03 And we also want to send them an email probably
+05:05 with a receipt and all this kind of stuff.
+05:06 There's, like, real e-commerce is a little more complicated.
+05:09 But that was pretty quick and easy and, yeah
+05:13 I use Stripe checkout for my business all the time.
+05:16 I think it's great, so definitely recommend
+05:18 that you give it a try.

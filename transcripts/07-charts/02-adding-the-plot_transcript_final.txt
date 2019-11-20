@@ -1,0 +1,116 @@
+00:00 Here's the component that represents
+00:02 the logged in view on the Home screen.
+00:04 When we run it, this section right here
+00:06 this is actually what you see.
+00:08 Now before we actually get to adding the chart
+00:10 if we move around between all these different things
+00:13 you'll see that this one has a pretty good
+00:16 add measurement top piece, but the rest of 'em
+00:18 they're really kind of boring.
+00:21 What I want to do is have something that looks like this
+00:24 instead this. Let's go ahead and put that like so.
+00:29 I'll just take this one out.
+00:30 Now let's just change the value
+00:31 it's just going to be something like Your Health History.
+00:38 We don't want the scale
+00:39 let's maybe put some kind of chart
+00:41 so we'll do a little search and the bar chart
+00:45 that looks pretty good to us. Great.
+00:47 Everything's working in terms of having this look
+00:50 we're going to just now add our chart.
+00:54 That's it, we've now integrated Plotly
+00:56 but let's do a little bit more work here.
+00:58 Let's go ahead and give it
+01:00 a better name instead of Plot One
+01:02 let's call it Plot Weight History
+01:04 so we know what this is about.
+01:05 Really it's weight and heart rate, but that's fine.
+01:09 That's it. We're going to have this here.
+01:11 It would be great to just leave it like this
+01:13 and put it here
+01:14 but it turns out that what we need to do
+01:16 is we need to only show this element
+01:20 if they actually have entered measurements.
+01:22 If they don't we want to maybe show them
+01:24 a picture and a button that says
+01:26 Hey, you haven't added any history to your health
+01:28 click the button to get started, right?
+01:30 Kind of an onboarding type thing.
+01:32 Let's roll that back.
+01:34 What we're going to do is we're going to put a card down here
+01:36 like so, and we're going to put out plot into that.
+01:41 Perfect, and let's give this card a special name.
+01:43 We'll call it card_with_data, like so
+01:48 and let's it right while we're at it
+01:49 another one at the bottom and only one of these
+01:52 is going to be visible at any moment.
+01:54 This would be card_no_data, something like that.
+01:58 When the thing loads
+01:59 it's going to show either the one data or the one without data.
+02:04 Honestly I think just having this chart here
+02:07 that's probably what we want, maybe we'd have a button to have more, I'm not sure
+02:10 we're just going to leave it like this for now, though.
+02:12 However for the one that has no data
+02:14 what I want to do is I want to put a picture here
+02:16 to kind of inspire them what it might look like.
+02:19 I want to put some text below that and below the text
+02:24 I want to put a big ole button like this.
+02:27 Let's put something here for the image.
+02:29 Let's go down here and where's our data?
+02:32 We're just going to load
+02:33 I got this thing on my desktop here, just a picture
+02:36 no data, something like that.
+02:38 Let's change that to Zoom To Fill
+02:41 so it looks nice and big, along those lines.
+02:44 Then maybe we could make this a little bit taller
+02:47 there we go. It's going to look nice.
+02:49 Now for the label, I just want to put some text
+02:52 You haven't recorded any measurements yet
+02:54 as soon as we have some data on you
+02:55 we'll be able to track it here.
+02:57 Finally, for our button, let's put the text
+03:00 Add your first measurement, like so.
+03:04 We could also give it a role.
+03:09 Secondary, sure let's go with that.
+03:12 Let's give it the plus role, plus plus circle
+03:16 I'll go with the plus circle.
+03:19 This is going to be our button, and of course
+03:21 you want these elements to be named
+03:22 because we're going to have an event handler for them.
+03:28 Okay, I think everything's working.
+03:30 Let's go ahead and run it and see what's here.
+03:31 Probably not what we're expecting or hoping to have.
+03:34 Well there's our chart, that's not really doing anything
+03:37 and here is our image.
+03:40 Oh it looks like I didn't put that in the second card
+03:42 so I got to drag that over, but that's no big deal.
+03:45 We can just take this and we'll put it down in here.
+03:52 There we go, now it's in the right spot.
+03:54 Notice we saw both of them.
+03:55 Let's go and write the code to figure out
+03:58 whether or not which one we're going to show.
+04:00 Let's just set this to be
+04:03 even though we were pulling this in
+04:04 let's set this just to show the empty view at first
+04:07 'cause that's going to be real easy.
+04:09 We'll just say self.card_with_no_data Not Visible
+04:12 it's going to be whether or not the length of measurements
+04:18 is zero and then we'll have
+04:20 self.card_with_data Not Visible
+04:26 something super similar, but greater than.
+04:29 Now we can run it.
+04:31 First I'm setting it just at no data, see how it works
+04:34 perfect you have no data
+04:37 so you haven't recorded anything, click here to get started.
+04:40 Maybe on large screens we want to center this text
+04:43 probably would look good, but there you have it.
+04:45 That's working well.
+04:46 We saw before that we were actually getting
+04:48 three or four measurements back here
+04:50 so let's go get those again.
+04:52 Here you hate it, a completely empty and boring chart
+04:55 but the visibility thing that we're working on
+04:58 is totally good. What's up next?
+05:00 Well, we've got to put the data into the chart
+05:02 and figure the chart to be a bar chart.
+05:04 We're off to a good start with this graph here.

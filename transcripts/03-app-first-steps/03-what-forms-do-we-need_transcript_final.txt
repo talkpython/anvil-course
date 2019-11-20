@@ -1,0 +1,114 @@
+00:00 Now let's go ahead and create the rest of our forms.
+00:03 And we're not quite there yet in terms
+00:05 of writing the code, but I do want
+00:06 to speak just a little bit about how the navigation
+00:09 between these forms is going to work.
+00:11 I did say that this is kind of like the top level
+00:13 of our application.
+00:15 One really important thing to do
+00:17 or consider when you're writing web apps is
+00:18 what is the overall look and feel?
+00:20 You want the same navigation on the top
+00:22 maybe even on the side.
+00:23 A little footer on the bottom.
+00:25 Kind of want the same thing all over
+00:27 and then different content for the pages.
+00:30 So what we're going to do is we're actually going to set up
+00:31 this form so we can take little sub forms
+00:34 or components and dynamically replace them in here.
+00:38 So we're going to have one form
+00:39 that shows us our home view like
+00:41 a history of our measurements
+00:43 that we've saved in this as we've done work outs over time
+00:46 or just measurements over time.
+00:48 One that will show our account details
+00:50 one that will let us add another measurement in here.
+00:53 So we're going to dynamically swap those out.
+00:54 So right now we're going to create this top level
+00:56 material design form, we've already have.
+00:59 But then the subsequent ones
+01:01 these are going to be more blank ones
+01:03 and they're just going to fill in a little gap here.
+01:05 In fact let's go ahead and put that in here.
+01:08 Put a little column panel in here
+01:10 and we're going to give this a name.
+01:11 This is going to be content or something like that, right.
+01:15 Name it whatever you want.
+01:16 We're going to dynamically replace that...
+01:19 the value or the content of that
+01:21 with these other forms.
+01:24 Just to give us a sense of what kind
+01:26 of forms we need to build.
+01:27 Let's go ahead and add some hyper links over here.
+01:30 Before we do that, if you look carefully it says to...
+01:32 whoops, to put a column panel here.
+01:35 And so this is a column panel.
+01:38 Into the column panel we're going to put link one
+01:43 link two, link three.
+01:46 Those are not great names or values.
+01:49 So suppose we have one that's going to take us home.
+01:53 The text is going to be something like Home.
+01:56 Over here, let me just type Home.
+01:59 Another one we're going to want to add a measurement
+02:02 so let's just say Add.
+02:04 And we'll come up here and just say link_add.
+02:07 Maybe add measurement we need to be more clear
+02:10 and this one will be compare.
+02:11 So you can compare yourself against other people in the app
+02:15 stuff like that.
+02:16 So this one down here is going to be compare.
+02:20 Now we can add some little icons on top of this
+02:22 while we're at it.
+02:23 So if you're familiar with that, awesome.
+02:25 And then that kind of thing.
+02:26 So we come down here and say
+02:28 I would want some kind of home.
+02:30 If I choose that we have this little home thing there.
+02:35 This one I want some kind of scale
+02:37 so like, um
+02:39 measurement right? To indicate measurement.
+02:41 And for compare, what should we put?
+02:43 Lets put a chart or something like that.
+02:47 There we go.
+02:48 So now we have this cool little thing going on.
+02:50 Lets just take a quick look at that.
+02:52 Alright so over here we got our little
+02:54 hyperlinks with our stuff.
+02:55 We're coming along well.
+02:57 Alright that gives us a sense.
+02:58 We're going to need a Home form
+02:59 we're going to need a AddMeasurement form
+03:01 and a Compare form.
+03:03 The other thing that we need to do is
+03:04 we're going to have somethings like registration
+03:08 so come up here have Register.
+03:11 Actually lets put it in this way.
+03:12 Lets say you want to have an account
+03:14 and view your account details.
+03:15 Name Account and then the text is just going to be
+03:19 Account like that.
+03:21 We also want to have some other elements.
+03:24 We're going to come up here and we're going to have like, logout.
+03:27 So that's something you might see if you're logged in
+03:30 these are like the two things...
+03:33 You might have if you're logged in.
+03:39 These are the two things you can do.
+03:40 But if you're not logged in, you would have other operation.
+03:42 Now we could make these kind of dual purpose
+03:44 and change their text but it turns out in Anvil
+03:46 its generally easier to have different things in show
+03:50 and hide them depending on your circumstance.
+03:52 So this would be register like so.
+03:58 Then make the text register.
+04:01 We're just going to hide the logged out ones
+04:03 when you're logged in and vice versa.
+04:07 Okay, so lets just run this real quick
+04:08 and make sure everything's looking good.
+04:10 Great, now were not hiding these yet.
+04:12 We're going to, but we're not yet.
+04:14 So were going to need a home form
+04:15 an add measurement form and compare form
+04:17 something to do show me your account
+04:19 someway to login and register.
+04:21 Turns out login and register are little dialogues
+04:23 we don't have to write, they're provided by Anvil.

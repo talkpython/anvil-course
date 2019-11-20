@@ -1,0 +1,121 @@
+00:00 Here we are in our application.
+00:01 And when we run it, we see that all we get is
+00:05 we automatically load up this ad measurement control
+00:07 but when we click on these various things
+00:09 nothing is happening, right?
+00:11 There's no navigation.
+00:12 So let's go work on the navigation.
+00:14 Now we're going to do this in two parts.
+00:16 I want to show you the most naive basic straightforward way
+00:19 and then the more polished way that lets us build
+00:22 better structured applications.
+00:24 So we're going to start out just making it work
+00:26 and then we're going to make it right.
+00:28 So let's look at these various things here.
+00:30 We're going to need to go and add little event handlers
+00:33 for when somebody clicks home they can just double click
+00:36 that and it's going to add link home clicked.
+00:40 I'm going to do that for the rest of 'em.
+00:46 All right, here it is.
+00:47 Let's go and see how we might do this.
+00:50 Now, we already have this when somebody clicks on
+00:53 the link ad we're going to go and create this
+00:57 AddMeasurementComponent, we're going to change the role
+01:01 and we're going to put it in a panel.
+01:03 I'm going to push this off for just a moment.
+01:06 But what we want to do is basically, we want to create the
+01:09 various components and then add them here.
+01:12 Now notice this part is always the same.
+01:14 So let's add a function down here
+01:20 called load_component, it'll take self and a component
+01:24 let's say, component like that.
+01:26 And what it's going to do is, well
+01:29 it's just what's happening here.
+01:30 'Cause we're going to need to do this for every control, right?
+01:34 All right, that looks good.
+01:37 Then down here we just say self.load_component
+01:41 kind of like that.
+01:42 In fact, at this point we could inline this, right?
+01:47 There we go.
+01:48 So this is all we really need to do and
+01:50 let's put this off for just a second here.
+01:53 The next thing is, when we click on go home
+01:57 let's go here, and what've we got?
+01:59 We've got the HomeAnonComponent and
+02:03 the HomeDetails when you're logged in.
+02:05 So let's do the HomeAnonComponent.
+02:08 Now we're going to load that one for now and then
+02:10 we'll just go ahead and load
+02:11 we figure out whether they're logged in.
+02:13 We don't have users yet so that' not a big deal.
+02:17 Remember, in order to get access to these
+02:19 we've got to write this statement p like so.
+02:23 So let's just run it and see that these two are working.
+02:26 If I click ad it should take me add, if I click home
+02:28 it should take me to home and back and forth.
+02:32 Right. Home, home anonymous.
+02:35 Add and look how quick add.
+02:38 That's zero latency, I mean yeah JavaScript has to execute
+02:41 the DOM has to be manipulated, but there's no network
+02:44 right, there's no changing of the URL or anything like that.
+02:48 So that's great, let's just go ahead and think about
+02:51 how we might do the rest of those.
+02:53 Just write those out and it'll come back to him.
+02:56 And then we have it.
+02:57 We have Add Measurement, Home Anonymous for now, Compare
+03:01 all count, we also have some stuff with login, logout
+03:04 and registered, those are not actually going to be
+03:05 separate components, there's a different mechanism for
+03:08 dealing with them, we'll talk about that when we get to it.
+03:10 This should more or less have it working.
+03:13 Let's go clicking around here.
+03:14 So home, add, compare, just like that.
+03:19 Then the last thing to fix, we started working
+03:22 on the AddMeasurementComponent here
+03:23 because it's the most interesting.
+03:26 I think we got the biggest bang for the buck.
+03:27 But it shouldn't really start out with this
+03:29 it should start out either anonymously telling you
+03:31 about the air, hey you need to log in, here's all the
+03:34 cool stuff you can do or, if you're logged in
+03:36 here's your recent measurements and things like that.
+03:39 So let's go up here really quick and just change
+03:41 this to link on click, like that.
+03:45 Now if we run it one more time it's going to have probably
+03:48 the most reasonable behavior, right so we go here, right
+03:51 right to account and so on.
+03:54 Like I said, these three we need to deal with separately.
+03:56 This is our simple navigation.
+03:59 What's wrong with it though?
+04:00 Before we move on, I said this is not ideal
+04:03 what's wrong with this? Well, here's the thing.
+04:06 If I go over to add measurement and I click on this
+04:09 and I submit everything correctly, recall
+04:12 what we're going to do is we're going to go and when we get to
+04:15 database setup, we're going to save this to the database and
+04:18 then probably the most natural thing to do would be to go
+04:21 to compare list, recent measurements, something like that.
+04:27 We need to navigate from here to somewhere else
+04:31 as the result of this button click.
+04:32 What do we do then, do we have this thing
+04:35 import the home control?
+04:37 That doesn't work very well because the home control
+04:39 is already importing this and that gets a little weird
+04:41 and also that very tightly binds together
+04:44 these various controls and their components.
+04:47 That's not great, right?
+04:49 So what we're going to do is we're going to make it so
+04:51 sharing this navigation concept is basically its own
+04:54 standalone thing, there's actually more happening.
+04:57 You saw over here as well that we have the various roles
+05:01 we could set another, you know, various things we could
+05:04 say I want to link for add role to be kind of active or
+05:09 home link active, things like that.
+05:12 Also possibly setting the title, checking for whether or not
+05:15 a user's logged in, making them log in
+05:16 if they need to be logged in.
+05:18 There's a lot of stuff that we have to add here
+05:21 and we don't want to just load this up in our home forum
+05:24 we're going to have a separate little library whose job
+05:26 it is to only deal with navigation and we can share
+05:29 that library easily across all of these things.

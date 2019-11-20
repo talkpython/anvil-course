@@ -1,0 +1,38 @@
+00:00 I've built a couple e-commerce websites over the years
+00:03 and there are really hard ways to do it
+00:04 and quite easy ways to do it.
+00:07 A hard way is to work with some ancient e-commerce API
+00:11 from some bank's merchant account
+00:13 and they're just really crummy, hard to work with.
+00:16 And then you've got to handle all the flow, all the forms
+00:19 and validation and all of that stuff
+00:20 and all the edged cases in your Web app.
+00:23 Another way to do it, is to use something modern
+00:26 and clean and simple like Stripe.
+00:28 And so, what we're going to do
+00:29 and what Anvil has done and supported
+00:31 is allow us to use something called Stripe Checkout.
+00:35 If you've taken any of our paid courses
+00:38 you will know what this looks like.
+00:39 So come over here, here's are site
+00:41 and see that blue button
+00:43 buy now, get lifetime access for $49?
+00:46 If you click this, what happens is
+00:48 something pops up that looks just like that.
+00:51 Our Python, here's our icon
+00:53 lifetime access to the course $49.
+00:56 You enter your email, your credit card number
+00:58 expiration and CVV date or CVV code
+01:01 and then you hit pay.
+01:02 In the bottom left, see how it says powered by Stripe.
+01:07 This is what we're going to add to our application.
+01:10 We're going to add the ability to have this dialogue come.
+01:13 And when we actually hit the pay $49 here
+01:16 what's going to happen is, there's going to be some code run
+01:19 over on Anvil as a response.
+01:20 Now, on this one it actually does a post back
+01:23 and loads up a different page.
+01:25 The way Anvil's done it
+01:26 they've kind of taken care of that.
+01:27 So it's even simpler than pure Stripe Checkout
+01:31 which is great.

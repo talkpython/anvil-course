@@ -1,0 +1,156 @@
+00:00 In this next chapter we're going to dive in
+00:02 to building the client-side app.
+00:04 We've already built the API
+00:06 but what fun is an API if you can't use it?
+00:09 So we're going to go ahead and build out a Python application.
+00:12 And this is the first time that we're going to deviate
+00:14 from just being on the web, on Anvil.
+00:17 We're going to write this code locally, so that'll be
+00:20 a little bit of a different experience, as well.
+00:21 So that's going to bring us over to our Anvil repository
+00:25 on our GitHub repository.
+00:27 So let's go ahead and create a new folder
+00:29 called source or something like that
+00:32 and in here we'll create a folder
+00:34 called fitnessed_client or something like that.
+00:38 So what I want to do is create a virtual environment here
+00:42 and then I'm going to open this in PyCharm.
+00:44 You can use whatever editor you want.
+00:45 You probably should use PyCharm or Visual Studio Code
+00:48 with a Python extension, but you know
+00:51 feel free, whatever makes you happy, use that.
+00:53 Let's go over here
+00:55 and we're going to create a virtual environment.
+00:57 We'd normally type python3 -m venv
+00:58 or something like that.
+01:02 But I have a shortcut which I will show you.
+01:07 Which is to do that but also to activate it
+01:10 and then to make sure we have the latest tools
+01:12 'cause these are almost always out of date.
+01:14 Super big pet peeve of mine.
+01:16 So I'm just going to type venv and let that run for a sec.
+01:20 There we go. And now we get asked which Python on Windows
+01:23 You ask where Python and it has the right one.
+01:27 Okay, so we're done with the command line.
+01:28 We're going to open this in PyCharm and
+01:31 we're going to create our main little application
+01:34 which is going to be fitnessed like that
+01:38 Here and let's just double check in the terminal.
+01:41 So there we go.
+01:42 Check in the ternimal and notice that Pycharm
+01:45 automatically found our Python again
+01:49 So that's good, that means it's going to use this one to run it
+01:52 So we can just run our little app
+01:53 it's not going to do anything but just get everything set up.
+01:56 We can use the hot keys
+01:58 or this little play button
+01:59 to run our app as many times as we want.
+02:02 Okay, so our app is up and running.
+02:04 We're going to need to talk to that end point.
+02:08 So let me just write that down
+02:10 and let's call this base_url over to Postman
+02:15 and we want this, this much of it.
+02:21 That's going to be this like so
+02:23 and were just going to add on, like, authorize
+02:25 or add_measurement or whatever.
+02:28 Now I want to call this somehow and Python does have
+02:31 URL load built in and some other stuff
+02:34 that is not super duper amazing.
+02:36 So what we're going to do is use some other libraries
+02:38 and for that we're going to add a new
+02:41 requirements.txt file
+02:43 This is where we specify our requirements.
+02:45 I'm going to start just using requests
+02:48 and see PyCharm wants to install this for us
+02:50 I could click here and it would do that
+02:52 but I'll show you how to do it here as well
+02:53 So I'll say pip install -r requirements
+02:58 like that and that's going to install all the things that we need
+03:02 and make PyCharm happy as well. Okay, so this
+03:06 is the app that we're going to use
+03:07 We're going to get started with that.
+03:10 Now, What we need to do is build some kind of interaction
+03:13 and I don't like having all the code just crammed in here
+03:16 so I'm going to create some methods.
+03:17 I'm going to create a method called main
+03:20 like this and I'm going to use this convention called
+03:24 I don't know what it's called but dunder name
+03:27 convetion I'm going to call it, I'm going to say if the name
+03:29 is main then we're going to run the main method.
+03:32 I like this convention 'cause it lets me put
+03:35 sort of work flow at the top and the utility functions below
+03:39 in that order. So what are we going to do over here?
+03:42 We need to get the user input that we're going to submit
+03:46 So data = get_user_data()
+03:50 their measurements and stuff like that.
+03:52 And then we're going to somehow
+03:55 result save measurement
+03:57 It'll pass that data over like that
+03:59 and then it'll print. Done. Super!
+04:03 Well you can see there's two problems:
+04:05 This doesn't exist, does it.
+04:06 So let's go write that next
+04:08 and we'll do the other one as well
+04:10 just so everybody's happy.
+04:16 If we put a little type annotation on here
+04:17 not required, but very nice
+04:19 we can get dictionary behaviors
+04:22 and we can also get this to say
+04:25 it returns a dictionary.
+04:29 PyCharm is just saying you're not actually returning
+04:31 anything from here so this is not probably how you
+04:33 use it. This just 'cause we haven't written it yet.
+04:36 We're going to go through a couple iterations on this.
+04:38 First thing we're going to do is
+04:39 just write a real simple version
+04:41 that we type in everything every time
+04:44 get our information in
+04:46 and then submit it.
+04:47 Then we're going to use another one
+04:49 where we save the authentication
+04:51 so we basically save the API key and the email
+04:55 and then we're going to use that
+04:56 and then finally we're going to actually build
+04:58 a GUI version of this application
+05:00 Don't get super excited, it's a simple GUI
+05:02 but it'll still be really fun
+05:03 to build a GUI Python application.
+05:05 All right, so let's do iteration one where we just get this
+05:08 maybe iteration zero
+05:10 we just get the information from the user.
+05:13 So what do we actually need to get back?
+05:15 Well we got to ask them for their email and password.
+05:19 So we can just start going down the line and put
+05:22 What is your email? What is your password?
+05:30 And we say rate or let's do this, we say print nothing
+05:35 and then print entering measurement like so
+05:37 it'll say resting heart rate, weight in pounds and
+05:48 let's just say we're going to have the recorded date be
+05:50 right now. PyCharm import that at the top
+05:54 date, today, .isoformat there.
+06:01 Like that. Okay.
+06:02 So this will give us the ISO formatted string
+06:04 and then we're just going to return this information as email
+06:10 and so on. Okay let's just see that this is working
+06:15 and down here we're just going to print
+06:17 would have sent this to the server
+06:21 Alright, run it again. Oh perfect!
+06:24 what is your email?
+06:25 michael@talkpython.fm and remember my fancy password
+06:29 is also this. Let's enter our measurements: 71, 172
+06:35 done. Look at that.
+06:37 So, email, password, rate, weight
+06:41 look those are as strings
+06:42 that's not good.
+06:43 We want to fix that.
+06:45 Recorded though, it looks fine.
+06:47 So over here let's do
+06:49 and we're not going to put data validation here.
+06:52 Obviously you should have it
+06:53 and you can put it in your real one
+06:55 but it's not really the point of this app.
+06:56 We already did some validation earlier
+06:58 so you can see about it.
+07:00 So let's do this one more time.
+07:02 Perfect. So, rate and weight are integers.
+07:05 We've got our data

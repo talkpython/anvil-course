@@ -1,0 +1,158 @@
+00:00 Now it's time to finally start writing the code
+00:03 that we wanted, which is to add a measurement.
+00:06 First, we talked about hello
+00:07 just to talk about how this API infrastructure works.
+00:09 We need to do this user authorization stuff.
+00:12 Let's get over here and make this happen.
+00:15 I'm just going to paste a method here that we can use
+00:17 throughout all these other APIs to just do
+00:19 to verify our API key
+00:21 and I'm going to talk through it real quick.
+00:22 So what we do is make them pass in their API key
+00:26 and also email for validation and make sure its
+00:28 their API key.
+00:30 Through the post body is just a dictionary so
+00:33 that's what we're getting past here
+00:34 and we're going to say if you don't give us any data
+00:36 just like before you must give us data in valid request.
+00:40 And then we're going to get their email and their API key.
+00:43 They didn't give us that
+00:45 you know their, maybe four and three's right I'm not sure.
+00:48 Then we try to log them in
+00:49 and we say that log in is not good
+00:51 what we're going to return if it does log just fine
+00:55 the user and nothing but if there's an error
+00:58 we're going to return no user and some error code so.
+01:01 No user, some error code.
+01:03 And then we can use that in our methods up here
+01:05 so I can come up and say something like
+01:08 user error equals login request and here we want
+01:13 we're actually going to need this in a couple places
+01:15 so lets go over here and say
+01:16 data = anvil.server.request.body_json
+01:22 pass the data there.
+01:24 Then what we'll say is something like if there's an error
+01:27 in error response type
+01:29 return error, remember this HTTP status
+01:31 HTTP response so it can be processed directly.
+01:36 And then down here we can just return our
+01:39 works all right something like this.
+01:41 So of course we actually want to add the measurement
+01:43 get the measurements back
+01:45 we can just check that this is working.
+01:47 And we want a copy, actually duplicate this
+01:50 cause there's some similarities here.
+01:53 We're going to change this to add measurement
+01:55 let's copy it to make sure it's exact.
+01:58 Add measurement, and if we send it it should
+02:00 just give us some kind of you know
+02:02 API key not found.
+02:03 So if we go look at the body we're sending
+02:05 we don't want to send password anymore
+02:07 we want to send whatever the API key is.
+02:10 How we find out what it is, well we call this function.
+02:12 All right so we go like this once and then we get
+02:15 our API key and then we can just use it over and over.
+02:19 Course if we change it to seven there at the end
+02:22 it should run like before.
+02:24 So invalid login for three just like expected.
+02:27 But with the right API key, well, it works.
+02:31 So we're able to login our user with API key.
+02:34 That's great.
+02:35 Now what we need to do is we need to add
+02:38 the measurements over here and rename these things.
+02:47 All right now we know which one we're working with
+02:48 and we can get back to it from our little collections
+02:51 over here.
+02:52 So what we need to add is a couple of things
+02:54 and we can decide what these are going to be called
+02:56 but we're going to need to add something
+02:59 along the lines of weight.
+03:00 Remember this was like 175.
+03:03 Now its unfortunate JSON does not like serializing
+03:07 actual dates kind of a short coming of it.
+03:10 We need to pick a format and then parse it back apart.
+03:13 So lets put something like this.
+03:16 All right so this is what we're going to pass over.
+03:18 Just to make sure everything's happy.
+03:20 Yes it still works response status code two hundred
+03:22 A Okay.
+03:24 Visible work we're going to pass over and we need to get these
+03:27 things back out on the server side.
+03:30 Here we're going to say well the weight
+03:33 is not seventy five but it's going to be equal to data
+03:36 dot get weight.
+03:38 And we can put in a default value that's not none.
+03:42 It's probably an integer but if they mess up
+03:44 and pass a string we can probably parse it back
+03:46 into an integer as well.
+03:48 Same thing for rate and recorded
+03:51 it's going to be more complicated we have to do some
+03:54 string parsing which is pretty rough.
+03:57 All right so we're going to use datetime.strptime
+04:01 I'm going to say year, month, and day
+04:03 and we don't want the date time we just want the date
+04:07 part of it.
+04:08 Believe that's the way we set it over here.
+04:12 Yeah its just a date, not a date time.
+04:14 So we have to get the date part of it.
+04:15 Now we have to import date time at the top
+04:17 or this won't work obviously.
+04:20 Now with that in place we should be able to get this data
+04:23 and lets just echo it back
+04:27 just that it works so we have weight.
+04:30 So we just echo it back first to see that things are working
+04:34 over here and we go like this.
+04:36 We probably need some kind of thing to check that
+04:40 these are integers but you know that's okay.
+04:43 For that response there lets go
+04:46 we could actually put remember JSON doesn't like this.
+04:49 We can say isoformat.
+04:52 That's the way to get that back in basically
+04:54 the same format we sent it over.
+04:56 Here we go, like that.
+04:58 All right looks like our parsing is working
+05:00 So we're passing out data across and remember
+05:02 if our API key.
+05:03 Let's do one more thing lets put user and user email
+05:08 so we can make sure that it is actually the right user
+05:11 that's being pulled back.
+05:12 Now this is not echoing as value I passed
+05:14 this is gong to the data base, getting the user
+05:16 and then returning their email so yeah
+05:19 it looks like everything is working great.
+05:21 All we have to do is save it and it turns out that
+05:23 that's super easy. So instead of doing all of this
+05:27 we're just going to go to app_tables.measurements.add_row
+05:30 and then create a date is going to be
+05:32 datetime.datetime.now we don't pass that in.
+05:37 Record a date its going to be recorded
+05:39 resting heart rate is rate and weight in pounds is weight.
+05:44 All right lets forma this so humans can read it.
+05:48 And lets just say status or success true
+05:53 we technically we don't even really need to return anything
+05:55 lets make people happy give them a little nice message.
+05:58 Yeah that worked.
+05:59 Before we go back here and run this lets look at our
+06:01 data tables and measurements for me here.
+06:05 Sort, here we go.
+06:06 Now we sort, increasing perfect.
+06:09 So we have one for September twentieth.
+06:11 We should have one for September twenty first
+06:12 when I say go right here.
+06:17 Our real success is true and we refresh.
+06:20 There's our record, oh.
+06:21 Did we forget something? Yes. We did.
+06:25 But look it got inserted that's pretty cool.
+06:27 But what did we forget?
+06:28 So if we go back over to our API
+06:31 last super thing is user those user.
+06:35 Right so user we want to set that
+06:37 go to the future a little.
+06:43 Change that a bit. Hit it one more time.
+06:47 Now refresh.
+06:50 Perfect everything's working now we have the user
+06:52 associated with it, this is the date.
+06:53 There's our one seventy six and seventy
+06:56 we just entered.
+06:57 I love it we have our API totally working.

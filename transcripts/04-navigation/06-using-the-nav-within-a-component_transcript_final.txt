@@ -1,0 +1,86 @@
+00:00 So we built up this navigation
+00:01 and one of the things I gave as motivation was
+00:04 well, yeah if all the navigation actually happened
+00:07 within the home form
+00:09 well, we could just stick it in there
+00:10 and it'll all be well and good, right?
+00:12 However, it's mixed throughout all of these things
+00:15 and when I say compare
+00:18 or especially when I say add measurement
+00:21 when this is finished
+00:22 what I would like to do is have it take me away.
+00:25 So let's see what it's doing now.
+00:27 We come over here and I can add a measurement
+00:29 and I pick today, that's cool.
+00:32 I can say this let's put 180
+00:35 and our validation works.
+00:37 I don't know what my heart rate is
+00:38 but let's say it's 70.  Boom!
+00:41 And we get a little print.
+00:42 Hey, we saved this, that's cool.
+00:45 Great. And what would we really want to do?
+00:48 Not stay on this page.
+00:49 That's probably the worst possible thing.
+00:51 We would probably want to go home
+00:52 and here's like a list
+00:54 of our recent measurements we've added
+00:56 or a graph. A graph would be even better.
+00:58 When we're done adding it successfully
+01:00 we want to go home. Check this out.
+01:03 So over here
+01:04 this is part of the glory is say import
+01:06 navigation. This part, this would go home.
+01:11 Let's just say navigation dot go home.
+01:14 Let's see it now. Come over here
+01:18 we're going to say add.
+01:19 I don't need that.
+01:20 Let's still say it's today
+01:21 we're not actually saving in this.
+01:23 179. I lost a pound in just as few seconds
+01:27 and my heart rate went up. Ready?
+01:30 When I click this, it should print out that we're going to save it
+01:32 which will simulate saving it
+01:33 and we'll get to that when we actually work
+01:34 with the database but the next thing to do is
+01:37 it should remove this component here
+01:40 and it should take us, effectively
+01:41 from what the user's perspective is back to the home screen.
+01:45 Ready? Boom!
+01:47 Home anonymous because that's what we're loading up, right?
+01:49 It should be the logged in one.
+01:50 I guess, sort of. Isn't that cool?
+01:52 How awesome is that? And look how easy it is
+01:54 to share this navigation function
+01:57 throughout our entire application
+01:59 even other modules. Right?
+02:02 If we have other modules over here
+02:03 potentially they could do navigation.
+02:06 Now, one final caveat within this function
+02:09 this initialization function
+02:11 the sequence of events happening here is
+02:14 this add measurement component is about to be put
+02:17 into the main view most likely.
+02:20 It's not quite there yet.
+02:21 It's about to member the processes
+02:23 allocate, set data
+02:24 and then put it in the component panel there.
+02:27 What that means is
+02:28 we're not ready to stop navigating here
+02:31 and go somewhere else.
+02:32 So you can't do something like, I don't know
+02:34 if not account
+02:36 navigation go home or go account, I don't know.
+02:39 Let's put it the other way.
+02:40 All right, if account
+02:41 we want you to go here instead
+02:43 you can do that within response to button clicks
+02:46 other behaviors, timers, and whatnot
+02:48 but you cannot do that in the initialization here.
+02:52 Just because of that workflow
+02:54 that we talked about at the beginning.
+02:55 We're not even done loading this component.
+02:58 We can't navigate away from it yet.
+02:59 Okay, so we just keep in mind
+03:01 this navigation does not work in the initializers
+03:04 but it pretty much works everywhere else
+03:06 and it's a thing of beauty.

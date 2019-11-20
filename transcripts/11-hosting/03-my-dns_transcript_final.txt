@@ -1,0 +1,67 @@
+00:00 Here we are at the DNS settings for talkpython.com.
+00:03 It's at GoDaddy, I actually really dislike GoDaddy
+00:06 as a company, but it's been around there so long
+00:08 I just don't want to transfer it away and deal with
+00:10 the consequence of possibly messing that up or the downtime
+00:13 so it's staying there.
+00:14 Our new domains I'm getting at domains.google.com
+00:17 I like them a lot. But, here it is.
+00:19 So, I'm going to use this, and we're just going
+00:21 to add a name server.
+00:23 The host is going to be fitnessd, and it's going to point
+00:27 to that location that I already copied.
+00:30 Time to live, let's make this as short as possible
+00:33 'cause we're going to be possibly messing with it.
+00:35 So, here we go. Well, it's done.
+00:39 And here's where the patience comes in.
+00:42 So, just going to wait a couple of seconds
+00:45 to make sure that this works and then we'll see.
+00:49 So, here's a good way to start.
+00:51 Thing is, if you rush this too much
+00:52 then you're going to get it cached locally
+00:55 somewhere in the chain along the way
+00:57 and your system, either in your local OS's DNS lookup
+01:02 or maybe in your router, or maybe your ISP
+01:06 but, we'll try.
+01:10 All right, moment of truth, is the DNS ready?
+01:12 Probably, let's give it a shot.
+01:14 Aw, sweet, it's working.
+01:17 Okay, so there's a chance that Anvil is ready.
+01:21 Let's go back over here
+01:24 and let's try going like that.
+01:27 Aw. Now, I'm glad I ran into it.
+01:29 I'm not glad this is here
+01:31 but I'm glad I ran into this.
+01:33 So, what's going on?
+01:35 So if we look here you can see more information
+01:39 about this certificate somewhere
+01:44 maybe, maybe it's not pulling it down.
+01:46 So, here's the deal though
+01:47 let me take a step back.
+01:50 So when we go to things like
+01:53 fresh-zealous-song.anvil.app
+01:56 and we look at the certificate
+01:58 we'll see it's created by Let's Encrypt.
+02:00 Let's Encrypt is awesome.
+02:01 You can automate creating free SSL certificates.
+02:05 And, just by the way
+02:08 we go over here and look at this
+02:10 similar, right, same thing.
+02:12 Over here what we saw was we have this
+02:15 if we look at more information
+02:17 here, View Certificates, that's what I was looking for
+02:20 and see that it's for *.anvil.app.
+02:24 That's why when we go to this other view
+02:29 here, where it's not .anvil.app
+02:33 we're not seeing something nice, like SSL-encrypted
+02:36 what we're instead seeing is that it's not ready.
+02:39 Here's the process.
+02:40 I told you it takes patience but it is easy.
+02:43 The first part is we had to wait on
+02:45 our DNS provider to update
+02:47 so that fitnessd.talkpython.com resolved to something.
+02:52 That was pretty quick.
+02:54 The next thing we have to do is actually wait a little bit
+02:57 for Anvil to run some automated scripts that go out
+03:01 to Let's Encrypt and generate a certificate
+03:04 for that domain for us.

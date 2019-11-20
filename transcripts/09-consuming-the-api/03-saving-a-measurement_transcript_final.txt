@@ -1,0 +1,72 @@
+00:00 All right, the last thing we need to do
+00:01 is save the measurement.
+00:02 We have the API key, we just need to take that data
+00:05 and send it along.
+00:07 Let's actually do a little test here.
+00:09 It resolved, so we'll let this return
+00:11 some kind of thing here.
+00:14 Alright, so we're passing this in.
+00:15 We also need to have probably, we have the API key
+00:19 I think we also need to pass the email as well.
+00:24 The server's going to expect that
+00:25 so we're going to have to pass it.
+00:26 Let's make that happen up here.
+00:32 Not the cleanest look there, but that's okay.
+00:38 I'm going to say return true for the minute
+00:39 but let's figure this out.
+00:40 Okay, so instead of saying this is what we would send
+00:42 to the server, let's actually do this.
+00:44 Now, back to postman and we're going to say the URL
+00:47 is base_url plus and let's figure out what we're doing.
+00:51 You're in add_measurement.
+00:53 That's what this is.
+00:55 And the data is going to be
+00:59 what we're putting here, like this.
+01:04 So we have our API key is going to be API key.
+01:12 We have our email here.
+01:13 And then we have this stuff, it's already kind of good
+01:17 so say data.extend or update rather.
+01:22 Off, how about that?
+01:24 So this will add these two keys, or these two things
+01:28 into our data and I believe our data's already correct.
+01:31 We're going to find out in a minute.
+01:33 And then, just like before, what did we do?
+01:35 We went up here and we went to request data for this one.
+01:44 Actually, yep that should be fine.
+01:46 If the status code's not 200
+01:47 we're going to return false.
+01:50 Otherwise, we're going to return true.
+01:51 And a better way to say that is just
+01:53 return the status code as 200.
+01:55 So let's print out actually server response
+02:00 is resp., just put out the text.
+02:04 That will also be the JSON but we'll just see that.
+02:08 Okay, so do it, let's give it a shot.
+02:09 Go ahead and run it one more time, do that again.
+02:12 Now it's going to ask for a measurement.
+02:14 The resting heart rate is, let's say one
+02:16 not 170 , we'll be hurting.
+02:19 Let's say 73 here and then 175.
+02:23 Hit enter, it's going to go to the server.
+02:25 Let's see what happens.
+02:27 Yes! Success is true!
+02:30 Let's go see if we have a 73 and 175 over in our app tables.
+02:35 It should be right near the top.
+02:37 Perfect, there our 175 and 73 is at the top.
+02:41 Beautiful! It's working, right?
+02:43 So our little API, let's run just one more time.
+02:46 Obviously, the dates are going to be piling up
+02:48 on the same day. But let's do 74 and 181.
+02:55 I was beasting during lunch or something.
+02:58 We're going to hit refresh. 181 and 74.
+03:03 Check that out, we're using our API
+03:05 former external application.
+03:06 Now, yeah this is a Python application also
+03:09 because, hey, I like to write applications in Python
+03:12 and you probably do as well.
+03:14 However, this could be a Javascript app.
+03:16 This could be a Xamarin app.
+03:18 It could be C#, it could be Java, whatever.
+03:22 It doesn't matter, that's what APIs are about.
+03:24 We're talking to the API and we're saving our data there.
+03:27 How cool is that?

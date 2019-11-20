@@ -1,0 +1,79 @@
+00:00 Now that we have our table
+00:01 and we've talked about security a little bit
+00:03 let's go and actually save a record.
+00:06 Now, it turns out this is basically done all
+00:09 but for the database.
+00:11 So remember, we've already set up our account
+00:14 memory and all that kind of stuff.
+00:15 We come over here, we can pick a date.
+00:17 Like, let's pick today
+00:19 let's say I'm 178 pounds today
+00:22 and my resting heart rate is 72.
+00:24 We say add measurement and that sort of worked
+00:27 it says, well, we would have saved
+00:29 what you typed in to the database had we had one.
+00:33 Well now we do
+00:34 and so our job is to go and implement that over here.
+00:37 So remember, that is in the add measurement part.
+00:42 So here's where we say we would've saved it
+00:43 so we're going to write the code that actually does the saving.
+00:47 Now we're going to do this in two parts.
+00:48 We're going to do it directly
+00:50 working with it in these components
+00:52 which is probably not the best way
+00:54 to factor that kind of stuff.
+00:56 And then we're going to split it off
+00:57 kind of like we did with navigation
+00:58 into another client side module
+01:01 we're going to call that data access.
+01:03 That's going to be later
+01:04 let's just work about getting this into our database.
+01:08 Remember, if we look at the database
+01:09 here we have forms, no access, server modules, read write.
+01:13 What is a server module?
+01:15 A server module is like a regular module
+01:18 but instead of running on the client's side in JavaScript
+01:20 it runs literally on Anvil's back-end servers
+01:23 over there on Linux.
+01:24 So what we can do is we can add one of these
+01:28 and let's give it a name.
+01:33 So we're going to call that measurement_service
+01:34 and it gives us a cool little tip here.
+01:37 It says, hey, all you have to do is something like this.
+01:40 If you have a method
+01:41 it has arguments and it returns arguments
+01:43 you can just say it's server callable.
+01:46 Okay, so that's pretty easy.
+01:47 We could actually go and get this to run
+01:50 just so you all see what is up, let's go do that.
+01:53 Let's go, just went in the home details loads.
+01:58 We'll go over here and we'll say anvil.server.
+02:02 When we say call, it takes the function name and the arguments.
+02:05 Watch, this is pretty good integration here.
+02:07 So notice, I just hit enter
+02:09 and it is listing all the server callable methods
+02:12 that is knows about.
+02:13 Say hello, that's pretty cool.
+02:16 And then it knows that we need to give it a name
+02:18 so I'll put my name, Michael
+02:19 and it's going to return.
+02:21 42, so let's print this out.
+02:23 Let's go ahead and just run this real quick
+02:24 to see what's happening.
+02:26 It's running, oh, something happened over here, let's see.
+02:29 Now, check this out.
+02:30 It says hello, Michael, and then it said 42.
+02:34 But, more importantly, look at the colors.
+02:36 The color here, white, means this happened
+02:38 on the client side in JavaScript
+02:41 in the client side Anvil code.
+02:43 The yellow means it ran on the server.
+02:46 How cool is that?
+02:47 So, if you look at this over here
+02:48 if we look at this, it has the white background.
+02:51 And we look at this, it has the yellow background.
+02:52 Just remind you, server, server, server
+02:55 client, client, client.
+02:56 And the output works the same way.
+02:58 So all we had to do is make this little function
+03:00 and we could call it.

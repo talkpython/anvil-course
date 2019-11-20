@@ -1,0 +1,80 @@
+00:00 Here's our app running again
+00:01 and we have our user management working beautifully, right?
+00:04 We can log in, log out, register all that good stuff.
+00:06 However certain things don't make a lot of sense, right?
+00:10 We can't get to the account view over here
+00:12 because it's not shown, but in order to
+00:14 add a measurement, hey we need to log in
+00:17 before we can do that. In order to compare our history
+00:20 against the average person we also need to have us
+00:25 there as the source of what our data is.
+00:27 So these two views really don't make a lot of sense
+00:30 until you're logged in.
+00:32 What we're going to do is we're going to refactor
+00:34 things just a little bit to make sure that
+00:36 before we're allowed to navigate to those views
+00:39 we make sure that there's an account there
+00:40 So that's what we're going to do.
+00:44 So over here, let's go to the bottom
+00:46 and write little function here called
+00:49 require_account. And what this is going to do
+00:52 it's going to run and make sure either an account
+00:55 already exists, or already logged in
+00:57 or make you log in to do that okay?
+01:01 So let's go in here and say user = data_access.the_user()
+01:07 That's what we had before, we'll say
+01:09 if there is a user, return that user, everything is good.
+01:13 But if there's no user we're going to require them to log in.
+01:18 We'll say user = anvil.users.login_with_form(allow_cancel=True)
+01:24 Cancel true, what we had. Now maybe this worked
+01:27 maybe it didn't. So we're going to
+01:31 get this user and we also need to toggle potentially
+01:35 if they did log in and they weren't
+01:36 something like that, the user states
+01:38 so after we get the form like this
+01:42 we'll say form.set_account_state(user) what did we call this over here?
+01:46 Remember we have this set_account_state.
+01:49 And pass in, the user and it toggles the UI
+01:53 and then let's return user. So whoever calls this
+01:56 they can check to see that a user
+01:58 came back, either here or one was logged in.
+02:00 If there's none, then they can decide.
+02:03 Alright, so let's see, how will we
+02:04 use that up here? Let's just get rid of the top navigation.
+02:07 No, this one's fine. If you want to add
+02:10 you're going to need a user, right?
+02:12 So let's do that, let's say this.
+02:17 If user =require account, say if not, go home.
+02:24 So if there's no user, they didn't log in
+02:26 either the user already logged in
+02:28 or we asked them to log in and they didn't
+02:30 then we're just going to say
+02:31 look you can't go here, we're going to take you home
+02:33 and this is probably going to look a lot like that
+02:35 so same thing for compare and same thing for account.
+02:41 You can't go to your account if you're not logged in.
+02:44 Uh- this looks pretty good. Let's quit and run it.
+02:47 Dyr@theanonymous. We try to go here, it should log us in.
+02:52 Great, could log in. Couldn't log in the first time.
+02:58 Boom. We logged in. It let us go through.
+03:01 Next time, we're going to try go to compare
+03:04 but we're already logged in so
+03:06 it should just let us go there.
+03:07 Boom. Same for the account. Same for add now.
+03:11 If we log out, however, and try to go back to compare
+03:14 boom, either we log in and we cancel
+03:17 oh, that didn't work, did it? Aah looks
+03:21 like we're not quite there, I think I
+03:23 might need to return or something like that.
+03:25 So let's go and quickly fix this little bit.
+03:30 How about that? Perfect.
+03:36 Let's test our cancel. So we're going to
+03:39 try to go to add, we're not going to log in
+03:41 it should take us back to home anonymous, cancel, boom.
+03:45 This time let's try to go to add and actually log in.
+03:49 Took us there, super. Same thing
+03:51 should be the case for the others.
+03:52 Right, we go here, everything's fine
+03:55 not, it won't let us go there if we don't log in.
+03:58 Great, so, I think our user interaction
+04:00 is working pretty well. I might even call it done.

@@ -1,0 +1,78 @@
+00:00 The next thing you're going to need to install is Python
+00:02 and it's important that you have Python 3.6 or higher.
+00:06 The primary feature we may end up using from 3.6
+00:09 or higher is f-strings
+00:10 but there are other ones that we could
+00:12 accidentally use as well.
+00:14 Current version is 3.7, at the time of the recording
+00:17 but 3.6 or above should be totally fine.
+00:19 Now you may be thinking
+00:20 "Michael, one of the big benefits of Anvil
+00:23 is I can create these webapps in my browser.
+00:26 I don't have to have an editor
+00:28 or Python locally, or anything like that
+00:30 so why do I need to install Python?"
+00:33 Well, here's the thing, for Anvil, absolutely.
+00:36 It runs up there in the Anvil cloud
+00:39 you don't have to do anything
+00:41 you just work with your editor
+00:42 in your browser and you're golden.
+00:44 However, during this course
+00:46 we're going to look at some
+00:47 of the more advanced features of Anvil
+00:49 one of them being working with the http endpoints
+00:53 that we can create in Anvil.
+00:54 So we're going to write some client-side applications
+00:57 that talk to our server-side Anvil code.
+00:59 For that, you need Python 3.6.
+01:02 If you don't want to do that particular part
+01:03 you can actually skip installing Python
+01:06 but I think Python's good, right?
+01:08 So, you probably do want to follow along
+01:10 but if you absolutely don't
+01:11 and you don't mind skipping that section
+01:13 then you can just stick with your web browser
+01:14 and you'll be golden.
+01:17 Let's assume you do want to have Python 3.6 or above
+01:20 you might ask the question, "Do I have Python?"
+01:22 If you're on MacOS or Linux
+01:24 you can just type python3 -V and it'll tell you the version
+01:28 or it'll tell you there's an error
+01:29 and there's no Python 3.
+01:31 So, assuming you don't get an error
+01:33 you see the version, hopefully you've got the right one
+01:35 if it's out of date, upgrade it.
+01:37 If you don't have it at all, then you need to go install it.
+01:41 If you're on Windows, you type either python -V
+01:46 sometimes you can type python3 -V
+01:49 depending on how you've installed it.
+01:51 Most of the time the three doesn't work
+01:53 but in the newer versions it does.
+01:56 We'll talk about that more in just a second.
+01:58 So, go to your terminal or your command prompt
+01:59 see if you've got Python
+02:01 if you've got 3.6 or above you're good.
+02:04 If you happen to need to install it
+02:05 I recommend you check out the guide
+02:06 from my friends over at Real Python.
+02:08 That's realpython.com/installing-python
+02:11 they talk about how to set it up on Mac
+02:14 on Windows, on Linux, and all those things
+02:16 and one really new thing, if you're on Windows
+02:21 and that Windows is the latest version of Windows 10
+02:24 mid to late 2019, then you can actually
+02:29 go to the Windows Store.
+02:31 Go to the store app, store in your Windows, Windows Store
+02:34 search for Python, you'll find Python 3.7 or 3.8
+02:37 and you can install that.
+02:38 That will give you probably the best
+02:41 Python experience on Windows.
+02:43 That little example of typing python3
+02:45 that will work if you install it this way
+02:47 but not if you install it from python.org for example.
+02:50 So if you're on Windows, this is a really great way.
+02:52 It auto-updates within minor versions
+02:55 and all those kinds of things.
+02:56 Make sure you have Python 3.6 or higher
+02:58 if you want to follow along on the client-side bit
+03:01 of work that we're going to do.

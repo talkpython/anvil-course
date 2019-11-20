@@ -1,0 +1,73 @@
+00:00 With our app refactored nicely
+00:02 another thing I would like to do
+00:03 is stop asking for the email and password.
+00:05 Only ask on first run and then just remember the account.
+00:09 So we've got this authenticate method here that uses those.
+00:12 But we're over in this part
+00:15 where this get auth data down here.
+00:18 We're always asking this.
+00:19 So let's actually when we go through
+00:21 and get this API key here
+00:24 let's actually save that somewhere.
+00:26 So let's go and create what we'll call author
+00:31 something like that. And I'm just going to paste in the code
+00:33 and talk through it because it doesn't really matter.
+00:35 What we're going to do is we're going to have
+00:37 an email and an API key
+00:39 and we're going to ask basically is this set, right?
+00:42 Is this set correctly?
+00:44 And we're going to be able to save those
+00:46 which just puts them into a JSON file
+00:48 and load them, which just reads them out of a JSON file.
+00:52 Okay, so up here we'll say import auth.
+00:57 And we'll say something like this
+00:58 if they're not authorized
+01:02 we're going to go and get this.
+01:05 We'll say we want to save that.
+01:07 Actually, we don't want to save this yet, sorry.
+01:09 Let's go this authenticate.
+01:10 Let's actually change this to pass in email and password.
+01:27 So we'll set the email and password that way.
+01:29 Else, I want to say email was auth.email.
+01:37 The API key equals auth.api_key.
+01:41 All right, so that's not super clean, but that should work.
+01:43 All right, now here, I want to just pass the email
+01:48 that we had from before.
+01:51 Okay, so this should work just like it did before.
+01:54 It should ask us, when we run it
+01:56 for the email and the password, go get the API key.
+01:59 And then we also want to save it here.
+02:02 So we'll say auth.save, auth email and API.
+02:08 But say load_auth, and does that crash?
+02:11 Yeah. If it doesn't exist, it's just going to bail.
+02:14 So this authentication bit, it's kind of clumsy
+02:16 but it'll make the user experience a lot nicer.
+02:19 So let's run this again.
+02:21 The first time, it'll behave exactly the same.
+02:24 Ask for the username and the password.
+02:28 And now, we go over here and maybe wait a second
+02:32 or certainly I can trigger that if I say sync.
+02:35 Now notice there's an account.json
+02:38 with my API key and my email.
+02:42 It looks like it worked.
+02:43 So far as the user's going
+02:45 they probably are not seeing this, right.
+02:47 So they probably don't care.
+02:48 They'll just type in whatever they type.
+02:50 Let's put 178.
+02:54 It prints out the API key, success is true.
+02:57 That's all well and good.
+02:58 But here's the cool part, if we run it again, boom.
+03:00 Enter measurement.
+03:02 Now let's put 79 there and 184.
+03:07 I don't think I've entered that number before.
+03:11 It worked. So nice!  Do it again!
+03:15 80, 185. It goes, awesome!
+03:20 If we go refresh again over here
+03:24 you can see a whole bunch of those.
+03:25 185, 184, all these things.
+03:28 My heart rate's going up because I'm getting excited!
+03:30 This is awesome.
+03:31 So that's a super cool experience for our users.
+03:34 They can just come in here, login once
+03:36 and forever after, the app remembers them.

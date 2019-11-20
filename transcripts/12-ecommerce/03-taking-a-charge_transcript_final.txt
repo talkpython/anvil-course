@@ -1,0 +1,150 @@
+00:00 Well we have our Stripe service
+00:01 and our Stripe account all added.
+00:03 Let's go and try this.
+00:04 Over here what we want to do is to try and to run that code
+00:08 when they click this button
+00:09 so if we double click that it'll generate
+00:11 the little event handler here for us.
+00:13 And let's be naive first here
+00:16 and let's just try to run this code.
+00:18 I'm going to put this import statement up at the top.
+00:21 Just now look at that it's already there.
+00:24 That's interesting. There we go.
+00:27 So we're going to take this payment
+00:29 and we're going to say the charge is this.
+00:32 And I'm going to attempt to print out a charge.
+00:35 What a charge is, is a dictionary
+00:38 and it has all sorts of information in it.
+00:40 What we want to get is this thing called the result
+00:42 and the result is going to be succeeded or something.
+00:47 Something else like fail, declined, whatever.
+00:49 Succeeded is what we're hoping for.
+00:51 And let's change this to dollars.
+00:55 You can use whatever you want.
+00:56 I'm going to use USD.
+00:58 And down here we want to have fitnessed like this.
+01:03 And the description will be
+01:08 Fitness Pro, or something like that.
+01:10 All right and notice this is in cents here.
+01:13 All right so 9.99 times 100.
+01:17 Don't forget you'll be undercharging dramatically.
+01:21 Okay so we're going to need to log in
+01:23 cause we want to get to our account
+01:24 and make it Go Pro.
+01:29 Perfect, we go over to our account.
+01:31 And now we have our Go Pro Button.
+01:33 What happens if we click it?
+01:35 Boom look how awesome that is!
+01:37 Down here on the bottom left Powered by Stripe.
+01:39 Top right Test Mode.
+01:41 And we can put in our email.
+01:43 I don't like this remember me.
+01:46 Forgot how to make it go away.
+01:48 I think is a way to hide it.
+01:52 There certainly is a way to hide it in Stripe checkout.
+01:54 I don't remember the way to hide it in Envo.
+01:56 We'll see what we can find there.
+01:58 Just don't check it.
+02:00 Now we need to attempt to do a credit card charge.
+02:03 Let's do a successful one first.
+02:05 Now here's the the task card we want to use:
+02:08 4-2 straight across the board
+02:10 6 well, 8, 4-2's, right?
+02:12 16 digits, so 4-2-4-2-4-2-4-2-4-2-4-2-4-2.
+02:17 How do I know that?
+02:18 If you search Stripe test credit card numbers
+02:21 there's a huge table of here are successful ones
+02:24 here are ones that are expired
+02:26 and here are ones that are right
+02:28 all these different kinds.
+02:29 And then long as you put a date in the future
+02:32 and anything there, this will work.
+02:34 So let's hit pay 9.99, now
+02:37 let's see what happens.
+02:38 If it works, we should print out the result
+02:40 and it should say succeeded.
+02:43 That checkbox is good. We wait
+02:46 and we're not dealing with the outcome, yet, but
+02:51 here you can see this is all the information we got back.
+02:55 Here's the payment ID. What we got
+02:58 the country, all that stuff is good on.
+03:01 Here's the charge ID.
+03:02 Sorry. And here is the...
+03:06 Yeah, I guess those are the same.
+03:07 And here's the thing we're actually going to test against.
+03:10 All right, we can go back and get this
+03:11 out of our Stripe Account
+03:12 through their reporting and stuff
+03:13 but we need to know
+03:14 did it succeed, or did it not succeed?
+03:19 So let's go down here, and we'll say
+03:21 instead of printing it out, we'll say
+03:23 if charged, remember this is a dictionary
+03:26 so we say, get result.
+03:30 If it equals succeeded
+03:32 let's give ourselves a little room
+03:33 to move that up the screen.
+03:35 If that's the case, we'll print.
+03:37 Yay! You're a Pro.
+03:39 We're going to try this else print.
+03:42 Oops, that failed.
+03:44 Now we could even try to set our label.
+03:46 We have a label error. Like this.
+03:50 It said it's text, to this, to do this.
+03:54 Like that, otherwise, let's make this invisible.
+03:59 Here, we'll just hide it.
+04:05 Wow we already tested the success case.
+04:07 Let me just show you.
+04:08 We got a little more work to do
+04:09 and I'll come back to fix this in a second.
+04:12 So if you go over here
+04:13 and we put in an email address
+04:16 doesn't really matter.
+04:23 Our test card that's going to succeed.
+04:26 Do the charge.
+04:30 Here's our little print, yay we're a pro.
+04:32 But let's go back here again
+04:35 and we decide, you know what
+04:36 we don't want this.
+04:37 We hit cancel or escape.
+04:39 Boom! Exception. Our app has crashed.
+04:43 Wait a minute. That is weird.
+04:45 What happened?
+04:48 So it turns out, that when this fails
+04:50 it doesn't return not succeeded
+04:52 it just throws an exception. Okay.
+04:55 For better or worse, but that's what it does.
+04:57 So we need to put this whole bit in here to a try.
+05:03 except. And now we got to come down here
+05:07 and do some more error handling.
+05:09 I mean just copy some stuff over for you.
+05:12 Because there's...
+05:14 Notice this is the exception we get when it failed.
+05:17 This is when you canceled it.
+05:19 There's other exceptions when it's expired or whatever.
+05:22 So we're going to say if that text
+05:26 is in the string representation
+05:29 we're going to say that the purchase was canceled.
+05:31 Otherwise there's some error we don't understand
+05:33 and we're going to tell people about it.
+05:35 All right, one more time. Go here.
+05:38 It's going to work for when we successfully enter a code
+05:42 but let's hit cancel. Name exception.
+05:46 Spelling's hard, isn't it?
+05:47 Let's go down here.
+05:52 Try again. We hit cancel.
+05:55 Boom, down here, purchase canceled.
+05:57 Instead of our app going boom it crashed
+05:59 we're just going to say, you know what?
+06:00 You didn't want to buy it, apparently.
+06:02 Or we could do nothing
+06:03 like we don't have to show them they canceled it.
+06:05 They canceled it. Right?
+06:07 But what we don't want to happen is to have our app crash.
+06:10 All right, well we're working with Stripe
+06:11 and if this was live
+06:12 we would be taking real money from real people.
+06:15 But are they pro?
+06:16 I refresh this page, or I go away and I come back?
+06:20 No. It still has the Go Pro
+06:22 and our account type is basic, so we need to actually record this in our app.

@@ -1,0 +1,102 @@
+00:00 You have the user interaction side of our little app built
+00:03 but we also need to have the server side
+00:06 with server communication built.
+00:07 So it's going to be in several steps.
+00:08 Actually, let's go up here and add
+00:11 the bit to get the API key separate.
+00:15 I'll pass in the data
+00:17 and I'm going to create this here as well.
+00:20 Let's just do it like this right here.
+00:23 It's going to be a dict
+00:24 and it's going to return an Optional of str
+00:28 if you're familiar with this,
+00:30 the typing thing that says it could be a string
+00:31 or it could be nothing in case it failed.
+00:34 So what we're going to do down here is
+00:35 we're going to get email,
+00:36 it's going to be data.get('email')
+00:39 and same thing for password.
+00:41 Now, it gets interesting.
+00:42 Now we get to the server side bit
+00:44 and maybe we'll refactor this into something nicer,
+00:47 have a server side, piece, and a user interaction piece,
+00:50 I would like that, but let's just keep rolling here for now.
+00:53 So, we're going to use requests.
+00:54 So we have to import requests up at the top.
+00:57 and PyCharm luckily will do that for us
+00:59 And then we need to do a post for a URL.
+01:03 Save the json equals, something like that.
+01:06 Those don't exist yet
+01:08 we'll figure them out in a second.
+01:09 Let's save the response to that
+01:10 and we want to make sure the response succeeded
+01:13 so there's a couple things we could do.
+01:15 We could either just check the status code
+01:17 or we could say resp.raise_for_status
+01:20 if it's not 200 or 201,
+01:22 this would cause an exception.
+01:24 I think though, actually, what I want to do is say
+01:26 something like this:
+01:27 if not resp.status_code == 200
+01:32 return None.
+01:33 There's our optional bit.
+01:35 Otherwise, we want to return resp.json
+01:39 This will parse the body.
+01:41 .get and what do we have?
+01:43 API key I believe is what we're sending over.
+01:47 All right, well that should pretty much do it
+01:49 except we have to come up with the body.
+01:51 So, body is going to be super easy.
+01:55 Email. So that fixes body.
+01:59 If I were able to put an equal sign there,
+02:02 and colon there,
+02:03 and then the other thing is URL is going to be
+02:06 a base URL, remember that
+02:08 plus authorize, I believe is what we called it.
+02:11 Okay, so let's just check this part
+02:15 and we also have to pass the API key in here
+02:18 and just print API key.
+02:20 Let's run this again.
+02:21 See it before getting to the server
+02:23 or actually getting this authentication here.
+02:25 So Type this again. Moment of truth.
+02:29 Well we actually probably should
+02:31 do the authentication right away
+02:32 but whatever.
+02:33 This will still let us test it.
+02:35 See it took a moment
+02:37 and save measurement
+02:39 is not written correctly.
+02:40 Over here it expects
+02:43 not an API key.
+02:45 You know what that means?
+02:46 That means awesome stuff
+02:47 because it went past that line where it printed it out.
+02:50 Look! We got our API key.
+02:52 We logged in! Yes! It worked!
+02:55 I think there's a couple things we need to do.
+02:57 Let's put this at the top here
+03:00 and let's say this is auth_data = get_auth_data().
+03:05 And we'll pass that over like this
+03:07 and then this one, we need to tell it to do less.
+03:10 So let's go here and let's ask like that,
+03:27 There we go. So we can factor getting the email
+03:30 and the password in one step.
+03:32 Getting the other information here,
+03:34 that let's us do the authentication
+03:36 and we're going to say if not api_key
+03:39 and bail out early.
+03:41 So let's do this one more time,
+03:42 just to make sure this is working.
+03:47 All right let me put something bad in here
+03:50 invalid login, exit, all right.
+03:51 Let me put in something correct this time
+03:55 Perfect! We logged in, we're ready.
+03:58 Now we can go enter our heart rate which is 71
+04:02 whatever, something like that.
+04:04 It worked. Looks like our interaction
+04:06 and our little login even printed out later
+04:09 In the flow we printed this out.
+04:11 So I feel like getting the login and getting the user,
+04:14 the API key is actually what we need.
+04:16 This is totally working.

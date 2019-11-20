@@ -1,0 +1,74 @@
+00:00 Now, let's create our first database table.
+00:02 Actually, it's going to be the second
+00:04 but just the first one we create.
+00:05 Remember, we added this user service
+00:08 and it actually added a data table into this database
+00:11 that I'm already talking about.
+00:12 So, we'll probably have data tables over here
+00:15 if you don't you can click plus and add them.
+00:17 You won't see them in that list cause they're already here.
+00:20 They'll show up over here, either you add them
+00:21 or something else like the user table
+00:23 or the user service put them there.
+00:25 So if we click, we'll now see we actually have a table.
+00:29 Here's my email from when I registered
+00:30 this is the email column.
+00:32 Whether or not this account is enabled
+00:33 whether or not it's pro, remember we set
+00:35 that up with user table.
+00:37 And then some other stuff about when I logged in and so on.
+00:40 Let's go and create another one.
+00:41 Let's call this measurements, like so.
+00:46 Now, remember, our web application
+00:48 the whole purpose is we record measurements over time
+00:52 and then we can graph these
+00:53 like how tall are you, and what is your resting heart rate
+00:55 and things like that.
+00:58 The most important thing about these measurements is
+01:00 they are tied to a particular user.
+01:03 In, quote, real databases, in relational databases
+01:06 you work with directly, you have to set up
+01:08 foreign key relationships between several things.
+01:11 Watch how easy this is over here.
+01:12 So we can just say we want to new column
+01:14 and this is going to link to a single row
+01:17 from the users table.
+01:18 That's it, and we'll just call this user.
+01:22 So this is actually going to be
+01:23 a link over to this table.
+01:26 So some entry here, only one we have now
+01:28 but they'll be many entries in theory, will be
+01:31 related over here through a foreign key.
+01:34 Now, let's put in some more data.
+01:36 We want to record the date when this happened
+01:39 and we're going to do it by just the date
+01:41 not day, hour, minute, and so on
+01:43 and we just want to record it once a day.
+01:47 So we'll call that record date.
+01:49 Then we want to know when this individual record was
+01:52 inserted, so this is when the measurement was taken.
+01:56 This was actually when in the app it was saved
+01:59 so we'll go ahead and say that here.
+02:02 And then we'll record a couple of things
+02:03 weight in pounds, which is going to be a number
+02:07 and let's have one more number here, the resting heart rate.
+02:13 Those are the main things that we're going to compare here.
+02:16 All right, there we have it.
+02:17 We've defined a database table.
+02:19 Pretty easy, huh?
+02:20 And you'll see that working with it is also super easy.
+02:24 Over here it shows us that
+02:25 it's app_tables.measurements
+02:27 when we work with it within Python.
+02:30 Also, notice the permissions.
+02:31 We cannot directly interact with it from the forms
+02:35 we have to go through what's called a server module.
+02:37 So that's going to be interesting.
+02:38 That's a security mechanism to make sure that
+02:40 you cannot get directly to the web applications.
+02:45 The only thing talk in the database, not say
+02:47 arbitrary Javascript running in the browser
+02:49 talking directly to the database.
+02:52 This is no big deal, it's easy to set up
+02:53 but you do need to be aware of the permissions
+02:55 and what that can mean.

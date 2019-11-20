@@ -1,0 +1,158 @@
+00:00 The next step to complete are compare yourself
+00:02 to the average person of your height and gender
+00:05 is to load up a bunch of averages.
+00:08 You know, if you are this height and this gender
+00:10 here are your average heart rates
+00:12 and average weights and so on.
+00:15 I've already dropped in an app here.
+00:17 It's very similar to the Fitnessd client
+00:20 at least the terminal command line version of it.
+00:23 So this is in the GitHub Repo for you to work with.
+00:26 But let's go and have a quick look.
+00:28 I guess we could clean up some things here.
+00:31 So what it's going to do is it's going to go to the service
+00:33 and see if the averages exist and not re-upload them
+00:37 because then we'd end up with weird duplicates.
+00:39 And then it's going to load some CSV data.
+00:41 So if you look over here, I've just going to the internet
+00:43 and found some probably highly inaccurate
+00:46 or at least maybe tilted data around gender and height
+00:51 and heart rates and things like this.
+00:54 Oh, it just says height and weight.
+00:55 They're just height and weight over here.
+00:57 And then we're going to take
+00:59 we have 10000 rows of this
+01:01 and then we're going to process it
+01:02 and come up with averages.
+01:03 If you're 71 point something inches tall
+01:07 then this is the average weight of these measurements.
+01:10 If you're 72, and so on.
+01:12 And then we're going to upload those really simply here.
+01:15 It's using the same authentication mechanism as before.
+01:19 Here's where it's computing the averages.
+01:20 And then we just did to not upload some when we're testing.
+01:24 This is kind of useless line now.
+01:26 We're going to go and upload those to the service
+01:29 and what we've done is we've added another load average
+01:34 function over an .
+01:35 So let's look at that real quick.
+01:38 So down here, we have a data loader service
+01:41 and I've moved the authentication step
+01:43 that we wrote before from management
+01:45 sorry from the API, over into the separate modules
+01:47 so that data loader in API can use it.
+01:50 And we're just going to upload a bunch of weights
+01:53 heights, genders and heart rate information and save that
+01:56 as an average, as I've described before.
+01:59 There won't be too many of them.
+02:00 Once we average out, it's like 40-some, 41
+02:03 something like this.
+02:04 We also want to know are there any averages.
+02:08 Right, so what you're going to do is we're actually on that
+02:11 compare page only show the compare results
+02:14 if I even attempt to continue if there are some averages
+02:18 uploaded, okay.
+02:19 So if we run it now, then we go to compare
+02:23 it says, sorry, you don't have any information about
+02:25 a male who's five feet 11.
+02:28 Actually I've done a little bit more work
+02:30 to work with these API end points here
+02:34 in this compare 'cause not a lot of sense for you
+02:37 watching me do this the whole time.
+02:38 So let's just a quick look.
+02:41 So it comes in and it's going to ask for
+02:44 your averages and let's see what else does it
+02:47 Use this count thing.
+02:48 So what it's going to do is it's going to ask for your average.
+02:51 This is a function on the server side that says
+02:54 I'm this tall, I'm this gender.
+02:56 Do you have an average for me
+02:57 'cause maybe, you know like I said
+02:58 we're just randomly grabbing a bunch of measurements
+03:00 and turning those into averages.
+03:02 So we might not have one for you
+03:04 which would be unfortunate
+03:05 and you might, may or may not have measurements
+03:07 so if you have measurements in an average
+03:09 then we're going to build this out here.
+03:13 And we're going to hide and show these cards.
+03:15 I also added two little quick functions
+03:17 the computer a foot statement
+03:20 so, like, five feet 11 inches out of just pure inches
+03:24 71 inches for example.
+03:25 And then computing the sign
+03:27 so we want to show you're five pounds heavier
+03:31 or five pounds lighter than the average person
+03:33 of your height.
+03:35 And I just want to reiterate this data is super sketchy
+03:38 and please don't take any of this as, like, accurate
+03:41 like look at real medical data and stuff
+03:43 if you care about this.
+03:44 This is just a silly example and we just need some data
+03:46 that kind of sort of works.
+03:47 That's where that is.
+03:49 We're going to run this application here to upload it
+03:53 all right, and we've already gone through
+03:56 building this application before
+03:57 so we don't need to do it again, right.
+03:59 We basically did this with our interactive
+04:02 our fake mobile app or whatever.
+04:05 Okay, so I'm just going to run this and we'll see what we get.
+04:08 So it's running.
+04:09 It found no data on the server, so it's going to load it.
+04:12 It loaded 10000 entries.
+04:15 It then computed 41 averages
+04:18 by averaging that data
+04:20 and then it is uploading stuff
+04:22 so we'll give that a second.
+04:24 We don't have any data on heart rate
+04:26 so I just said, well, the rate is 80.
+04:28 I don't even know if that's good or not
+04:32 and it probably varies from male to female
+04:33 but it's 80.
+04:34 It doesn't really mean anything. We just need a number there.
+04:35 All that data is uploaded.
+04:36 If we go over here and we go back to our data tables
+04:41 we should have data in our averages table.
+04:45 Here you go!
+04:46 We have a bunch of stuff on males
+04:47 a bunch of stuff on females
+04:48 and their heights and then their weights and so on.
+04:51 Again, super sketchy data
+04:52 but here it is.
+04:54 So for the grand finale
+04:55 let's run this and we'll see over here
+05:00 in this compare, it's going to go and do a filter
+05:04 for this height, this gender, and so on.
+05:07 You get an average.
+05:08 It's going to take your latest measurement
+05:10 and it is going to...
+05:12 Here's your latest measurement.
+05:14 And it's going to set the average as far as it's concerned
+05:17 average weight, and it's going to compute your weight
+05:18 and the change relative to the average
+05:21 and it'll put a plus or minus and then the value.
+05:24 So let's run that see what we get.
+05:25 All right, let's compare. Compare me. Alright.
+05:29 The average person my size, their weight is 201.9.
+05:32 Their heart rate, surprise, is 80 beats per minute.
+05:35 I weigh, according to my last measurement, 181
+05:39 which is 21 pounds less than average
+05:42 and my heart rate was 74, which is 6 beats per minute
+05:46 less than average.
+05:47 Again, contrived data, semi-contrived.
+05:50 I did get it from somewhere but I don't know
+05:52 how representative it is.
+05:53 Anyway, here's our cool little compare ourself.
+05:56 And we were able to use our API and some scripts
+05:59 to load up that data and to compute that data.
+06:01 And I think that's a really cool aspect of it as well.
+06:04 This should be it for our UI.
+06:06 We've got home. We've got add.
+06:10 We've got compare. We've got our account.
+06:13 Now, we haven't the go_pro part
+06:14 but that's going to be the e-commerce stuff.
+06:16 And then if we log out, finally we have
+06:19 this unauthenticated home page
+06:21 and then you try to go anywhere, it just says login.
+06:24 Okay, that's it. The UI for our app is done.

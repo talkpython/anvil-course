@@ -1,0 +1,18 @@
+00:00 We're going to need a proper editor
+00:01 to write Python code when we're working locally.
+00:04 Again, it doesn't make any sense
+00:06 or it's not really a feature of Anvil to use a local
+00:09 editor against our remote Anvil code.
+00:12 That's what anvil.works and the whole Editor Online is there
+00:16 and what that's all about, but again
+00:18 we're going to work on some local client-side applications
+00:21 that talk to our server code through APIs that we're
+00:23 going to create during this course.
+00:25 For that, we're going to need an editor
+00:27 so I recommend that you check out PyCharm
+00:28 that's my favorite, that's what I'm going to be using.
+00:31 Close second would be VS Code with the Python plugin.
+00:35 Those are both really good options.
+00:36 We're going to use PyCharm.
+00:37 You should be able to use the Community Edition
+00:39 the free edition of PyCharm for this course.

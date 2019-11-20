@@ -1,0 +1,98 @@
+00:00 So final thing here
+00:01 is to setup our graph with some data.
+00:04 So let's all load data or something like that.
+00:07 So down here we're going to write another function
+00:10 kind of like this one, like that.
+00:13 So, we're going to call this function
+00:14 and it's going to load up all the data.
+00:17 So first of all I'll go with measurements
+00:19 is data_access.my_measurements.
+00:23 Now, notice we're calling that here to do a little test
+00:26 and we're calling it again down here.
+00:28 If this was actually going every time to the server
+00:30 this would be scary and slow
+00:33 but remember we're caching it
+00:34 it's going to go super fast.
+00:36 It doesn't matter if we call it or pass it but
+00:38 I'll just call it here.
+00:39 So we can say, if not measurements
+00:41 return cause there's nothing to do.
+00:43 We don't need to add data if we have no data to add.
+00:47 So now we're going to have three arrays but have
+00:50 x for the x-axis, h for the heart rate
+00:55 and w for the weight.
+00:58 Now I don't like really short variable names most the time.
+01:00 Like I wouldn't use m, I would use measurements
+01:02 and I don't use p, I use plot weight history and so on.
+01:06 But when doing math, you know this seems okay.
+01:09 So what we're going to do is we're going to loop over
+01:11 all of our measurements and we're going to get
+01:13 what measurement number is that like
+01:15 measurement one, two, three. We're not actually trying to
+01:18 if we skip some days we're not putting gaps in the graph
+01:21 we're just going to take it easy.
+01:23 You can make this nicer if you want.
+01:25 But what we're going to do is we're going to get the index
+01:28 and we're going to get the measurement itself
+01:31 in enumerate measurements like this.
+01:37 That's cool, let's just do a print idx, m real quick
+01:40 just to see what happens when we run that.
+01:43 You can see zero, one, two, three and then
+01:46 a row, a row, a row, a row.
+01:48 All right so those are the four measurements
+01:49 and the numbers.
+01:50 Perfect, so now what we need to do
+01:52 is enter the x list.
+01:55 We're going to say idx plus one.
+01:57 So that's one, two, three, four just because
+01:59 that's the way people think.
+02:01 For the height we're going to append measurement
+02:04 the value that we have oh not height, sorry.
+02:07 The heart is a resting heart rate.
+02:11 That's what we called that I believe.
+02:13 And then for the weight, we're going to say
+02:15 append m of weight in pounds.
+02:20 Alright, so that puts the data in to these three lists.
+02:23 The next thing we got to do is just plot them in plotly.
+02:26 So, so when I set the data here to be, a list.
+02:31 In here we're going to create some graph objects
+02:32 and when we did the drag and drop to put the plot here
+02:35 it added some imports. import plotly.graph_objs as go
+02:41 Okay? So here we're going to have a couple of things.
+02:43 You see there's tons of stuff to work with.
+02:46 We're going to have a scatter plot.
+02:48 And in here we'll say x = x
+02:50 not super surprising there.
+02:53 y = h, for the heart rate.
+02:56 The name is going to be, heart rate.
+03:00 Alright, so that's one of the items in here.
+03:02 Here there is one that has a bar, bar chart.
+03:05 Again, x is still x.
+03:07 These are the same days.
+03:09 Y is going to be the weight.
+03:11 And the name is going to be
+03:13 weight in pounds. And this might do it.
+03:17 We've got our data
+03:18 we've converted it into these three arrays
+03:21 or lists that we can send over in.
+03:22 Let's just run and see what happens.
+03:25 There it is.
+03:26 Well, I haven't entered super different data.
+03:28 So you can't tell so much.
+03:30 But if I hover over it you see 181, 180, 179, 177
+03:34 let's add one more.
+03:36 Let's add one for today.
+03:38 Let's say the weight is 165.
+03:42 Who knows, maybe I was like super sick.
+03:44 So whatever, I lost a bunch of weight.
+03:47 Maybe I'm getting ready for some kind of wrestling.
+03:49 I had to lose a bunch of weight in a few days.
+03:52 Notice you here you can see there that did a drop off
+03:54 and the heart rate went up. How cool is that?
+03:56 Look how interactive this is.
+03:58 Day three, four, five.
+04:00 You can interact with all the different elements.
+04:01 You got your heart rate, your weight.
+04:03 Yeah, Plotly is pretty cool.
+04:05 And it's super easy to use from anvil.
+04:08 In fact, I would say this part of our app is basically done.

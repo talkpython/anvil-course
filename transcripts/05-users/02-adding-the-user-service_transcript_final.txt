@@ -1,0 +1,48 @@
+00:00 Well, here we are in our web app
+00:02 and we want to add some stuff to say register or login.
+00:06 Now, we've already added these event handlers
+00:09 so if somebody clicks login here, or they click register
+00:12 or logout, we already have the placeholders
+00:15 but we need to fill our promise here to do actually
+00:18 log them in, and as you just saw
+00:21 this all starts with these services.
+00:22 There's actually a ton of services we could have.
+00:24 Data tables, users, emails, secrets, so on.
+00:29 We're going to start in this chapter with users.
+00:32 Let's see how we might let them log in.
+00:33 Let's say, email and password, and I guess
+00:35 we could go ahead and checkoff Google as well, if we want.
+00:38 We can allow visitors to register for the site
+00:41 we could enforce secure passwords
+00:44 can allow them to remember, lets say, up to a year, right?
+00:49 That's pretty good.
+00:50 We don't need to confirm the email addresses
+00:52 although that's a possibility here, right
+00:54 so we're going to also say the accounts can be used right away.
+00:58 So, that looks like it's all set up here
+01:00 and everything's good to go.
+01:02 You can see down here, a couple of the things
+01:04 that we can configure in terms of
+01:06 what we're going to store about the users.
+01:09 We'll talk more about this interface
+01:10 when we get to databases, but you can add other information
+01:13 like we could have a boolean column, or something like that
+01:17 about whether a user is Pro.
+01:21 Okay, true or false?
+01:22 Now, later we're going to let people buy a Pro subscription
+01:26 to our account, so let's go ahead and say that our users
+01:28 are going to have this is Pro, and you can adjust this later.
+01:31 You're not committed to what you're doin' right here.
+01:33 Alright, so it looks like our user service is set up
+01:36 and notice also that we have the Google API
+01:38 and data table service added.
+01:41 Data tables because that's where our user data is going to go
+01:44 this is actually part of the data table service
+01:46 and then when we checked the sign in with Google
+01:49 to make that work, we probably have to go and configure our
+01:52 API over here, right, things like this.
+01:55 We're not going to do that for now, just leave it alone, right?
+01:58 We'll just login with username and password.
+02:00 Okay, it looks like our user service is set up, and in fact
+02:04 all we have to start doing is calling from our code
+02:07 and we have full user support.

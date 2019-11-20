@@ -1,0 +1,32 @@
+00:00 Let's just quickly review how we charged a credit card
+00:02 with Stripe Checkout inside Anvil.
+00:05 We had a button we clicked called Go Pro
+00:08 or something like that
+00:10 and we're going to go to Stripe Checkout and call charge.
+00:13 We pass the amount in cents
+00:15 and we're passing United States dollars, so $9.99.
+00:20 We set the title of the thing that came up
+00:22 that we're buying to be Fitnessd
+00:24 and then the description to be a pro account at Fitnessd.
+00:27 And, then we check if this dictionary that we get back
+00:30 that we're calling charge has a result.
+00:32 And, if the result is called succeeded
+00:34 then we flip the user to pro in the database.
+00:39 Here, we're actually just resetting the UI
+00:42 in ours we just reloaded it
+00:43 which triggered the UI to be reset.
+00:46 Then, we said, well maybe else we'll try
+00:47 to log a failed charge.
+00:49 I don't know, but in reality most of the time
+00:52 this is an exception, so we have to say try and then except
+00:55 and then we check for either a cancellation or a true error.
+00:58 And, that's it.
+00:59 As long as you have a Stripe account
+01:00 you can start taking money.
+01:01 Stripe is great.
+01:03 They send you money. They didn't hang on to it for a long time.
+01:06 There's about a two-day latency from the time
+01:08 that the money piles up in your account
+01:10 until it is received in your bank.
+01:12 Really nice, modern credit card processors.
+01:15 Great option here to integrate with your apps.

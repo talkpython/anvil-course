@@ -1,0 +1,58 @@
+00:00 When we run our app it's working
+00:03 but notice the title up here is just the title of the app
+00:06 and that may be okay
+00:07 but, in this example, I would like to see
+00:10 right now I'm on the compare page
+00:11 or now I'm on the add page and so on
+00:13 so let's go and update that.
+00:16 So let's go down here for each one of these
+00:18 and we're going to add a separate function.
+00:21 Now, I could just directly work with the form
+00:23 but again, I like have this nice and broken out
+00:25 so I have def set_title
+00:28 and what we're going to do is we're going to say
+00:29 form = get_form() and our form
+00:32 if we go look at it has a self.label_title.
+00:37 So, labeled titles is what we want to work with
+00:40 and we'll say label_title, that's the control
+00:43 and then we want to say the text is equal to, well what?
+00:47 We could just say text, right?
+00:48 But what we actually want to do is have the base title
+00:51 plus this.
+00:53 So, let's go back to our home form and say
+00:56 something to the effect of
+00:58 self.base_title equals this at start up
+01:01 that way we let people design it in the designer
+01:04 we have access to this here.
+01:06 So if we change up the designer we don't have to
+01:08 go and change code as well.
+01:09 So what we will do is say base_title = form.base_title.
+01:18 We'll say if there's some text passed in
+01:22 we'll do base title.
+01:29 We just want to set it to base_title.
+01:33 Like this. Okay, so this, I think this will do it.
+01:36 Now we just have to call set_title.
+01:37 So here we can say set_title("Add Measurement").
+01:45 Just say, for this one let's set it to
+01:47 just nothing, like that.
+01:52 Compare. We'll have your account like that.
+02:00 Now, let's see if this is going to work.
+02:03 Form is not find. Where do we do this?
+02:06 Yes, it's with the self.
+02:11 Okay, notice nothing appeared. We click on add.
+02:14 Add measurement, compare, add home goes back to nothing
+02:19 remember that the colon is gone.
+02:21 Actually I would like to have a dash I think, but I will
+02:23 put that in a sec.
+02:24 So over here, you see how cool that is?
+02:26 Now it's super easy for us to give a little bit better
+02:29 idea to the user on where they are.
+02:32 'Cause we have this all centralized into one
+02:35 beautiful place.
+02:36 Make one change right there.
+02:38 Every time it changes, every time that we navigate
+02:40 somewhere it's going to take that change.
+02:42 That's why we refactored it.
+02:44 So, if we go here we're going to add, there's our dash
+02:47 there's our compare, there's our count, there's our nothing.
+02:51 All right, looks like we're setting our title, great.

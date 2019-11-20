@@ -1,0 +1,32 @@
+00:00 At the end of this course
+00:01 I'm going to provide everything that I've created here to you.
+00:05 Now that's going to take two basic shapes.
+00:08 A lot of that is going to be in our GitHub repository
+00:11 for the course over at github.com/talkpython/anvil-course.
+00:16 So go over here, star this, and fork it.
+00:18 Make sure you have access to it.
+00:20 What I'm going to do is I'm going to export the code from Anvil
+00:23 and drop it in here.
+00:24 That will let you look at the Python files
+00:26 and actually see exactly the code
+00:28 and you can copy little bits out of there into your editor.
+00:31 Another thing I'll do is I'll put a link in here
+00:33 so that you can clone a live version
+00:36 make a copy of a live version
+00:38 of the Anvil app so that you can just, inside Anvil
+00:41 say make a copy and start editing this on my account.
+00:45 That's probably the best way if you want to take the code
+00:47 we create in the course and run it.
+00:49 It will clone it within Anvil and then play with it.
+00:52 But if you want to take the source files
+00:55 and maybe copy little bits in here and there
+00:57 over into your app that might be slightly different
+01:00 you would probably want to get the source code from GitHub.
+01:02 Either way, you want to go here
+01:03 this is going to have the link to make a copy
+01:05 as well as the original source files
+01:07 that we create during the course.
+01:08 I'm going to try to provide as much as possible
+01:11 of what we create during the course for you.
+01:13 Also we talked about creating the client-side applications.
+01:16 All that code will be here.

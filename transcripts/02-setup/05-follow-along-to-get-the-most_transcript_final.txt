@@ -1,0 +1,36 @@
+00:00 Think back when you were a kid.
+00:01 Maybe you were fans of Legos
+00:03 and you enjoyed building things
+00:05 and you'd see a big box of Legos like this
+00:07 and you're like, this is amazing.
+00:08 Anvil's kind of like that.
+00:09 We're going to learn about all these different pieces
+00:11 that we can click together and build amazing stuff.
+00:14 And, learning about each little piece in isolation
+00:17 it's kind of cool.
+00:18 Like, that little dragon green thing in the middle
+00:20 that's cool, we could check that out.
+00:22 But, you know what's cooler?
+00:23 Building things. Actually building 'em.
+00:26 So, here's what I encourage you to do.
+00:28 I encourage you to follow along in this course.
+00:30 We're going to build a fitness tracker app
+00:32 and we'll talk more about that in just a minute.
+00:34 I want you to think of an app that is similar
+00:37 maybe it's exactly the same, maybe it's just
+00:39 very, very similar in the type of interaction
+00:43 and the data it collects, and so on, and try to build that.
+00:46 After each chapter, stop the chapter, go try to build it.
+00:50 Either recreate what we actually created in the videos
+00:52 or, like I said, something similar.
+00:54 You know, we're doing fitness tracking
+00:56 maybe you're doing calorie tracking, I don't know.
+00:58 Something super similar, but not identical, right.
+01:01 Follow along and build it as we go.
+01:04 You'll get way more out of this course
+01:06 and you'll definitely learn it a lot better.
+01:08 Course, if you want to just sit back
+01:09 let it wash over you, and just watch the course
+01:12 there's no requirement to follow along if you don't want.
+01:15 But, like I said, I think you'll get more fun
+01:17 and more value out of it that way.

@@ -1,0 +1,39 @@
+00:00 Now, I don't know if you picked it up
+00:01 in my voice, but I was cringing a little bit
+00:04 while writing this because it's like
+00:05 ugh, it's really just piling it all together
+00:08 and it's not writing really great apps.
+00:10 So, let's first, quickly save this to Github.
+00:13 Let's save it so you can go back
+00:14 and sort of view the history.
+00:16 First version of the client, save that.
+00:19 And now we're going to rearrange stuff.
+00:21 So, what I want to do is take the stuff
+00:22 that works with the API, like
+00:26 this save measurement or this authorize one
+00:30 which one, authenticate one, I want to
+00:32 move those somewhere else, so let's go
+00:34 and create a new file, python file
+00:36 called svc, rob a few of these things over there
+00:40 let's go like that, and, I go that
+00:49 and we also need those things, the top
+00:55 whoo, okay, so let's just look through this
+00:57 and see it's hanging together, one up a little.
+01:00 Yeah, so we have our authenticate and
+01:02 we have our save measurement over here
+01:04 and those are the things that we need.
+01:06 Now, this, we want to say svc.
+01:08 And PyCharm will happily import that up at the top there.
+01:13 And then we come down here, say svc.save_measurement
+01:16 and we say dot, right, there's our
+01:18 server bits that we're going to do.
+01:21 And create now, if we clean this up
+01:22 I think that's looking really good
+01:25 just run it, make sure it still saves stuff.
+01:33 Yep, it still saves things, great.
+01:35 So, we haven't broken it, we've just move it around
+01:37 so, if you want to work with the server stuff
+01:39 you go over simply here, and you look at it
+01:41 and you're like, yeah, here's my server stuff.
+01:43 Well, that cleans it up, that moves our server side
+01:45 code to one place and our user interaction code to another.

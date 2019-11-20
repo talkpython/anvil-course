@@ -1,0 +1,194 @@
+00:00 Well, here's our AddMeasurementComponent
+00:02 it's not super compelling is it?
+00:04 It has just like the words, Add Measurement
+00:06 what we want to do is build up
+00:08 something cool and interactive.
+00:09 Let me just show you over here
+00:12 on the previously published version
+00:14 health.python.com
+00:16 we'll probably have fitnessd at the end
+00:18 but this is the previous one.
+00:20 So let me go and login.
+00:26 And here's what I want this form to look like.
+00:29 This is nice, right?
+00:30 We've got this cool little top bar
+00:32 we've got this called out card thing
+00:35 that shows us what you can enter
+00:36 we try to enter something that's invalid
+00:39 We're going to end up with the way that's required
+00:40 we have a numerical Up-down
+00:42 we have a little placeholder text
+00:45 we're going to collect the weight and pounds
+00:47 and the resting heart rate and beats per minute
+00:50 each day, theoretically.
+00:51 So let's say I'm on 70.
+00:54 Try to say this required and so on
+00:56 and eventually if I add them all in there
+00:58 we're going to save that in the database and move on
+01:01 and show you like all your history of all your measurements
+01:04 including this new one you added.
+01:06 Okay, so we've got this cool error-handling here, and so on.
+01:10 So this is what I want to build
+01:12 at a nice little calendar and so on.
+01:14 So how are we going to do this with Anvil?
+01:17 Well, we're doing several parts.
+01:19 First, we're just going to spec out the UI
+01:21 then we're going to add the events
+01:22 and then add the validation.
+01:23 So we can make this a lot better by going down here
+01:26 and setting some properties on it.
+01:27 So Add Measurement, that's good.
+01:30 But let's go and set some more values.
+01:32 I wanted to go in the center
+01:34 I want the font size to be
+01:37 it's probably a little big about 28 pixels
+01:42 Put 28. It's always pixels.
+01:44 And then I want to set an icon, Member on the left
+01:47 we had the scale, and we wanted to add this in the link.
+01:51 And so we also want that topic over here
+01:53 and this all we want to see that appear over there.
+01:57 The next one we want, it's that little card.
+01:59 So we're going to Come back over here
+02:00 and there's all these different components
+02:02 that we can drop in and even more if you expand them out.
+02:06 So what we want is a card
+02:07 it's going to go below
+02:09 and it takes up all the space
+02:11 has this little shadow
+02:12 it's a slightly different background color.
+02:14 And then here we want to have a couple of labels.
+02:17 So one label it works a lot easier on a larger monitor
+02:21 just going to be label, title, date
+02:24 something like that.
+02:27 That's just kind of date
+02:28 like so, kind of boring
+02:30 but we're going to have more stuff like it
+02:32 so let's make a copy, can drag that
+02:36 thing in here
+02:39 in addition to the one that says date
+02:40 we want that's a weight in pounds.
+02:44 Already folks who are using the metric system
+02:46 I love it as well but it got to pick something
+02:48 so I'm just going to go with pounds, speed, title and pounds
+02:53 something like that. Another one like this.
+02:57 So we put it right, see the little blue drag it drop it
+03:02 indicator, so this is going to be
+03:03 rate for resting and heart rate.
+03:07 And here what are we going to put?
+03:09 Resting and heart rate, beats per minute
+03:14 something like that. That's about as much space we have to work with.
+03:17 So those are the labels that we saw.
+03:19 The other thing we want is to have people input value.
+03:22 So could get a single line text box
+03:24 or a multi line text area.
+03:27 We going to add Text Box.
+03:28 Now, could rag it here
+03:29 but what I want is to be next to this.
+03:31 So check this out.
+03:32 So I come over here and put it to the right
+03:35 I drop it in the right place
+03:37 and even move this little purple thing
+03:39 to make more room or less room you know
+03:41 so it's like 75%, text input
+03:44 25% label and so on.
+03:46 And let's connect here and give them some values.
+03:48 So this going to be text box.
+03:51 Not date, let's put this down one.
+03:54 Let's put it there. Text Box, weight
+04:00 and then we can give it a little placeholder right here.
+04:04 This will just be, weight like that.
+04:07 Then we have type equals text number, email
+04:10 but text is actually what we want
+04:11 actually numbers is what we want, isn't it?
+04:13 So let's go set this to number
+04:16 and I'll make another one of those
+04:18 and we'll put it over here for the heartbeat.
+04:30 Okay, I think we're doing pretty well.
+04:31 We've got our weight set
+04:33 we've got our heart rate set
+04:34 and then I actually wanted a calendar for this first one.
+04:38 So let's put that right here
+04:42 and let's go set it's placeholder value too.
+04:44 So not a date picker.
+04:45 This is going to be, p of measurement or something like that.
+04:51 Right, that looks pretty good.
+04:52 Let's see how we're doing.
+04:53 We'll run it on auto load
+04:55 this is component for add measurement
+04:56 We click here, We got our date
+04:58 or we click on that date
+05:00 or the Weight, set it to some values
+05:02 not negative to this at 170
+05:05 or whatever, hopes that the resting heart rates at 60
+05:08 whatever happens to be
+05:10 things like that.
+05:11 So it looks like it's kind of working right?
+05:13 I think that's a pretty good looking UI.
+05:15 I got a few more things we need in our UI here
+05:18 we're going to need a button
+05:19 so let's put the button
+05:22 as Outside, let's say Inside-Outside.
+05:24 So your UI from when you're building it.
+05:26 So this is going to be a Save button
+05:29 which is going to be the Name.
+05:30 But down here, it's going to be, Add Measurement
+05:37 and again, let's put a little
+05:39 cool little plus sign or something like that here.
+05:42 so you want to add it
+05:43 and I kind of like the colored inputs here.
+05:46 So we can come down and set the role
+05:48 to either primary or secondary for different colors.
+05:51 I'll go with primary for now
+05:54 and then finally, let's align that to the right
+05:57 All right again, how we doing?
+05:59 Hoo, it's looking pretty good.
+06:01 I can click it.
+06:02 And the last thing though is what if
+06:04 I don't put weight here and I click it?
+06:07 Right, you saw that there's this nice error message.
+06:10 That's the last thing that we need to add here
+06:11 so let's go to in here and put this error message like
+06:13 even right in the way here so people know.
+06:17 And let's make it super obvious.
+06:19 Let's go, error message, like that.
+06:22 For the name, Let's go
+06:26 Error message, so we can see it more clearly.
+06:29 Let's put it in the center make it bold
+06:33 go down to the appearance
+06:34 here we can set the foreground color
+06:39 red's so harsh R-G-B, like that, make it red.
+06:44 And then the last thing we want to do
+06:46 is make it not visible by default.
+06:49 Someone will run it by default
+06:51 it's going to completely vanish from the UI
+06:52 but if we click this
+06:54 and something goes wrong, We're going to set the visibility, True
+06:57 Set the Error message to what it is
+07:00 Right, well, I think that pretty much does it for design
+07:03 in the UI of our AddMeasurementComponent.
+07:05 How cool is that!
+07:06 like, you notice we can grab these
+07:08 we can lay them out really nicely
+07:10 put them side by side
+07:11 we can even change the divider here
+07:14 lot of cool stuff for that.
+07:15 And for each one we have different class properties.
+07:19 We also have different events
+07:21 that we can click on down here and add
+07:23 we don't really need to do any of those for these.
+07:25 It's not like changing the date drive
+07:26 some other part of the UI that we need to work with.
+07:29 Right, but we will need an event for this one
+07:31 which we'll get to.
+07:33 That's the drag and drop way of building these forums.
+07:35 And you can see it's really, really easy.
+07:38 How much HTML Do we need to know?
+07:41 None. How much CSS? Well, unless you count
+07:44 knowing that, that hex code is red
+07:49 we really didn't need to know very much at all.
+07:50 Not that I'm saying knowing CSS is bad
+07:53 knowing HTML is bad, I'm a web developer.
+07:55 I love those things.
+07:56 But it's certainly cool
+07:57 that we can build this great looking UI
+07:59 without having to know it.

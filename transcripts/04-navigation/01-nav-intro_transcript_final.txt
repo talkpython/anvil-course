@@ -1,0 +1,61 @@
+00:00 It's time to expand our application.
+00:02 So far, we've only had the Add Measurement control.
+00:05 And yeah, it's doing some cool stuff.
+00:07 It does validation and it processes the request
+00:08 and things like that.
+00:10 But, there are many aspects for application
+00:12 and so we've already created these different components.
+00:15 The CompareComponent and the home details
+00:18 the AddMeasurementComponent, and all those things.
+00:21 But we need to talk about navigating between them.
+00:24 With normal web applications
+00:26 standard server side driven web applications
+00:28 or even static ones the way navigation happens
+00:31 is we navigate by going to different URLs
+00:34 and completely reloading the web page.
+00:37 Anvil, on the other hand, is different.
+00:39 The way Anvil works is it is what's called
+00:41 a Single Page Application, often shortened to SPA.
+00:45 In a Single Page App, the app does not actually reload.
+00:49 As you interact with it, just certain parts are changed.
+00:52 The DOM, the Document Object Model and HTML
+00:55 is just replaced.
+00:56 So here we can see the shell
+00:58 the home form that we've already created.
+01:00 And there's this section right here.
+01:02 Into this little panel, what we're going to do
+01:04 is we're going to start dropping different components.
+01:08 Let's imagine they've clicked add
+01:10 here in the left navigation, and we need to load
+01:12 the AddMeasurementComponent into this area.
+01:14 So what happens? We sort of did this early on
+01:17 just to get things up and running.
+01:18 What happens is, we're first going to create
+01:21 one of these add measurement components.
+01:23 We're just going to call it's initializer in Python.
+01:26 Then, potentially, we're going to set some data.
+01:28 I don't believe we actually do that
+01:30 on the AddMeasurementComponent but if we needed to
+01:33 we could go ahead and set some properties
+01:35 because maybe the state of one of the components
+01:37 needs to be passed over to the other.
+01:39 Then, we're going to tell Anvil to update this panel
+01:44 which will effectively change the DOM and insert this
+01:47 into this little shell thing that we've created.
+01:49 So this is how navigation works.
+01:52 We're going to load the overall HomeForm
+01:53 and it's little component there, that content_panel.
+01:57 And then as we interact with the navigation
+01:59 and the buttons and the app and so on
+02:01 we're just going to create copies, or instances
+02:04 of these components and load them up with data
+02:06 and set them here.
+02:07 As far as the user's concerned
+02:09 it's going to be super snappy.
+02:10 We're not actually refreshing the page.
+02:12 We're not going back to the server.
+02:13 We're not navigating the internet.
+02:15 This is all client side goodness.
+02:17 Of course, we may end up talking to the back end
+02:20 to get data, but there's nothing implicit
+02:22 about this navigation that does that.

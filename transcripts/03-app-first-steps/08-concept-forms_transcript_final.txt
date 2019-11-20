@@ -1,0 +1,33 @@
+00:00 We saw the core way to create UI elements
+00:03 is to use all the controls that you can drag and drop
+00:06 onto the Form Designer.
+00:08 You create these forms, you set the properties
+00:11 of the elements you drag and drop over, and that's it.
+00:13 You create these beautiful forms
+00:15 and they come in two parts.
+00:17 One part is we have this UI.
+00:20 Alright, this is the design for add measurement
+00:22 that we just built.
+00:24 Looks great, you can see we're in Design mode.
+00:26 But, on the other side, we have the code behind
+00:29 and here's where we write all the Python code
+00:32 that responds to events on those forms.
+00:36 It actually lets us write code for when it starts up
+00:40 and even other types of operations as well.
+00:42 What's super-interesting is this Python code
+00:45 actually runs on the client side.
+00:47 This is all running on top of a JavaScript Python runtime.
+00:52 That means it puts no load on a server
+00:53 it has near zero latency, it's beautiful.
+00:56 So, really, really nice way to take a great UI like this
+01:00 write some interactive code in Python
+01:02 and have it work the way you want.
+01:04 Course, we're going to add ways to reach back to the server
+01:07 talk to the database, interact with the APIs, and so on.
+01:10 That's really the next thing we need to do
+01:11 for this add measurement control
+01:13 is somehow save those measurements
+01:14 we've validated and gotten from the user.
+01:17 But, these forms are really, really great
+01:18 and pretty much anyone can go use the designer
+01:21 and build them out just the way they want.

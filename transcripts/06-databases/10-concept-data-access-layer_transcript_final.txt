@@ -1,0 +1,51 @@
+00:00 Let's quickly review the two concepts
+00:02 around our data access layer
+00:04 isolating data access so we don't have to worry
+00:07 about how that's done all over our app
+00:09 just in the one data access layer
+00:11 and the other is performance in caching.
+00:14 In terms of isolation, this was pretty simple.
+00:16 We wrote a simple function called my_measurements
+00:19 and that found its way over to the server
+00:21 and it called my_measurements thing there.
+00:24 Now this is really, really simple.
+00:26 Probably in a real app, maybe there's two different calls
+00:29 or something more interesting is happening
+00:31 or there's some kind of validation, things like that
+00:34 but even this is not terrible because it is a place
+00:37 where we can extend other things.
+00:39 We can put logging, or we can put other validation
+00:42 or we can put performance improvement, things like that.
+00:45 Speaking of performance improvement
+00:47 we saw that if we want to cache stuff on the client side
+00:51 this will go much, much faster.
+00:53 Remember, Anvil web apps are Single Page Applications.
+00:55 That means they pull down all their data
+00:57 and they run without refreshing the page.
+01:00 They also don't go back and talk to the server
+01:02 unless you call functions, things like anvil.server.call.
+01:06 So if we can avoid doing those
+01:08 we can make our app run nearly instantaneously
+01:11 at least instantaneous as far as the user's concerned.
+01:14 So we can expand on this and have a little local variable
+01:17 called measurements, and then we can check
+01:20 and see if that's been set.
+01:21 If it has, we don't need to go back and ask again.
+01:23 We're assuming this is the only copy of the app
+01:25 working with the data, and maybe we can have
+01:28 some kind of refresh mechanism.
+01:29 But for now we're assuming this is the one instance
+01:31 of the app working with the data.
+01:33 So if it hasn't changed within the app, it hasn't changed.
+01:36 So we just check.
+01:37 If we have measurements, just give 'em that.
+01:39 Otherwise, go to the server, get the measurements
+01:42 store 'em in this local variable, and give it back.
+01:45 You saw that when we did things like add a new measurement
+01:47 we just nulled this out.
+01:49 We just set this to none.
+01:50 That erased the measurements that were there
+01:52 and the next time someone asked
+01:54 it fell through to the server and got the fresh copy.
+01:57 Super easy, super fast, and really
+01:59 really useful for the users.

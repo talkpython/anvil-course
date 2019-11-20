@@ -1,0 +1,133 @@
+00:00 All right, let's quickly use
+00:01 this set height and gender thing.
+00:03 I've even also added a little drop-down
+00:05 which is cool, we haven't seen that before.
+00:07 So we're going to implement something
+00:09 that happens when we click on this.
+00:12 And what we're going to do is
+00:13 we're going to gather up the details that we have over here.
+00:17 We want to get the height in inches, so we'll say self.
+00:23 let's just say height equals self.
+00:27 have a little textbox.text
+00:31 and that's going to come in as a string
+00:32 so we've got to convert that to an integer.
+00:35 Perfect, and we have gender
+00:37 is equal to self.dropdown
+00:42 selected value.
+00:45 And we could always do a little validation here.
+00:47 We'll say, if not one of these, like
+00:50 let's go if not this.
+00:55 self.error message, label_error_message, sorry
+00:58 label_error.text equals
+01:02 you must set your height.
+01:05 And this one's a little different because when it runs
+01:08 it's automatically going to have select your gender.
+01:11 So over here we'll say self.dropdown_gender.selected_value.
+01:16 If that's equal to self.dropdown.items
+01:20 of zero, which is the first one
+01:22 you must set your gender.
+01:26 All right so that's a good start.
+01:28 And in order to test that, let's go into the navigation
+01:30 and before we go to our account
+01:34 let's say if not user, what are we looking for?
+01:37 Gender, that'll work.
+01:41 Go set details, something like that, then hit return.
+01:45 So this we haven't written yet.
+01:51 Set the active nav to None.
+01:54 Set title to None.
+02:00 And then we'll do something much like this.
+02:03 And up at the top, we again have to import one last time
+02:06 from sent height component.
+02:09 Maybe I should rename that to details
+02:11 but I'm just going to leave it like this for now.
+02:17 There, like that.
+02:20 Okay, I think that'll do it here.
+02:22 And we also need to add that in compare
+02:25 in case they try to go to compare.
+02:31 Perfect, let's give that a try.
+02:35 Alright, here we are.
+02:36 If we try to go to our account
+02:37 it's going to take us here, that's cool.
+02:39 Let's go back. Try to go to compare also
+02:42 because these details are not set.
+02:45 Super, so now this page is showing up.
+02:46 If we try to say save, you must set your height.
+02:50 Whatever, that's not really height.
+02:52 Must set our gender, okay cool.
+02:54 If we pick this, the error doesn't go away.
+02:57 We just do the work and actually leave.
+02:59 So we don't need to worry about that.
+03:01 Now the last thing here is
+03:03 what happens when this actually succeeds, right?
+03:06 We get to this part, and just like before
+03:08 we want to make sure we refresh the user
+03:10 and we're going to talk to the server.
+03:12 So that was our data access we're using everywhere else.
+03:17 Let's say set details height and gender.
+03:25 And up here, we need to import that stuff.
+03:27 There's a bunch of things we don't need.
+03:32 Cool, now let's go over to data access
+03:34 and write one more function that's going to be
+03:37 very similar to the one right above it.
+03:41 So all we have to do is go and call server here
+03:46 a server thing, and it's going to be set details
+03:50 doesn't exist yet, but what we're going to pass it
+03:53 is height and gender.
+03:56 And the other thing we need to do is just wipe out the user.
+04:00 So we're going to go over here.
+04:02 And we're not going to log them out, necessarily.
+04:06 I guess we could just call a logout, but I don't know.
+04:09 I'm just going to set it to be none
+04:10 and we need that to be global.
+04:13 The reason is, we need to get the user again from the server
+04:17 because these details are going to be set on it.
+04:20 All right, so let's go and do that.
+04:23 The last bit is just going to be a real simple thing
+04:25 over on the server side.
+04:26 Remember, we don't have direct access to this.
+04:30 Here we have set details and we're going to have
+04:33 what order, this order has to be consistent.
+04:36 Height and gender.
+04:41 All right, height and gender.
+04:42 We're going to get the user.
+04:44 Let's just raise.
+04:48 Must be logged in. Okay, so that's going to require that we do that.
+04:50 Now here, this is going to be really easy.
+04:52 We're going to say user set to gender, equal to gender.
+04:57 And user height equals to height.
+05:03 And I'll just say return, there we go.
+05:06 Perfect, so this is all we should need to do.
+05:09 Let's make sure that this works.
+05:10 We will take it through it's paces real quick.
+05:15 All right, so over here, so over here
+05:17 let's try to go to our account page.
+05:19 Says no, no, no, we can't show you that just yet.
+05:21 I have to set your height and so on.
+05:24 And for me that is 71 and I come over here
+05:28 and use my dropdown and say I'm a guy.
+05:31 When I click this, it should go to the server
+05:33 and set those details.
+05:35 And then, well, let's see what happens.
+05:37 If it goes anywhere, I think it'll take us
+05:39 back to our account, we'll find out.
+05:41 So the details have been set.
+05:42 We should do a redirect, which apparently we didn't.
+05:44 But if we go home and then back.
+05:47 Check it out, it's set.
+05:49 We've got to fix that redirect really quick
+05:51 but look how cool that is.
+05:52 My details are now set.
+05:55 So quickly, we forgot a quick redirect here.
+05:59 Now we need navigation as well.
+06:08 I'm going to say go to your account.
+06:10 I guess we could pass it and somehow
+06:11 whether or not you go to the account or back to compare
+06:14 I'm just going to, just go like this.
+06:16 This will be good enough
+06:18 for what we've got going on I suppose.
+06:20 Okay, so this is going to take us to home.
+06:21 I can't really test it again because my details are set.
+06:24 I guess I could erase them, but it seems like
+06:26 that's going to be just fine.
+06:28 All right, so now our account page
+06:30 after a little diversion there, is working.

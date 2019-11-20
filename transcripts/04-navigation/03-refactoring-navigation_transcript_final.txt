@@ -1,0 +1,107 @@
+00:00 Let's re-factor our navigation
+00:02 into its own little library, this is going to introduce
+00:05 an entirely new idea over here.
+00:07 So far, we've had forms and components.
+00:10 Now we have modules and server modules.
+00:13 These are both Python files that can be shared
+00:16 Python functionality that can be shared
+00:18 across your application. The modules
+00:22 these are things that can be shared with your forms.
+00:24 They live in the client. They execute in the browser.
+00:28 Server-side modules are more advanced Python code
+00:31 that lives in the server, and is not directly
+00:34 accessible through JavaScript or anything like that.
+00:37 So, what we want, is a client-side module or just a module
+00:41 and going to rename that to just navigation.
+00:47 Now, what we need to do is basically go, and work with that
+00:52 right here, we did the bottom
+00:53 go to this column panel component
+00:56 here and add this component to it.
+00:59 We can already work with this function directly.
+01:02 The idea is, we'd like to move this behavior
+01:04 and remember, right now, it's simple.
+01:06 Later, it's going to get increasingly complex.
+01:08 We want to move this out, so I'm going to take all of this
+01:11 'cause we don't want to do that there anymore
+01:13 We're going to put it in our navigation thing.
+01:17 This navigation component is going to need
+01:19 to have access to that home control.
+01:23 So, what we're going to do is, when it loads up
+01:25 the home control's actually going to
+01:26 set itself back to the navigation
+01:29 another thing called the HomeForm, rather
+01:32 and we're going to start out as None.
+01:34 We could just work directly with this.
+01:35 But, I want to verify that this has been
+01:37 set to something other than this.
+01:39 So, we're going to say get HomeForm
+01:42 or I'll just get the form if HomeForm is None
+01:49 raise exception, you must set the HomeForm
+01:52 otherwise, it will just return HomeForm.
+01:55 Okay, this lets us, throughout the rest of our application
+01:58 make sure that we're doing things correctly.
+02:01 Now, let's go back here, and take, some of this;
+02:08 and we don't want to say, self here or any of these
+02:12 sorts of things, it's not, no longer an event.
+02:14 Let's just call this, go_add, something to that effect.
+02:20 This one will be go_home, go_compare, go_account.
+02:28 Now, it doesn't make any sense to have this
+02:30 self look component, because what we got to do
+02:32 is get a hold of the HomeForm and do that.
+02:35 So, let's just say, form equals, get_form, like that
+02:40 and then form load_component, okay?
+02:42 So, we're just going to do that for all of them.
+02:47 Now, let's go back here, of course
+02:49 we wanted this to do something
+02:51 so what we got to do is say import navigation
+02:56 and then we can come down here and say
+02:58 instead of this working with ourself
+02:59 we can say dot go_home, that, this bit
+03:04 down here can say go_add, that, perfect.
+03:15 Now, this might not look like we've done much yet
+03:17 and, honestly we haven't, we're going
+03:19 like I said, to add more features
+03:21 maybe we would want to set the title as we navigate around.
+03:23 That would make a lot of sense.
+03:25 Maybe, we want to set the selected navigation elements
+03:27 to be active or inactive, all of that's going to be
+03:31 dealt with through navigation.
+03:32 Also, do you have to have an account
+03:34 before you're allowed to access this stuff?
+03:36 So, you got to realize we're putting this in place
+03:38 to build it up over time, but now, it's a good start.
+03:41 First of all, the refactoring thing should still work
+03:44 let's find out if we got that right, beautiful.
+03:47 We already caught the problem with our first error.
+03:49 So, let's go here, and it says
+03:51 well, you tried to get the HomeForm
+03:54 when you called go_home, so the first thing we need to do
+03:57 right at the beginning, is say, HomeForm equals self, okay
+04:01 we do this once, at startup of the overall application
+04:04 and then we can use this back reference to
+04:07 like set the elements, and so on, try again.
+04:12 Oh, that didn't look good, what did I do?
+04:23 Aah, so what I did is I had this double underscore
+04:25 and that means something, a little bit funky in Python
+04:29 idea is to hide it and I guess I should have a function in
+04:32 set HomeForm, but, I decided to just rename it
+04:35 And just a little bit of a glitch there
+04:37 it should have said that it didn't exist
+04:39 when I tried to set it, anyway, sorry about that.
+04:41 So, we're going to set the HomeForm here
+04:45 and then, we'll be able to work with it.
+04:47 Let's run it, by the output, here's anonymous
+04:51 and compare, home, count, and so on.
+04:56 But, notice up here this fitnessd app
+04:58 we might want that to have, like dash home
+05:01 dash account, or something like this
+05:03 and we want these to be selected
+05:05 remember we had ad selected before.
+05:07 So, we're going to have the navigation deal
+05:08 with all those things, if you try
+05:10 to get to this account section, you should be logged in
+05:12 or even if you're trying to add a component
+05:15 you should be logged and then taken there.
+05:17 So, that's what we're going to do with this module
+05:19 the cool thing is, this runs on the
+05:21 client-side in Python, very nice.

@@ -1,0 +1,25 @@
+00:00 Almost every meaningful web application
+00:02 has some form of database.
+00:05 If you going to log in and have an account
+00:07 if you're going to have a listing of items
+00:09 even a blog post probably has some form of database.
+00:13 Now, simple blogs, they might have just have files on disk
+00:17 or maybe somethin' like SQLite
+00:19 but real web applications, they have database servers.
+00:23 This might be Postgres, it might be MongoDB.
+00:25 When you work with those
+00:27 there's a lot of things you have to consider.
+00:29 How am I going to talk to the database?
+00:32 Will I use the SQL query language?
+00:34 Will I use an ORM that maps classes into that database?
+00:38 How will I make sure that the web server
+00:41 is properly connected and securely connected
+00:44 to the database server machine and the database itself?
+00:47 All these things can be challenging.
+00:50 Luckily, Anvil's packaged the web app
+00:52 and the database together and they're already wired up
+00:56 and ready to talk to each other.
+00:58 So this is really great.
+00:59 You'll see that workin' with databases in Anvil
+01:01 is, well, it's almost transparent.
+01:03 In this case that's a good thing.

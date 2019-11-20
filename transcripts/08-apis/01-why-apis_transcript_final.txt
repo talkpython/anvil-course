@@ -1,0 +1,61 @@
+00:00 In this chapter
+00:01 we're going to see how to build HTTP end points
+00:03 and JSON based API's with our info application.
+00:07 A good question that you might have
+00:09 is why would I build an API?
+00:11 So let's talk about the power of API's really quick.
+00:14 Well, imagine we've got our web app running
+00:17 in Anvil up in well, their servers.
+00:19 But you know, maybe we consider our server
+00:21 It's got a web app
+00:22 It's got a database service, the data tables
+00:24 all that stuff is over there.
+00:26 And how do people work with it?
+00:27 Well, they open up their web browser
+00:30 either on a PC or on a mobile device
+00:33 some kind of phone, and they request the page
+00:36 and that's what we built so far.
+00:38 They can interact with it, it has the graphs, it has the ad measurement
+00:41 the login, all that stuff.
+00:42 It's super, but this is only one part of the world.
+00:46 It's the most invisible part to be sure
+00:48 but it's not the only one
+00:49 and not necessarily the most important.
+00:52 We might also want to build a really sweet native app
+00:56 that we sell through the App Store for iOS or Android.
+00:59 And we We'd like to talk to the same data
+01:01 basically have a native app version of the website
+01:05 that people are going to use.
+01:06 How does that talk to our server?
+01:08 Well, it's definitely
+01:09 not going to just request the same pages.
+01:11 I need data in a computer readable format
+01:13 like JSON or XML or something else, but not HTML.
+01:17 Also, maybe some other websites or services
+01:21 want to integrate with ours
+01:22 maybe there's some healthcare company
+01:24 and they have like a wellness program for their people.
+01:27 And they would like to have all the customers of fitness
+01:30 have their data integrated in
+01:33 so to it automatically records this stuff
+01:35 into their system as well.
+01:37 If we want to make this happen
+01:38 well, of course, we've got to build some API's
+01:40 to allow that to happen.
+01:42 Now another really powerful reason for API's
+01:44 is to break up our app into smaller pieces.
+01:47 This doesn't really make a lot of sense for envelopes.
+01:50 But when you hear people talk about micro services
+01:52 these are maybe a little web app that does authentication
+01:55 one that compares measurements
+01:56 one that's graph-some, things like that.
+01:58 These are obviously connected with API's as well.
+02:02 like I said, probably not a use case for anvil
+02:04 But certainly a use case for API's.
+02:06 So API's are super important
+02:08 they connect all these things that make our apps
+02:11 more amazing, make the integrations work
+02:12 make architectural decisions more flexible.
+02:17 But we're going to see how to build API's that are HTTP based
+02:20 and sort of JSON in anvil.
+02:23 It's easy as you can expect.

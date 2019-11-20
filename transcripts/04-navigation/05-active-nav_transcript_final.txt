@@ -1,0 +1,68 @@
+00:00 Our app is pretty good, it has navigation.
+00:02 It's setting the title as we navigate
+00:04 over as here you can see, but when we click on these
+00:08 we don't have them highlighted.
+00:10 They should be kind of this blue color
+00:12 to indicate here's where you are
+00:13 in the navigation as well.
+00:15 But lets go and make that work finally.
+00:18 So the last thing that we want to do here
+00:21 is we're going to have a set_active_nav
+00:25 and we'll have it state or something like that.
+00:27 This is going to be a string that we're going to pass in
+00:30 so that will let us do things like over here on add
+00:34 we can say set_active_nav add, keep this nice and short
+00:40 home, compare, account
+00:48 and I'm just making this stuff up.
+00:50 We're going to have it mean something in a second.
+00:53 What we're going to do down here
+00:54 is we're going to say form = get_form().
+00:56 My form, I'm going to pass this idea onto it.
+01:01 Again, we could do this up here
+01:03 but I kind of like having it
+01:05 the idea of setting the nav
+01:06 just focused on this one function
+01:09 even if we're going to delegate it.
+01:11 So what we've got to do is
+01:12 to find a function like this over our home form
+01:15 'cause the form is really in charge of it's elements, right?
+01:19 In charge of it's navigation and it's links and so on
+01:21 we shouldn't really be working with these too much
+01:23 outside of here
+01:24 but we're going to write some simple code
+01:26 we'll say something like self link
+01:30 going to pass self in this world
+01:32 so we'll say self.link_home.role equals
+01:35 it's either going to be selected or empty.
+01:38 Selected is a string, or empty.
+01:39 So we'll do a little ternary expression selected
+01:43 if state is home else None.
+01:48 And we're just going to do exactly this
+01:49 for all of the navigational elements, there's only three
+01:51 so we have link add, the navigation element is add
+01:57 and then the last one link is compare.
+02:02 What's nice, if it's none of those
+02:04 it deselects all of them, right
+02:05 if we pass account it's going to unselect home add in compare.
+02:09 All right let's see if this works.
+02:11 So here we are, we go home, we go add, notice how it sticks
+02:16 it's gray, go to compare, sticks but if I click on account
+02:21 all those on the left go away.
+02:22 How slick is that, right?
+02:23 Super easy, home sticks, add sticks, compare sticks.
+02:28 And even when the app starts up
+02:31 it's already got home selected, why is that?
+02:33 That's because at the very top here
+02:35 we're actually using the navigation to go home
+02:38 not just internally loading that control.
+02:40 That means all the cool stuff of setting the title
+02:43 clearing the title, setting the selected elements
+02:46 potentially checking for users
+02:48 all of that stuff is happening
+02:49 as we build out this navigation, very very cool
+02:52 so hopefully you're starting to see the value
+02:54 of this navigation module over here
+02:56 and also just how cool is it
+02:58 that we can write these Python libraries
+03:00 these Python modules and share them through our application?
+03:04 It's pretty cool.

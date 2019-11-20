@@ -1,0 +1,138 @@
+00:00 Well we've got our UI in place, but if I run it
+00:04 and I click on this Add Measurement, you can see
+00:07 not too much is happening.
+00:08 Let's go and actually have that button click do something
+00:12 and makes sure we have the right kind of data and then
+00:15 almost save it back to the database.
+00:16 We haven't created that yet, but when we do, it will just be
+00:19 a one stop, one line, to finish this off.
+00:22 So far, we've been in this visual bit
+00:24 on the design side of the form.
+00:26 Let's go to the code behind over here
+00:28 and hide that so we have the most room.
+00:31 Actually, we need one quick thing before we do that.
+00:33 We need to hook into this event when somebody clicks this.
+00:36 So we can just double click it, make sure the name
+00:39 is set to something you would
+00:40 like to have because it's going to be
+00:42 part of the method here.
+00:44 And then, we are going to go write what code we need to do.
+00:48 So we're going to have a couple of steps here.
+00:51 Let's separate it out. Let's actually
+00:53 you can override as many functions as you want
+00:55 these are just python classes right? So I can come over here
+00:57 and write one called sync_data.
+00:59 The idea is it's going to take all the elements, UI elements
+01:03 like the text box's text and turn that into a number
+01:06 or given us an error message if it's impossible.
+01:10 So for a moment I write pass. Let's go down here
+01:12 what we are going to do is we are going to say
+01:14 and be an error that maybe, maybe has returned
+01:18 and we are going to auto-complete on that, that's awesome.
+01:20 And we'll say if error is return, which means just stay on
+01:25 the form, this sync data is going to set the error
+01:27 let's go and actually do it this way, let's say self.
+01:30 it was a label_error_message.text = error
+01:35 and let's do a visible = True.
+01:40 And then we're going to return.
+01:41 So if there is an error, we're going to show it.
+01:43 And also let's go at the beginning
+01:48 before we do any of this, let's say
+01:51 also we are going to hide it but in case there is an error
+01:53 we are going to show it but again and set the error.
+01:56 And then, later, I'll just print
+02:00 would have saved the data on the measurement.
+02:04 The other thing I want to do is have a way to easily
+02:06 communicate what those values are we got.
+02:09 So let's just go over here, we'll have a self.weight = 0
+02:11 self.rate = 0, and self.date = None.
+02:19 The date is the day we said we recorded the measurement.
+02:22 And we can even come down here
+02:24 and say what measurements
+02:26 or what values we are going to put
+02:27 and we can do a little format, just like standard Python.
+02:31 So we can do it like this.
+02:33 Why am I so fascinated that I can write this code?
+02:36 Because this code runs in your browser
+02:39 on top of a Javascript engine. It's super cool.
+02:43 But we get a right Python which is the way we like it.
+02:45 This is good.
+02:46 Let's go over here and just put an error message for now.
+02:48 This will always fail. Try to run it.
+02:53 It will go click this, it's going to return an error
+02:55 the system will see there and error, it's going to show
+02:57 the error message and set it to whatever we return.
+03:01 Uh, that didn't work so well, did it?
+03:03 What step did we get here?
+03:04 Ah, because I forgot the word return.
+03:07 You know, details. Okay, try again.
+03:11 This will always fail.
+03:12 Okay, so our validation is working
+03:13 whatever message gets back, if there is any from
+03:15 that sync_data, it's going to show that as an error.
+03:19 So let's go and actually to the validation here.
+03:21 So there are several layers of what we need to do.
+03:23 First, if there is no data
+03:26 we can say if not self.text_box_rate.text
+03:32 alright if it's empty
+03:34 then we can return some kind of message like
+03:36 heart rate is required.
+03:41 We can do something similar for the others.
+03:47 Let it fall through but return none is probably good here.
+03:50 We're going to say, if you haven't filled out the heart rate
+03:52 that's required. If you haven't filled out the weight
+03:53 that's required and if you haven't selected a measurement
+03:56 date that's required. Let's just check those real quick.
+04:00 So click that heart rate is required, so put a 79
+04:04 weight, 170, whatever it is.
+04:07 Measurement and date is required pick one of those.
+04:10 Boom, would have actually saved this
+04:13 it didn't really work because we didn't actually
+04:15 get the data but we're on the right path.
+04:17 So that's working well. The next thing we need to do is
+04:20 we need to try to get those values because
+04:22 maybe this is like some text value but
+04:24 it's not a number, right? Not a proper integer.
+04:27 So over here, we're going to say self.weight
+04:30 and let's just do Exception
+04:36 and we'll return a known error here
+04:40 alright so we're going to return the error message here
+04:42 but probably the most common thing is it's possible
+04:44 we get some kind of conversion error
+04:46 that's going to show up as a type error swool.
+04:51 And then, in this one we are going to return invalid format.
+04:56 Okay, so in here, what are we going to do?
+04:57 We're going to convert from a string to an integer.
+05:00 So we're going to take the string and
+05:01 pass it to the end constructor
+05:04 self.text_box_weight.text, and you know what?
+05:08 We're going to do something real similar for the rate.
+05:17 For the date it's already in the right format.
+05:19 So we just go to date_of_measurement.date
+05:21 as the selected date, and there we go.
+05:24 So if those all work right
+05:26 we should have those set when we get back here and
+05:28 we'll have a go.
+05:29 So, I think we'll have it right.
+05:30 Let's give it a shot here.
+05:32 We'll put this away for a minute and come over here
+05:34 and we add a measurement, a heart rate is required, okay
+05:37 so let's say the heart rate is 71
+05:41 and let's say the weight, 170 or whatever it is
+05:45 measurement date is required, let's say it's today
+05:49 You ready? This should work.
+05:51 It should convert those all out and then print them
+05:52 into this little output window.
+05:54 Boom. Notice the red dot in the upper left.
+05:56 That means there is new output that would have gone
+05:59 to the terminal or somewhere.
+06:01 Go look back at it and you see we would
+06:02 have saved the measurement, it would have been 170 pounds
+06:06 on August 2nd with a heart rate of 71 beats per minute.
+06:11 It works! How cool is that?
+06:13 Now we haven't saved that to the database
+06:14 we just printed it with the console
+06:16 you're going to see it's actually about
+06:17 the same amount of work.
+06:19 Right, so there it is our add measurement component
+06:21 is done and we're ready to start using it.

@@ -1,0 +1,127 @@
+00:00 Well, our app is starting to come together.
+00:01 We have some forms in place
+00:03 these components that are going to dynamically
+00:04 swap out what we're showing
+00:06 and we have the overall look and feel in this home form.
+00:09 Let's run it and see where we are.
+00:11 Well, all the navigation bits are here
+00:13 and what we don't have is, really
+00:15 any content in this control thing we've got here
+00:20 called a column panel content.
+00:23 The idea is that as we interact with the app
+00:25 we're going to load different things like, probably
+00:27 that first thing in the anonymous bit
+00:29 then you're login will show you this
+00:30 and then you go in and add a measurement.
+00:31 If you click that, we're going to load that one in there.
+00:34 What I want to do, this is one of the more interesting forms
+00:36 is going to show you how we work with this designer
+00:39 and the code that handles the events
+00:41 which is super interesting.
+00:42 So, what I want to do is just start with loading this up
+00:46 as if this was what we're going to do.
+00:47 We'll talk about navigating
+00:49 between these different components
+00:51 and creating a navigational system later.
+00:53 For now, let's just, somehow
+00:55 have this appear right here when we launch our app.
+00:59 And that brings us to a super interesting aspect of this.
+01:03 You've probably already noticed it.
+01:05 Over here we have our HomeForm
+01:06 here's our designer
+01:07 we have all of our elements we can drag on
+01:09 and once we have an element selected
+01:11 we can set its properties.
+01:13 We also have events, down here when something happens
+01:16 like button when it's clicked
+01:17 we can have a function that's called.
+01:19 But, notice up here, this design and this code.
+01:24 We've only been working the design mode
+01:26 and the UI design is really cool
+01:27 but a lot of the magic happens here.
+01:30 So, check this out. This is Python code.
+01:32 It instantiates the form, the HTML
+01:34 that's basically what this does
+01:36 it sets all those properties you set in the designer
+01:39 and then whatever code you want to write happens here.
+01:42 So, button clicks, for example
+01:44 will happen here and so on.
+01:47 All right, I'll give you an example of that
+01:48 so if we click on, let's say, add
+01:51 make sure the names are right before you set this link add
+01:54 because the method name is going to contain
+01:57 part of the name here. So, that looks good.
+01:59 If I double click this, notice it writes a function
+02:01 and this code behind embed here that says
+02:03 the link_add has been clicked
+02:05 and this is what happens when the link gets clicked.
+02:08 Now, what we're going to do is write the code
+02:10 that gets the AddMeasurementComponent
+02:13 and puts it into the shell that is our home form.
+02:16 So, the way we're going to do that
+02:17 is we're going to write some Python code.
+02:19 We're going to say, from AddMeasurementComponent
+02:23 that's this module right here
+02:25 this is like a separate file.
+02:27 But then, inside there
+02:28 there's also a class named exactly the same thing.
+02:30 So, we're going to write code like that.
+02:32 Looks a bit funky, you'll get totally used to it.
+02:34 That's just how it goes.
+02:35 So, we're going to create a component
+02:38 and we're just going to call the in it method
+02:41 just create the class
+02:42 just like you would in standard Python.
+02:44 And then, over here, we're going to say self.
+02:47 and check out all that stuff.
+02:49 There's a whole bunch of cool things.
+02:51 In fact, over here on the right
+02:52 you can also see, you've got the column panel one
+02:54 this is the one we have the navigation in
+02:56 which, right, we should name it.
+02:58 But, this is the one that really matters
+02:59 and we can actually see stuff about it, right
+03:01 all of its properties and so on.
+03:04 This is really interesting, the beginning and the end
+03:06 after a while, I'll find that I don't really use that window that much
+03:08 but it's super nice to have it there.
+03:09 So, we're going to say self.column_panel_content.clear.
+03:14 And then, we're going to come over here and say Add Component
+03:18 this AddMeasurementComponent.
+03:20 Well, let's see how we've done.
+03:23 Let's run it. All right, here it is.
+03:25 We click this, it should clear out this part
+03:28 there's nothing in here at the moment
+03:29 but imagine we were on another view
+03:31 this is going to add that form
+03:32 we're going to have a better way
+03:34 a more global factored way, a refactored way.
+03:36 To do that, we're going to get in a later chapter
+03:38 but for now, we just got to bootstrap the process
+03:40 so we can build that form and see it. So, let's click.
+03:43 Boom. Look at that. It doesn't look like much
+03:46 but whatever we design in that add measurement component
+03:50 is just going to show up
+03:51 taking over the entire center of the screen here.
+03:53 That's pretty awesome.
+03:55 And, just so that we can get started a little bit easier
+03:58 let's just write self.link_add_click, like so.
+04:08 That way, when we run it
+04:10 it should start up with the AddMeasurement form loaded.
+04:14 See one other thing, you notice over on the left here
+04:17 you don't see anything going on in terms of
+04:21 it's not highlighted, showing us we're on this page.
+04:24 We can do one final thing in this section.
+04:26 We can say self link dot add role equals selected.
+04:33 Here we go. Now, see it's got that gray, even if I don't hover over.
+04:36 Okay, so we've loaded this up
+04:37 and again we're going to take out that home bit
+04:39 to load it on unload when we get a more
+04:42 full-featured app written.
+04:43 But I want to develop this AddMeasurement control component
+04:46 because it shows you the most power
+04:51 and most of the techniques you're going to need to know
+04:52 how to build these components, these forms
+04:55 and then add the event handlers
+04:56 in all of those kinds of things.
+04:58 Really cool. Looking forward to getting to it.

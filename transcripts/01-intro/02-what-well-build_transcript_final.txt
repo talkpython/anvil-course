@@ -1,0 +1,67 @@
+00:00 In this course
+00:01 we're going to spend the vast majority
+00:02 of our time actually writing code
+00:04 working in Anvil directly in Python
+00:07 building out our application.
+00:09 It's not going to be PowerPoints and just a bunch of fluff
+00:12 and walking you through.
+00:13 No, we start with blank pages
+00:15 and we build this app end to end
+00:17 with very little copy and paste
+00:18 or starting from any working code.
+00:21 So you're going to see it built from the ground up.
+00:23 Here's our app, it's called Fitnessd.
+00:26 That's how we're going to pronounce it
+00:27 and it's dropping the E because we want it
+00:29 to be something we could trademark
+00:31 and something cool and things like that.
+00:33 So we're going to build an app
+00:34 and the idea is that it tracks your health
+00:36 tracks your stats, like your weight
+00:39 and resting heart rate over time.
+00:42 So here, you can see, it has a little laning page
+00:44 it tells you that if you follow this plan
+00:46 you'll wake up feeling energized
+00:48 and it's free and it's mobile friendly
+00:50 and all of those kind of things.
+00:52 Let's go and actually log in.
+00:53 If we try to do the other stuff
+00:55 it'll make us create our account.
+00:56 So, here you can see we have a really nice login page.
+00:59 We can login with Google
+01:00 I'm just going to login with a username and password
+01:02 or I could register.
+01:03 When I land here, you can see this is our homepage
+01:07 that has our fitness details.
+01:09 Really nice, interactive graph
+01:10 we can come in here and see things like that.
+01:14 We could zoom in on a particular section
+01:17 like this, and pan it around.
+01:19 All right, we can look at our days.
+01:20 So we have this really nice, interactive graph.
+01:23 So the idea is we want to allow people to enter their weight
+01:26 and their resting heart rate one time a day
+01:29 and then they'll have a graph
+01:30 and they can see, how are they doing?
+01:32 Are they getting healthier and things like that.
+01:34 There's a nice way for them to add things like this
+01:37 so they can say, you know, I want to add a measurement here
+01:40 and come down here and pick.
+01:42 Cool, another date just like that and so on.
+01:45 But their heart rate is 75 or whatever
+01:48 and now weight is required and so on.
+01:50 So, very, very cool.
+01:51 We can also compare us against the whole thing.
+01:56 You're this tall and you're a male
+01:57 here's their average.
+01:58 Here's how you compare to those people.
+02:01 Okay, so this is the app that we're going to build
+02:03 it has a pro, go to our account.
+02:06 See, I've purchased the pro plan using a credit card.
+02:10 So, I started out as a basic free user
+02:12 and I upgraded through the e-commerce system.
+02:14 This is the app that we're going to build entirely in Anvil
+02:17 and we're also going to build some Python apps on the side
+02:21 that simulate things like mobile apps
+02:23 that could save our data or other utilities
+02:25 that work with our databases here.

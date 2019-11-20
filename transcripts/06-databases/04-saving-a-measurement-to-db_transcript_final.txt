@@ -1,0 +1,114 @@
+00:00 Now that we have our server site module working
+00:02 let's do this little silly example way
+00:06 and let's make something that we actually care about.
+00:08 What we want to do is, we want to save our measurements.
+00:11 So let's call this add_measurement
+00:16 and let's think about the things we're going to need
+00:18 from our database.
+00:22 Over here, we're going to need a user
+00:25 that's fine, actually the user
+00:27 is passed in a side channel
+00:28 you don't actually have to pass user
+00:30 it's kind of like you can always just ask
+00:32 for who is the logged in user
+00:34 either on the client or the server
+00:35 so that'll be easy and then we have
+00:37 record date, created date, weight and pounds
+00:40 and resting heart rate.
+00:46 Now, the created date, you think the server
+00:48 knows what time it is?
+00:50 Yes, so we don't actually have to ask that.
+00:52 And come up here and say import datetime
+00:57 and down here, we just say and you have
+00:59 a standard python
+01:02 like that date, datetime.now
+01:04 So that works pretty well, now what are we going to do?
+01:07 We have to create one of these records and save it.
+01:10 But we want to make sure that when it's called
+01:12 the user's logged in.
+01:13 So let's do this.
+01:14 Say user remember this anvil.users.getuser?
+01:18 Oh, that works the same here and when you say
+01:21 if not user, then we can either raise an exception
+01:24 or just return some kind of error.
+01:31 Now of course our app is going to enforce that
+01:34 we're logged in, in order to call this method
+01:37 but you know just in case we make a mistake
+01:39 or there's some flaw in our logic on the client side
+01:42 well here we can double catch that.
+01:44 And then it's super easy
+01:45 we just go app_tables.measurements
+01:48 and notice the auto complete right here
+01:50 super nice.
+01:52 Say add_row and look what it shows us right there.
+01:54 Going to say user, weight in pounds, record date
+01:57 created date and so on
+02:00 Let's say created date equals created date
+02:04 record date equals record date
+02:08 resting heart rate
+02:15 user equals user
+02:16 and I notice I have an e right here
+02:20 oh that should be a rate
+02:21 so let's fix that real quick, okay
+02:23 well, it looks like we pretty much have this
+02:25 all ready to go.
+02:27 The only thing is, to call it.
+02:30 Well, let's go try that.
+02:31 Now we've have a quick thing to fix real quick here
+02:34 Remember, we put this little print here
+02:35 so let's take that out, this doesn't exist anymore
+02:38 it's going to cause a crash.
+02:39 Here's where it gets interesting.
+02:41 We said we would have recorded it
+02:43 well let's go do it.
+02:44 anvil.server.call
+02:49 Here's our add_measurement
+02:51 and what do we have to pass it?
+02:53 Now, this dialogue here is in the way of that
+02:57 which is annoying.
+02:59 Let's see if we can make that go away
+03:02 like so, maybe. There we go.
+03:06 So we can pass in the record date
+03:08 which is going to be self.date
+03:11 we pass in the weight and pounds
+03:13 self.weight
+03:16 and we have self.rate, wow those are weird
+03:20 A weird combination.
+03:21 And let's just comment this out.
+03:25 Alright, if everything's hanging together
+03:28 when we go back here, we should now have at least
+03:30 one entry in our table. Let's go.
+03:33 Alright, we're logged in, we're going to go over here
+03:35 and let's say the date is
+03:37 let's do one for yesterday.
+03:38 Yesterday was 179, my resting heart rate was 71.
+03:44 Okay, that--did it work?
+03:46 I don't know, let's try to add one more.
+03:48 Let's say now it's today and my rest
+03:51 my weight is 177, and my resting heart is 69.
+03:54 Maybe I've been gettin' in shape, I don't know.
+03:57 Did it again, stop, let's go back to our tables
+04:01 How about that? That is so cool, there is is!
+04:04 We've got our recorded date, our record date
+04:06 these are the days that we've entered
+04:08 Here's the actual down to the millisecond time
+04:11 when we made these actions
+04:14 here's the weight in pounds that we typed in
+04:16 here's the resting heart rate
+04:19 and check this out
+04:20 we actually have the user over here
+04:23 that we could go to.
+04:24 So it's, pull this up, you can see all the details
+04:27 about the user and so on.
+04:29 Isn't that cool?
+04:30 Here's our foreign key relationship
+04:32 and all we had to do to make that happen
+04:35 was to call get current user
+04:38 and then right there just pass it over.
+04:41 Working with databases in Anvil is super easy
+04:44 we didn't even have to know
+04:46 the sequel query language or
+04:47 third normal forum or any of those types of things
+04:50 although it wouldn't be terrible to know.
+04:52 It is a simple way to get started
+04:54 and just connect these things right together.

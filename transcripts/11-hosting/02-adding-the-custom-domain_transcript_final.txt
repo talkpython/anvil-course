@@ -1,0 +1,43 @@
+00:00 Well, here's our app, and we saw that
+00:01 we could press run on it and that's pretty cool.
+00:04 We get this URL up here
+00:06 if you try to go to that URL in a private browser
+00:10 well, what do we get? Sign in.
+00:13 This is not the experience we want
+00:14 we don't want to share our login to Anvil, obviously.
+00:17 Well, we've done some work already as part of that API step
+00:21 and we said publish the app
+00:22 and we said we want to use fresh-zealous-song.anvil.app
+00:26 That first part was auto generated
+00:29 and this actually works.
+00:31 This is pretty good
+00:32 we have HTPS, we have a domain
+00:34 we could even login over here.
+00:38 Now we're logged in, here's our help history
+00:40 works like a charm.
+00:41 Okay, however if you really want to build your own product
+00:45 you don't want to depend on Anvil's domain
+00:48 you wanted to identify you out there.
+00:50 This is fine for little utility apps
+00:52 maybe even you share within your company
+00:54 things like that
+00:55 but if you want to have a public website you need a domain.
+00:58 So that's what we going to do here
+01:01 and you come down here and click
+01:02 add a custom domain
+01:06 and like I said what I'm going to use is Fitnessd, like fitnessd
+01:09 that's the name of our app .talkpython
+01:12 My main site is .fm, but I'm going to use .com.
+01:15 I have both domains
+01:16 really rather not mess with the
+01:18 talk.python.fm domain really at all
+01:21 and notice here it says we're going to
+01:22 create an A record and we're going to enter
+01:26 Fitnessd for the pattern or whatever
+01:30 and then we're going to enter that as the
+01:32 place to map it to.
+01:33 And they have a little guide here on how that works.
+01:36 So I'm going to flip over to my domain provider
+01:39 quickly run through these steps
+01:41 and then we're going to come back
+01:42 and have a look at what happened.

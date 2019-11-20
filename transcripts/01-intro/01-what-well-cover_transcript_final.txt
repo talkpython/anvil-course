@@ -1,0 +1,181 @@
+00:00 Hello and welcome to our course
+00:02 Anvil Web Apps with Nothing but Python.
+00:04 Have you ever wanted to create a web app?
+00:06 But then as you got into it you realized
+00:08 well, it's not just Python
+00:10 it's also CSS, HTML, JavaScript, server-side code
+00:15 maybe Docker or Linux and then talking to a database
+00:19 with something like SQL, and database design
+00:21 and all of these things.
+00:22 Well, building real web apps that are
+00:25 what you might call full stack web app
+00:27 there are a ton of moving parts there.
+00:29 A bunch of different technologies.
+00:31 I like to say that you need to know at least five
+00:33 different technologies, programming languages
+00:35 to work on full stack web apps.
+00:38 But, with Anvil, all you need to know is how to work with
+00:40 a visual designer and write Python code.
+00:43 And they make that Python code take care of everything.
+00:46 The front-end JavaScript-type stuff
+00:47 as well as the backend server stuff.
+00:50 They have the database in place and it already
+00:52 has the relationships defined for you.
+00:54 What we will be covering in this course?
+00:56 Well, let's see.
+00:57 We're going to start out talking a little bit about
+00:59 full stack development. As we kind of already have.
+01:02 We're going to dig into what it is and we'll refer
+01:04 back to that as we go throughout the course.
+01:07 What we're doing is taking a simplified layer
+01:10 on top of a full stack development experience.
+01:13 Anvil handles a lot of the details of piecing things
+01:15 together and putting them in place for us so
+01:17 we don't have to worry about them
+01:19 but it's always good to know what full stack is
+01:21 and how it fits into our world.
+01:23 When we build websites, we want to create web pages
+01:26 so we can show them in our browser.
+01:28 Now, how do you go about doing that?
+01:30 Normally, what you might do is go and open up a blank file
+01:34 and start typing in HTML
+01:36 maybe put in some CSS and some content.
+01:38 You got to know quite a bit to make that work well.
+01:41 Yes, you can type a div or a button into an HTML page
+01:44 and make that work, but what if you really want a
+01:47 cool, interactive page, that is laid out just so?
+01:51 You need to know a lot of web design.
+01:53 With Anvil, you get a visual designer, with a toolbox
+01:57 full of these controls.
+01:59 You can drag a button over and drop it
+02:00 and sets some properties on it to make
+02:01 it look just like I want.
+02:03 I can get a calendar component or a chart
+02:06 position these all just right on the page
+02:09 and then I can even hook into events that are
+02:11 happening on say to that calendar.
+02:14 Like I can change the way the page looks
+02:16 by hooking into the event of date changed on that calendar.
+02:19 This makes it much, much easier to build interactive pages
+02:23 mostly working with data.
+02:24 We're not talking about just pure documentation
+02:26 but I've got some sort of data on the page
+02:29 and I want to put it into some sort of controls
+02:30 and interact with it.
+02:31 This visual form designer is the primary way to
+02:34 create web pages in Anvil.
+02:36 And you'll see that it works really well for that use case.
+02:40 We also going to talk about navigation between pages.
+02:43 You might be thinking
+02:44 Michael, that's just put a hyperlink here
+02:47 and it's going to click over to another page and
+02:49 that's navigation on the web.
+02:51 Yes, in general that's true
+02:53 but within Anvil apps, it's a little bit different.
+02:55 These are what are called single page applications
+02:58 sometimes referred to as SPAs.
+03:01 As far as the browser's concerned
+03:02 it downloads the page once
+03:04 and once it's loaded up, it never refreshes the page.
+03:07 Just a bunch of JavaScripty stuff is happening.
+03:10 It happens to be that the JavaScript is
+03:11 reloading parts of the UI
+03:13 so to the user, it looks like you're going from
+03:15 screen to screen to screen
+03:17 but you're not doing that by navigating the browser
+03:19 away with a hyperlink.
+03:20 You're navigating that by swapping out elements and
+03:23 part of your UI.
+03:24 And it's not hard, but it's a little bit different
+03:26 and we're going to focus on how to do that.
+03:28 You see, it's really nice because
+03:29 there's actually no latency.
+03:32 You're not going to the server
+03:33 and waiting for a response and then loading the page.
+03:35 You're just running locally.
+03:37 It doesn't really even matter what network
+03:39 or how fast your network is.
+03:41 So, this navigation is pretty cool.
+03:43 We're going to talk about databases.
+03:44 Now, we don't have to set up databases, or design them
+03:47 or create them with DDL and all that kind of stuff
+03:50 that maybe you don't want to think about
+03:51 but there is a database service
+03:53 and we can create tables that already can
+03:56 easily have relationships between them through the
+03:59 super simplified view into a database called Data Tables
+04:02 and we're going to use that to store a bunch of information.
+04:05 We're going to have what are called client modules.
+04:09 Because our application is a single page app, a lot
+04:12 of stuff is happening on the client in JavaScript.
+04:16 However, we don't want to write JavaScript.
+04:18 We're Python people, right?
+04:20 With these client modules, as well as the forms
+04:22 we write Python code.
+04:25 That Python code runs in the browser.
+04:28 Incredibly, in Anvil, you write Python code
+04:31 instead of JavaScript to run
+04:32 on the front end. That's super awesome.
+04:34 Sometimes you have to write server-side code as well.
+04:38 Server-side code can run with higher access to the
+04:40 database, or it runs on real Python with access
+04:43 to the real packages and modules that
+04:46 you might need to do real Python things
+04:48 and keep them save on the server
+04:50 where nobody can mess with them.
+04:51 So, we'll be able to define client modules
+04:54 and server-side modules
+04:55 and connect them together basically seamlessly.
+04:58 Anvil has a really great way to do that.
+04:59 You don't have to think about creating services
+05:02 to communicate back and forth between them.
+05:04 We're going to manage users and store those in our database.
+05:08 We do have a database and we could just create a table
+05:10 where we store user information
+05:11 but Anvil has a special user service with cool
+05:14 integration into things like single sign-on
+05:16 or Google logins, or, you know, storing
+05:19 your user account successfully without incorrectly
+05:22 storing their password and accidentally leaking that.
+05:25 Things like this. So, user service is really nice.
+05:28 With something like Anvil, you might think you're stuck
+05:30 in this web world with the designer
+05:33 but a lot of cool web applications can be
+05:37 way more than just a web app if they define an API.
+05:39 If they have some kind of HTTP service that other things
+05:42 like mobile apps
+05:43 or other web applications can integrate with.
+05:46 And Anvil does that as well.
+05:48 We're going to focus a lot on building HTTP services
+05:51 with Anvil and consuming them.
+05:52 We're even build a Python, GUI-based application, running
+05:56 locally, talking to and working with our data
+05:59 over this HTTP service that we're going to create in Anvil.
+06:02 Speaking of which, we're going to create
+06:04 this client application and it's going to be
+06:06 the thing that actually talks to our HTTP service.
+06:08 In the app that we're going to build
+06:10 we're going to model some kind of paid
+06:13 software as a service product
+06:15 and, in order to that
+06:16 we're going to have to let our users
+06:18 buy a pro version of our service.
+06:21 We're going to add e-commerce support with Stripe
+06:24 to our web app and you'll see that's actually super doable.
+06:28 So, ultimately, if you're going to have a product
+06:31 it's needs its own domain.
+06:33 You don't want to just put it out and leave it on some
+06:35 kind of random, shareable link.
+06:38 If you've got something like Google
+06:39 you want it at google.com.
+06:41 If you've got something like Talk Python, you want it at
+06:43 talkpython.com or .fm or wherever it happens to be.
+06:47 We'll see that we can take our Anvil app and host
+06:50 it on a custom domain that we control.
+06:54 And finally, we'll see there's some limited support
+06:56 for version control. Not entire direct Git or
+07:00 Subversion or something like that
+07:01 but there is definitely version control
+07:03 for our web applications and we're going to use that.
+07:06 We're also going to have a GITHub app repository
+07:08 where we give you all the code that we write in this course.

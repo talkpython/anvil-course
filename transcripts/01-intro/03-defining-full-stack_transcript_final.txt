@@ -1,0 +1,83 @@
+00:00 Let's spend just a moment
+00:01 talking about full stack web development
+00:03 so you can compare and contrast that
+00:05 with working with something like Anvil.
+00:08 So, in the full stack world, really in Anvil as well
+00:11 you just don't have to write it
+00:12 we're going to have a browser, some server out in the cloud
+00:16 internet, being the cloud
+00:18 and a database where the app's going to store its data
+00:21 you know, what products you have in a bookstore
+00:24 what users have registered, things like this.
+00:26 So, a request is going to come in
+00:28 through the magic of the internet, find our server
+00:30 server's going to talk to our database
+00:32 and we'll get back to it.
+00:33 Now, in that simple and familiar experience
+00:37 how many technologies were involved?
+00:39 If you're going to create this experience
+00:41 directly from raw Python or some other programming language
+00:45 in a full stack way
+00:46 you're going to need to use those technologies to build it.
+00:51 So, on the server side, we have a lot happening.
+00:53 We have Python.
+00:54 We have HTML and CSS templates that we're generating.
+00:58 These are probably dynamic, not just static HTML
+01:01 but something that given, say
+01:03 a list of books and a template
+01:05 turn that into a whole bunch of repeated HTML blocks
+01:09 inside of an HTML response.
+01:11 So, you've got to know some kind of language
+01:13 like Jinja, Pure, Chameleon or something like this.
+01:17 You also need to know web framework.
+01:18 In Python world, a popular one of those is Flask
+01:22 so you'd have to know Flask.
+01:23 For talking to a database
+01:24 you need to have some library to do so.
+01:26 You can do it directly, in Python.
+01:29 You got to know that library, it's called DB-API2.
+01:32 More likely you'd be using something called an ORM
+01:35 and SQLAlchemy.
+01:37 In order to run all this code that you've written
+01:38 you have to know Linux and then on Linux
+01:41 you have to install a front-end client-facing server
+01:43 and then a thing that runs Python code in a web context
+01:47 so, Nginx and uWSGI is a good pairing there.
+01:50 On the data side
+01:51 you've got to know some kind of database server
+01:53 if that's SQLite or Postgres or something like MongoDB.
+01:58 And another query language
+02:00 for many of those that's the SQL language
+02:02 and you got to be able to do migrations
+02:04 from your data schema from one to the other.
+02:07 Right, migrate your database
+02:08 as the type of data you need to store changes.
+02:11 Finally, that's the server side.
+02:13 On the client side, you have to know JavaScript
+02:15 and again, HTML and CSS.
+02:17 These kind of appear in both places
+02:19 but really they have the most effect on the browser, right?
+02:22 And then you maybe need to know some CSS front-end framework
+02:25 like Bootstrap and some front-end framework for Javascript
+02:28 like AngularJS
+02:30 to create a single page app, as we're talking about here.
+02:33 Woof, that is a lot of stuff, isn't it?
+02:36 Each one of these is kind of a big deal to learn
+02:38 and to work with.
+02:40 And so you try to put them all together
+02:41 and that's a whole lot.
+02:42 So, what's great is, with Anvil, you'll see
+02:45 that we pretty much need to know Python
+02:48 and, yeah, that's about it.
+02:50 That's about all we got to know.
+02:51 We are going to work with a database
+02:53 but like I said, it's a super simplified thing.
+02:55 So, maybe the SQL language, as well.
+02:58 But, yeah, pretty much Python and possibly SQL
+03:01 but not necessarily.
+03:03 Anvil's primary job is to make
+03:06 most of this stuff transparent infrastructure to you.
+03:09 Allow you to write pure Python
+03:11 and then just work with their infrastructure
+03:13 which really is doing all these things
+03:15 but you don't have to worry about them, right?

@@ -1,0 +1,63 @@
+00:00 Let's round out this chapter on navigation
+00:02 by reviewing where we started
+00:04 and where we ended up.
+00:06 So we saw that Anvil applications are single-page apps
+00:10 that means they all load up at the beginning
+00:12 and they never go back to the server
+00:14 they don't refresh the page
+00:15 as far as the browser's concerned
+00:17 we're just on this one page for a super long time.
+00:20 But, in fact, we do navigate around
+00:21 and the way we do that is by using JavaScript to get data
+00:24 which we haven't done a ton of yet but we're going to
+00:26 and then manipulating the DOM.
+00:29 And the easiest way to do that is
+00:31 to just take these components that we built
+00:33 like a HomeDetailsComponent
+00:34 or an AddMeasurementComponent
+00:36 and having Anvil have an area in our page
+00:39 which is most of our app
+00:41 where we just pop those controls in and out of.
+00:44 So, here if we want to load up the home view
+00:46 and we've got that HomeForm
+00:48 which is a shell in the HomeDetailsComponent
+00:50 which is like the here's your recent measurements
+00:52 and whatnot
+00:53 we're going to go and go to this content panel
+00:55 figure whatever happens to be there
+00:56 if something is there and then just add the one
+00:59 and only home details component like this.
+01:01 We potentially could pass additional data to the thing
+01:04 but we're not actually doing that
+01:05 so that's all well and good.
+01:07 We also saw that we can set the title
+01:09 we can set the active navigation
+01:10 maybe we check for users
+01:12 all that would have to be stuck in here
+01:13 and it's hard to replicate that in other places, right?
+01:16 This is inside the HomeForm.
+01:17 We also saw, like, other components might need
+01:20 to do stuff like this.
+01:21 For example, the AddMeasurementComponent.
+01:24 So what's better?
+01:25 Well, we're going to move all of this navigation concept
+01:28 to a navigation client side module.
+01:31 We just called it navigation
+01:32 and it has things like go add measurement.
+01:35 And it can do and check, does this page require an account?
+01:38 Yes, it does
+01:39 so we're going to try to get that account.
+01:41 If we don't get one, go home
+01:43 otherwise, we're going to set the title
+01:45 set the active navigation
+01:47 and then load that add measurement component, right?
+01:50 And then all we do is basically delegate back
+01:52 to the home form to say load control and pass it off.
+01:56 Also, set_title, set_active_nav and so on.
+01:59 So this is a really nice pattern within Anvil applications
+02:02 to factor all that kind of stuff
+02:03 about moving from view to view
+02:05 validation from view to view
+02:07 setting up things like the active navigation and the title
+02:09 and whether an account is required, all that stuff.
+02:12 Really great and this is how you do it.

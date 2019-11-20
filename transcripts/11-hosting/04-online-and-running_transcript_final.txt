@@ -1,0 +1,32 @@
+00:00 Well, I've tried to refresh this page
+00:02 over the last 45 minutes, close to an hour
+00:06 and it hasn't been there yet.
+00:07 But I have reason to believe
+00:09 that finally the HTTP certificate, HTTPS certificate
+00:13 SSL certificate, has been generated and everything
+00:16 all the automated systems have kicked in
+00:18 over on the Anvil side
+00:19 so let's refresh this and see what we get.
+00:23 Ta-da, there it is!
+00:24 Awesome, here is our application, and it's working.
+00:27 We can go over here and we can log into it.
+00:31 Tell it to remember us, here we are logged in.
+00:34 Again, this is running against the same data, the same app
+00:37 it just happens to be hosted on a new domain.
+00:39 So all the measurements
+00:40 and stuff we've already put there are in.
+00:43 We don't have any information to compare ourselves yet
+00:45 but that's okay, we can go and just go
+00:48 and add another one of these, another measurement.
+00:51 Let's do 182, let's do 20
+00:53 20 is just going to mess up our graph.
+00:55 Let's put 74, 182 and 74.
+01:01 And there it is, 182 and 74
+01:03 that's our new set of measurements
+01:05 but running over our own domain using encryption.
+01:11 And just to round things out
+01:13 that encryption is via Let's Encrypt.
+01:16 You don't really care, Anvil takes care of that for you
+01:18 but it's just a kind of bit of a curiosity there.
+01:21 All right, we've hosted our app.
+01:23 That's a really good step.
