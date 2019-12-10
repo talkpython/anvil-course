@@ -45,7 +45,9 @@ def the_user():
   return __user
 
 def logout():
-  global __user
+  global __user, __my_ave, __measurements
+  __measurements = []
+  __my_ave = None
   __user = None
   
 def average_for_me():
@@ -62,6 +64,3 @@ def go_pro():
   __user = None
   
   anvil.server.call('go_pro')
-
-
-
